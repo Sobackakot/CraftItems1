@@ -23,19 +23,17 @@ public class InventoryWindow : MonoBehaviour
         inventoryController.Init();
         craftController.Init(); 
     }
-    public void Open()
+    public void OpenInventoryCraftUI()
     {
         gameObject.SetActive(true); 
     }
     public void SetCurrentItem(ItemInSlot itemInSlot)
-    {
+    {   
         CurrentItemInSlot = itemInSlot;
-        currentItemImage.sprite = CurrentItemInSlot.Item.Sprite;
+        currentItemImage.sprite = CurrentItemInSlot?.Item.GetSpriteItems();
         currentItemText.gameObject.SetActive(true);
         RefreshCurrentItemText();
         currentItemImage.gameObject.SetActive(true);
-
-
     }
     public void ResetCurrentItem()
     {

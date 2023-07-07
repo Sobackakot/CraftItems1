@@ -7730,6 +7730,7 @@ GameObject:
   - component: {fileID: 1421511786}
   - component: {fileID: 1421511785}
   - component: {fileID: 1421511787}
+  - component: {fileID: 1421511788}
   m_Layer: 0
   m_Name: ItemsManager
   m_TagString: Untagged
@@ -7749,55 +7750,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbfe4f67fd3668047a79b1bd2ef8f20f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemSprites:
-  - {fileID: 21300000, guid: 0e355b7b7e7a2ba4aa0dcd9dc4e03b5e, type: 3}
-  - {fileID: 21300000, guid: 7239ae39f4017764cb3bef0a2f8d1c90, type: 3}
-  - {fileID: 21300000, guid: ae43cd53d54627041bbff6734e7cf0f8, type: 3}
-  - {fileID: 21300000, guid: 0991e9a1193aa9145b3294791fd35159, type: 3}
-  - {fileID: 21300000, guid: 5c1d627a1ea5a9d40b1e9ca596f3c1da, type: 3}
-  - {fileID: 21300000, guid: 83c27476607798946b9182da488dfa05, type: 3}
-  - {fileID: 21300000, guid: ae9e2a0c8aa27c045a29296d0c60b2dd, type: 3}
-  BlockSprites:
-  - {fileID: 21300000, guid: 75a2764c8917c0841b502cf406c8f8d4, type: 3}
-  - {fileID: 21300000, guid: 20b65f0d6a3f65842996c1fa71d221fe, type: 3}
-  - {fileID: 21300000, guid: 392849215cd5164459e393f5fa3c576b, type: 3}
-  - {fileID: 21300000, guid: cd115b620bc012842960be5fa70252fb, type: 3}
-  - {fileID: 21300000, guid: a9bbb4936a727934fba1b357404b8952, type: 3}
-  - {fileID: 21300000, guid: b7fe82ac54935db4a9fc872f68a42985, type: 3}
-  - {fileID: 21300000, guid: 7b373ff660cec1e40be68ea4879e7507, type: 3}
-  - {fileID: 21300000, guid: 5d3d3f57ab144b94492d34697b20a89d, type: 3}
-  ArmorSprites:
-  - {fileID: 21300000, guid: e4c0bc61b35962949826feab682e4ff2, type: 3}
-  - {fileID: 21300000, guid: d6d30c10517e11b40a218a12e415a5a0, type: 3}
-  - {fileID: 21300000, guid: 266a3df5e4a6d3a44a107be9f41c8b89, type: 3}
-  - {fileID: 21300000, guid: 9b396aabfd06ede4887425ca4023b3f9, type: 3}
-  - {fileID: 21300000, guid: 761308f9f74991148aaa19d26171a0a8, type: 3}
-  ToolsSprites:
-  - {fileID: 21300000, guid: 090c0ea181a05fd4b9117f4441a7f4f4, type: 3}
-  - {fileID: 21300000, guid: 57e5b36095ceacb4cb7101428c46ebb7, type: 3}
-  - {fileID: 21300000, guid: d954c1b3f45d41040a2a377ac35a93af, type: 3}
-  - {fileID: 21300000, guid: 2134d6ab978ae214ebd492283dc9d6e5, type: 3}
-  - {fileID: 21300000, guid: 0aee4003e12fb6544bf696bf357d9f97, type: 3}
-  - {fileID: 21300000, guid: 9f2faa417e0246d43912aa0ca5fdbdee, type: 3}
-  - {fileID: 21300000, guid: 7d5bfb4c686b01a47b5e5c2b9f2ed639, type: 3}
-  - {fileID: 21300000, guid: 7f7ab44826c646c4c8ae44e6f9c45547, type: 3}
-  - {fileID: 21300000, guid: f737c6d3856692343a56eb92bd964ad0, type: 3}
-  - {fileID: 21300000, guid: 2e97f7396db05fb499520269648b3a6c, type: 3}
-  ResourceSprites:
-  - {fileID: 21300000, guid: 494c325596609a040a0d761551e8af12, type: 3}
-  - {fileID: 21300000, guid: 2bc606f4316742944a5e3826295e1205, type: 3}
-  - {fileID: 21300000, guid: 111089a405a15d1408e31828dd9915a5, type: 3}
-  - {fileID: 21300000, guid: 3e4276f904fd3ca449c2d4cd4a0aa536, type: 3}
-  - {fileID: 21300000, guid: 4b0950285c11aa241ac856248170e76e, type: 3}
-  - {fileID: 21300000, guid: b03a4bc5534bb584689ba73c7b7a0aac, type: 3}
-  - {fileID: 21300000, guid: 0700458590d2112428e8d0ac8470f7d8, type: 3}
-  MechanismsSprites:
-  - {fileID: 21300000, guid: bafd1b3684bbaaf49a72b2f25a0f01f4, type: 3}
-  - {fileID: 21300000, guid: c7699288f75f7044a8451d28185fcce0, type: 3}
-  - {fileID: 21300000, guid: 5e8a247f5601c4b4ca8a4e1c8880a94b, type: 3}
-  AccessoriesSprites:
-  - {fileID: 21300000, guid: 69770c625761c464181278bca5d8a4a9, type: 3}
-  - {fileID: 21300000, guid: 51963f5d395a1dc4cade504fd957033b, type: 3}
 --- !u!4 &1421511786
 Transform:
   m_ObjectHideFlags: 0
@@ -7827,6 +7779,60 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showName: {fileID: 2058317995}
   itemName: {fileID: 1604134433}
+--- !u!114 &1421511788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421511784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01fa0b37eda2e14439fc15e573b1f40d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TorchSprite: {fileID: 21300000, guid: 0e355b7b7e7a2ba4aa0dcd9dc4e03b5e, type: 3}
+  IronBucketSprite: {fileID: 21300000, guid: 7239ae39f4017764cb3bef0a2f8d1c90, type: 3}
+  ArrowSprite: {fileID: 21300000, guid: ae43cd53d54627041bbff6734e7cf0f8, type: 3}
+  FeatherSprite: {fileID: 21300000, guid: 0991e9a1193aa9145b3294791fd35159, type: 3}
+  StringsSprite: {fileID: 21300000, guid: 5c1d627a1ea5a9d40b1e9ca596f3c1da, type: 3}
+  CauldronSprite: {fileID: 21300000, guid: 83c27476607798946b9182da488dfa05, type: 3}
+  LanternSprite: {fileID: 21300000, guid: ae9e2a0c8aa27c045a29296d0c60b2dd, type: 3}
+  WoodBlockSprite: {fileID: 21300000, guid: 75a2764c8917c0841b502cf406c8f8d4, type: 3}
+  BoardsSprite: {fileID: 21300000, guid: 20b65f0d6a3f65842996c1fa71d221fe, type: 3}
+  DiamondOreSprite: {fileID: 21300000, guid: 392849215cd5164459e393f5fa3c576b, type: 3}
+  GoldOreSprite: {fileID: 21300000, guid: cd115b620bc012842960be5fa70252fb, type: 3}
+  CoalOreSprite: {fileID: 21300000, guid: a9bbb4936a727934fba1b357404b8952, type: 3}
+  RedstoneOreSprite: {fileID: 21300000, guid: b7fe82ac54935db4a9fc872f68a42985, type: 3}
+  CobblestoneSprite: {fileID: 21300000, guid: 7b373ff660cec1e40be68ea4879e7507, type: 3}
+  IronOreSprite: {fileID: 21300000, guid: 5d3d3f57ab144b94492d34697b20a89d, type: 3}
+  DiamondHelmetSprite: {fileID: 21300000, guid: e4c0bc61b35962949826feab682e4ff2, type: 3}
+  DiamondChestplateSprite: {fileID: 21300000, guid: d6d30c10517e11b40a218a12e415a5a0, type: 3}
+  DiamondLeggingsSprite: {fileID: 21300000, guid: 266a3df5e4a6d3a44a107be9f41c8b89, type: 3}
+  DiamondBootsSprite: {fileID: 21300000, guid: 9b396aabfd06ede4887425ca4023b3f9, type: 3}
+  ShieldSprite: {fileID: 21300000, guid: 761308f9f74991148aaa19d26171a0a8, type: 3}
+  DiamondSwordSprite: {fileID: 21300000, guid: 090c0ea181a05fd4b9117f4441a7f4f4, type: 3}
+  DiamondPickaxeSprite: {fileID: 21300000, guid: 57e5b36095ceacb4cb7101428c46ebb7, type: 3}
+  DiamondAxeSprite: {fileID: 21300000, guid: d954c1b3f45d41040a2a377ac35a93af, type: 3}
+  DiamondShovelSprite: {fileID: 21300000, guid: 2134d6ab978ae214ebd492283dc9d6e5, type: 3}
+  DiamondHoeSprite: {fileID: 21300000, guid: 0aee4003e12fb6544bf696bf357d9f97, type: 3}
+  BowSprite: {fileID: 21300000, guid: 9f2faa417e0246d43912aa0ca5fdbdee, type: 3}
+  FishingRodSprite: {fileID: 21300000, guid: 7d5bfb4c686b01a47b5e5c2b9f2ed639, type: 3}
+  ShearsSprite: {fileID: 21300000, guid: 7f7ab44826c646c4c8ae44e6f9c45547, type: 3}
+  FlintSteelSprite: {fileID: 21300000, guid: f737c6d3856692343a56eb92bd964ad0, type: 3}
+  "\u0421rossbowSprite": {fileID: 21300000, guid: 2e97f7396db05fb499520269648b3a6c, type: 3}
+  CoalSprite: {fileID: 21300000, guid: 494c325596609a040a0d761551e8af12, type: 3}
+  DiamondSprite: {fileID: 21300000, guid: 2bc606f4316742944a5e3826295e1205, type: 3}
+  IronIngotSprite: {fileID: 21300000, guid: 111089a405a15d1408e31828dd9915a5, type: 3}
+  GoldIngotSprite: {fileID: 21300000, guid: 3e4276f904fd3ca449c2d4cd4a0aa536, type: 3}
+  RedstoneSprite: {fileID: 21300000, guid: 4b0950285c11aa241ac856248170e76e, type: 3}
+  FlintSprite: {fileID: 21300000, guid: b03a4bc5534bb584689ba73c7b7a0aac, type: 3}
+  IronNuggetSprite: {fileID: 21300000, guid: 0700458590d2112428e8d0ac8470f7d8, type: 3}
+  WorkbenchSprite: {fileID: 21300000, guid: bafd1b3684bbaaf49a72b2f25a0f01f4, type: 3}
+  WoodenChestSprite: {fileID: 21300000, guid: c7699288f75f7044a8451d28185fcce0, type: 3}
+  StoveSprite: {fileID: 21300000, guid: 5e8a247f5601c4b4ca8a4e1c8880a94b, type: 3}
+  StickSprite: {fileID: 21300000, guid: 69770c625761c464181278bca5d8a4a9, type: 3}
+  TripWireSourceSprite: {fileID: 21300000, guid: 51963f5d395a1dc4cade504fd957033b, type: 3}
 --- !u!1 &1427143449
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,10 +5,8 @@ using UnityEngine;
 using static UnityEditor.Progress;
 
 public class CraftResultSlot : Slot
-{
-
-    public event System.Action OnCraft;
-
+{ 
+    public event System.Action OnCraft; 
     public override void LeftMouseClick()
     {
         if (InventoryWindow.InstanceInventory.HasCurrentItem || !InventoryWindow.InstanceInventory.craftController.HasResultItem)

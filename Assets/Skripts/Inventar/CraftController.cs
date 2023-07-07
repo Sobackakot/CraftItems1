@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
-using System.Linq; 
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine; 
 
 public class CraftController : MonoBehaviour
@@ -9,19 +10,17 @@ public class CraftController : MonoBehaviour
     [SerializeField] private AudioClip craftSlotAoudio;
     [SerializeField] private GameObject slotPrefab;
     [SerializeField] private Transform craftGrid;
-    [SerializeField] private ParticleSystem particlCraftSlot;
-
-    [HideInInspector]
-    public bool IsQuestCraft;
+    [SerializeField] private ParticleSystem particlCraftSlot; 
+    [HideInInspector] public bool IsQuestCraft;
     public CraftSlot[,] craftSlot { get; private set; }
     public CraftResultSlot craftResultSlot;
 
     public bool HasResultItem => craftResultSlot.ItemInSlot != null;
     private bool isCraftingInProgress = false;
-    private string[] resourcesItemName = new string[16]
+    private string[] resourcesItemName = new string[18]
     {
-        "Wood", "Wooden Planks","Wooden Stick","Coal Ore","Coal","Diamond Ore","Diamond",
-        "Gold Ore","Gold","Redstone Ore","Redstone","Iron","Flint","Feather","String","Trip Wire Source"
+        "Wood Block", "Boards","Stick","Coal Ore","Coal","Diamond Ore","Diamond",
+        "Gold Ore","Gold Ingot","Redstone Ore","Redstone","Iron Ingot","Flint","Feather","String","Trip Wire Source","Torch","IronNugget"
     };
     public void Awake()
     {
@@ -134,38 +133,38 @@ public class CraftController : MonoBehaviour
                 } 
             }
         }
-        var craftOrder = new Item[currentRecipeHorizontal * currentRecipeVertical];
+        var craftOrder = new Item.ItemId[currentRecipeHorizontal * currentRecipeVertical];
         for (int orderId = 0, i = currentRecipeHorizontalStartIndex; i < currentRecipeHorizontalStartIndex + currentRecipeHorizontal; i++) 
         {
             for (int j = currentRecipeVerticalStartIndex; j < currentRecipeVerticalStartIndex + currentRecipeVertical; j++) 
             {
                 if (craftSlot[i, j].HasItem)
                 {
-                    craftOrder[orderId++] = craftSlot[i, j].ItemInSlot?.Item;
+                    craftOrder[orderId++] = craftSlot[i, j].ItemInSlot.Item.itemId;
                 }
                 else if (currentRecipeVertical ==3 || currentRecipeHorizontal==3)
                 {
-                    craftOrder[orderId++] = null;
+                    craftOrder[orderId++] = Item.ItemId.None;
                 }
             }
         }
         foreach (var item in ItemsManager.InstanceItemManager.Items)
         {
-            if (item.HasRecipe && item.Recipe.RecipeItemOrder.SequenceEqual(craftOrder))
+            if (item.HasRecipe && craftOrder.SequenceEqual(item.Recipe.RecipeItemOrder))
             {
-                newItem = new ItemInSlot(item, item.Recipe.Amount); 
+                
+                newItem = new ItemInSlot(item , item.Recipe.Amount); 
                 break;
             }
         } 
         if (newItem != null)
-        {
-            Debug.Log("DL 1" + newItem.Item.Name);
+        { 
             if (ShowChallenge.InstanceChallenge.nameItemSpriteChallenge != null)
             { 
                 for (int i = 0; i < resourcesItemName.Length; i++)
                 {
                     string nameItem = resourcesItemName[i];
-                    if (nameItem == newItem.Item.Name)
+                    if (nameItem == newItem.Item.GetNameItemId())
                     {
                         craftResultSlot.SetItem(newItem);
                         m_AudioSource.PlayOneShot(craftSlotAoudio, 1f);
@@ -174,9 +173,9 @@ public class CraftController : MonoBehaviour
                         return;
                     }
                 }
-                if (ShowChallenge.InstanceChallenge.nameItemSpriteChallenge == newItem.Item.Name)
+                if (ShowChallenge.InstanceChallenge.nameItemSpriteChallenge == newItem.Item.GetNameItemId())
                 {
-                    string copi = newItem.Item.Name;
+                    string copi = newItem.Item.GetNameItemId();
                     craftResultSlot.SetItem(newItem);
                     m_AudioSource.PlayOneShot(craftSlotAoudio, 1f);
                     particlCraftSlot.Play();
@@ -222,4 +221,4 @@ public class CraftController : MonoBehaviour
         isCraftingInProgress = false;
     }
 }
- 
+

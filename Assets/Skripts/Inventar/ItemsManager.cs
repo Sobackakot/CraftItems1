@@ -3,293 +3,280 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static Unity.VisualScripting.Member;
 
 public class ItemsManager : MonoBehaviour
 {
     public static ItemsManager InstanceItemManager { get; private set; }
-    public List<Item> Items;
-    public Sprite[] ItemSprites;
-    public Sprite[] BlockSprites;
-    public Sprite[] ArmorSprites;
-    public Sprite[] ToolsSprites;
-    public Sprite[] ResourceSprites;
-    public Sprite[] MechanismsSprites;
-    public Sprite[] AccessoriesSprites;
-    private int Wood = 0;
-    private int WoodenPlanks= 1;
-    private int WoodenStick  = 2;
-    private int Coal = 4;
-    private int Diamont = 6;
-    private int Iron = 22;
-    private int Stringi = 27;
+    public List<Item> Items; 
     
     public void Awake()
     {
         InstanceItemManager = this;
         RecipeItems();
-    } 
+    }  
     private void RecipeItems()
     {
         Items = new List<Item>(); 
         // wood 0
-        Items.Add(new Item("Wood", BlockSprites[0]));
+        Items.Add(new Item(Item.ItemId.WoodBlock));
         //Wooden Planks 1
-        var woodenPlanksRecipe = new Item[,]
+        var woodenPlanksRecipe = new Item.ItemId[,]
         {
-            {Items[Wood]}
+            {Item.ItemId.WoodBlock}
         };
-        Items.Add(new Item("Wooden Planks", BlockSprites[1], new CraftRecipe(woodenPlanksRecipe, 4)));
+        Items.Add(new Item(Item.ItemId.Boards,  new CraftRecipe(woodenPlanksRecipe, 4)));
 
         //Wooden Stick 2
-        var woodenStickRecipe = new Item[,]
+        var woodenStickRecipe = new Item.ItemId[,]
         {
-            {Items[WoodenPlanks]},
-            {Items[WoodenPlanks]}
+            {Item.ItemId.Boards},
+            {Item.ItemId.Boards}
         };
-        Items.Add(new Item("Wooden Stick", AccessoriesSprites[0], new CraftRecipe(woodenStickRecipe, 4)));
+        Items.Add(new Item(Item.ItemId.Stick, new CraftRecipe(woodenStickRecipe, 4)));
         //CoalOre 3
-        Items.Add(new Item("Coal Ore", BlockSprites[4]));
+        Items.Add(new Item(Item.ItemId.CoalOre));
         //Coal 4
-        var coalRecipe = new Item[,]
+        var coalRecipe = new Item.ItemId[,]
         {
-            {Items[3] }
+            {Item.ItemId.CoalOre}
         };
-        Items.Add(new Item("Coal", ResourceSprites[0], new CraftRecipe(coalRecipe, 4)));
+        Items.Add(new Item(Item.ItemId.Coal, new CraftRecipe(coalRecipe, 4)));
         //"DiamondOre" 5
-        Items.Add(new Item("Diamond Ore", BlockSprites[2]));
+        Items.Add(new Item(Item.ItemId.DiamondOre));
         //Diamond 6
-        var DiamondRecipe = new Item[,]
+        var DiamondRecipe = new Item.ItemId[,]
         {
-            {Items[5]}
+            {Item.ItemId.DiamondOre}
         };
-        Items.Add(new Item("Diamond", ResourceSprites[1], new CraftRecipe(DiamondRecipe, 4)));
+        Items.Add(new Item(Item.ItemId.Diamond, new CraftRecipe(DiamondRecipe, 4)));
         //GoldOre 7
-        Items.Add(new Item("Gold Ore", BlockSprites[3]));
+        Items.Add(new Item(Item.ItemId.GoldOre));
         //Gold 8
-        var GoldRecipe = new Item[,]
+        var GoldRecipe = new Item.ItemId[,]
         {
-            {Items[7] }
+            {Item.ItemId.GoldOre}
         };
-        Items.Add(new Item("Gold", ResourceSprites[3], new CraftRecipe(GoldRecipe, 4)));
+        Items.Add(new Item(Item.ItemId.GoldIngot, new CraftRecipe(GoldRecipe, 4)));
         //RedstoneOre 9
-        Items.Add(new Item("Redstone Ore", BlockSprites[5]));
+        Items.Add(new Item(Item.ItemId.RedstoneOre));
         //Redstone 10
-        var redstonRecipe = new Item[,]
+        var redstonRecipe = new Item.ItemId[,]
         {
-            {Items[9] }
+            {Item.ItemId.RedstoneOre }
         };
-        Items.Add(new Item("Redstone", ResourceSprites[4], new CraftRecipe(redstonRecipe, 4)));
+        Items.Add(new Item(Item.ItemId.Redstone, new CraftRecipe(redstonRecipe, 4)));
 
         //Torch 11
-        var torchRecipe = new Item[,] // does not recognize recipe
+        var torchRecipe = new Item.ItemId[,] 
         {
-            {Items[Coal]},
-            {Items[WoodenStick]}, 
+            {Item.ItemId.Coal},
+            {Item.ItemId.Stick}, 
         };
-        Items.Add(new Item("Torch", ItemSprites[0], new CraftRecipe(torchRecipe, 4)));
+        Items.Add(new Item(Item.ItemId.Torch, new CraftRecipe(torchRecipe, 4)));
         //Diamond Axe 12
-        var diamondAxeRecipe = new Item[,]
+        var diamondAxeRecipe = new Item.ItemId[,]
         {
-            {Items[Diamont], Items[Diamont]},
-            {Items[Diamont], Items[WoodenStick]},
-            {null, Items[WoodenStick]}
+            {Item.ItemId.Diamond, Item.ItemId.Diamond},
+            {Item.ItemId.Diamond, Item.ItemId.Stick},
+            {Item.ItemId.None, Item.ItemId.Stick}
         };
-        Items.Add(new Item("Diamond Axe", ToolsSprites[2], new CraftRecipe(diamondAxeRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.DiamondAxe, new CraftRecipe(diamondAxeRecipe, 1)));
         //Diamond pickaxe 13
-        var diamondPickaxeRecipe = new Item[,]
+        var diamondPickaxeRecipe = new Item.ItemId[,]
         {
-            {Items[Diamont], Items[Diamont], Items[Diamont]},
-            {null, Items[WoodenStick], null},
-            {null, Items[WoodenStick], null}
+            {Item.ItemId.Diamond, Item.ItemId.Diamond, Item.ItemId.Diamond},
+            {Item.ItemId.None, Item.ItemId.Stick, Item.ItemId.None},
+            {Item.ItemId.None, Item.ItemId.Stick, Item.ItemId.None}
         };
-        Items.Add(new Item("Diamond Pickaxe", ToolsSprites[1], new CraftRecipe(diamondPickaxeRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.DiamondPickaxe, new CraftRecipe(diamondPickaxeRecipe, 1)));
         //Diamond shovel 14
-        var diamondShovelRecipe = new Item[,]
+        var diamondShovelRecipe = new Item.ItemId[,]
         {
-            {Items[Diamont]},
-            {Items[WoodenStick]},
-            {Items[WoodenStick]}
+            {Item.ItemId.Diamond},
+            {Item.ItemId.Stick},
+            {Item.ItemId.Stick}
         };
-        Items.Add(new Item("Diamond Shovel", ToolsSprites[3], new CraftRecipe(diamondShovelRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.DiamondShovel, new CraftRecipe(diamondShovelRecipe, 1)));
         //diamond_hoe 15
-        var diamondHoeRecipe = new Item[,]
+        var diamondHoeRecipe = new Item.ItemId[,]
         {
-            {Items[Diamont], Items[Diamont]},
-            {null, Items[WoodenStick]},
-            {null, Items[WoodenStick]}
+            {Item.ItemId.Diamond, Item.ItemId.Diamond},
+            {Item.ItemId.None, Item.ItemId.Stick},
+            {Item.ItemId.None, Item.ItemId.Stick}
         };
-        Items.Add(new Item("Diamond Hoe", ToolsSprites[4], new CraftRecipe(diamondHoeRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.DiamondHoe, new CraftRecipe(diamondHoeRecipe, 1)));
         //diamond_sword 16
-        var diamondSwordRecipe = new Item[,]
+        var diamondSwordRecipe = new Item.ItemId[,]
         {
-            {Items[Diamont]},
-            {Items[Diamont]},
-            {Items[WoodenStick]}
+            {Item.ItemId.Diamond},
+            {Item.ItemId.Diamond},
+            {Item.ItemId.Stick}
         };
-        Items.Add(new Item("Diamond Sword", ToolsSprites[0], new CraftRecipe(diamondSwordRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.DiamondSword, new CraftRecipe(diamondSwordRecipe, 1)));
         //diamond_helmet 17 
-        var diamond_helmetRecipe = new Item[,]
+        var diamond_helmetRecipe = new Item.ItemId[,]
         {
-            {Items[Diamont],Items[Diamont],Items[Diamont]},
-            {Items[Diamont], null ,Items[Diamont]}
+            {Item.ItemId.Diamond,Item.ItemId.Diamond,Item.ItemId.Diamond},
+            {Item.ItemId.Diamond, Item.ItemId.None ,Item.ItemId.Diamond}
 
         };
-        Items.Add(new Item("Diamond Helmet", ArmorSprites[0], new CraftRecipe(diamond_helmetRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.DiamondHelmet, new CraftRecipe(diamond_helmetRecipe, 1)));
         //diamond_chestplate 18
-        var diamond_chestplateRecipe = new Item[,]
+        var diamond_chestplateRecipe = new Item.ItemId[,]
         {
-            {Items[Diamont],null,Items[Diamont]},
-            {Items[Diamont], Items[Diamont] ,Items[Diamont]},
-            {Items[Diamont],Items[Diamont],Items[Diamont]}
+            {Item.ItemId.Diamond,Item.ItemId.None,Item.ItemId.Diamond},
+            {Item.ItemId.Diamond, Item.ItemId.Diamond ,Item.ItemId.Diamond},
+            {Item.ItemId.Diamond,Item.ItemId.Diamond,Item.ItemId.Diamond}
 
 
         };
-        Items.Add(new Item("Diamond Chestplate", ArmorSprites[1], new CraftRecipe(diamond_chestplateRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.DiamondChestplate, new CraftRecipe(diamond_chestplateRecipe, 1)));
         //diamond_leggings 19
-        var diamond_leggingsRecipe = new Item[,] // does not recognize recipe
+        var diamond_leggingsRecipe = new Item.ItemId[,] 
         {
-            {Items[Diamont],Items[Diamont],Items[Diamont]},
-            {Items[Diamont], null ,Items[Diamont]},
-            {Items[Diamont],null,Items[Diamont]} 
+            {Item.ItemId.Diamond,Item.ItemId.Diamond,Item.ItemId.Diamond},
+            {Item.ItemId.Diamond,Item.ItemId.None ,Item.ItemId.Diamond},
+            {Item.ItemId.Diamond,Item.ItemId.None,Item.ItemId.Diamond} 
         };
-        Items.Add(new Item("Diamond Leggings", ArmorSprites[2], new CraftRecipe(diamond_leggingsRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.DiamondLeggings, new CraftRecipe(diamond_leggingsRecipe, 1)));
         //diamond_boots 20
-        var diamond_bootsRecipe = new Item[,]
+        var diamond_bootsRecipe = new Item.ItemId[,]
         {
-            {Items[Diamont], null ,Items[Diamont]},
-            {Items[Diamont],null,Items[Diamont]}
+            {Item.ItemId.Diamond, Item.ItemId.None ,Item.ItemId.Diamond},
+            {Item.ItemId.Diamond,Item.ItemId.None,Item.ItemId.Diamond}
         };
-        Items.Add(new Item("Diamond Boots", ArmorSprites[3], new CraftRecipe(diamond_bootsRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.DiamondBoots, new CraftRecipe(diamond_bootsRecipe, 1)));
         //Iron Ore 21
-        Items.Add(new Item("Iron Ore", BlockSprites[7]));
+        Items.Add(new Item(Item.ItemId.IronOre));
         //Iron 22
-        var IronRecipe = new Item[,]
+        var IronRecipe = new Item.ItemId[,]
         {
-            {Items[21] }
+            {Item.ItemId.IronOre}
         };
-        Items.Add(new Item("Iron", ResourceSprites[2], new CraftRecipe(IronRecipe,4)));
+        Items.Add(new Item(Item.ItemId.IronIngot, new CraftRecipe(IronRecipe,4)));
         //Iron Bucket 23
-        var iron_BucketRecipe = new Item[,]
+        var iron_BucketRecipe = new Item.ItemId[,]
         {
-            {Items[Iron], null ,Items[Iron]},
-            {null,Items[Iron],null}
+            {Item.ItemId.IronIngot, Item.ItemId.None ,Item.ItemId.IronIngot},
+            {Item.ItemId.None,Item.ItemId.IronIngot,Item.ItemId.None}
         };
-        Items.Add(new Item("Iron Bucket", ItemSprites[1], new CraftRecipe(iron_BucketRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.IronBucket, new CraftRecipe(iron_BucketRecipe, 1)));
         //flint 24
-        Items.Add(new Item("Flint", ResourceSprites[5]));
+        Items.Add(new Item(Item.ItemId.Flint));
         //feather 25
-        Items.Add(new Item("Feather", ItemSprites[3]));
+        Items.Add(new Item(Item.ItemId.Feather));
         // Arrow 26
-        var arrowRecipe = new Item[,]
+        var arrowRecipe = new Item.ItemId[,]
         {
-            { Items[24]},
-            { Items[WoodenStick]},
-            {Items[25]}
+            { Item.ItemId.Flint},
+            {Item.ItemId.Stick},
+            {Item.ItemId.Feather}
         };
-        Items.Add(new Item("Arrow", ItemSprites[2], new CraftRecipe(arrowRecipe, 4)));
+        Items.Add(new Item(Item.ItemId.Arrow, new CraftRecipe(arrowRecipe, 4)));
         //string 27
-        Items.Add(new Item("String", ItemSprites[4]));
+        Items.Add(new Item(Item.ItemId.Strings));
         //bow 28
-        var bowRecipe = new Item[,]
+        var bowRecipe = new Item.ItemId[,]
         {
-            { null,Items[WoodenStick],Items[Stringi ]},
-            {Items[WoodenStick],null,Items[Stringi ]},
-            {null,Items[WoodenStick],Items[Stringi ]}
+            { Item.ItemId.None,Item.ItemId.Stick,Item.ItemId.Strings},
+            {Item.ItemId.Stick,Item.ItemId.None,Item.ItemId.Strings},
+            {Item.ItemId.None,Item.ItemId.Stick,Item.ItemId.Strings}
         };
-        Items.Add(new Item("Bow", ToolsSprites[5], new CraftRecipe(bowRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.Bow, new CraftRecipe(bowRecipe, 1)));
         //fishing_rod 29
-        var fishing_rodRecipe = new Item[,] //does not recognize recipe
+        var fishing_rodRecipe = new Item.ItemId[,] 
         {
-            { null, null,Items[WoodenStick]},
-            { null, Items[WoodenStick],Items[Stringi ]},
-            {Items[WoodenStick], null, Items[Stringi ]}
+            { Item.ItemId.None, Item.ItemId.None,Item.ItemId.Stick},
+            { Item.ItemId.None,Item.ItemId.Stick,Item.ItemId.Strings},
+            {Item.ItemId.Stick, Item.ItemId.None,Item.ItemId.Strings}
         };
-        Items.Add(new Item("Fishing Rod", ToolsSprites[6], new CraftRecipe(fishing_rodRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.FishingRod, new CraftRecipe(fishing_rodRecipe, 1)));
         //shears 30
-        var shearsRecipe = new Item[,] //does not recognize recipe
+        var shearsRecipe = new Item.ItemId[,] 
         {
-            {Items[WoodenStick],null, Items[Iron]},
-            {null,Items[Iron],null},
-            {Items[WoodenStick],null, Items[Iron]}
+            {Item.ItemId.Stick,Item.ItemId.None,Item.ItemId.IronIngot},
+            {Item.ItemId.None,Item.ItemId.IronIngot,Item.ItemId.None},
+            {Item.ItemId.Stick,Item.ItemId.None, Item.ItemId.IronIngot}
         };
-        Items.Add(new Item("Shears", ToolsSprites[7], new CraftRecipe(shearsRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.Shears, new CraftRecipe(shearsRecipe, 1)));
         //flint_and_steel 31
-        var flint_and_steelRecipe = new Item[,]
+        var flint_and_steelRecipe = new Item.ItemId[,]
         {
-            {Items[Iron],Items[24]}
+            {Item.ItemId.IronIngot,Item.ItemId.Flint}
         };
-        Items.Add(new Item("Flint and Steel", ToolsSprites[8], new CraftRecipe(flint_and_steelRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.FlintSteel, new CraftRecipe(flint_and_steelRecipe, 1)));
         //Trip Wire Source 32
-        var Trip_Wire_SourceRecipe = new Item[,]
+        var Trip_Wire_SourceRecipe = new Item.ItemId[,]
         {
-            {Items[Iron]},
-            {Items[WoodenStick]},
-            {Items[WoodenPlanks]}
+            {Item.ItemId.IronIngot},
+            {Item.ItemId.Stick},
+            {Item.ItemId.Boards}
         };
-        Items.Add(new Item("Trip Wire Source", AccessoriesSprites[1], new CraftRecipe(Trip_Wire_SourceRecipe, 2)));
+        Items.Add(new Item(Item.ItemId.TripWireSource, new CraftRecipe(Trip_Wire_SourceRecipe, 2)));
         //Ñrossbow 33
-        var ÑrossbowRecipe = new Item[,]
+        var ÑrossbowRecipe = new Item.ItemId[,]
         {
-            {Items[WoodenStick], Items[Iron], Items[WoodenStick]},
-            {Items[Stringi], Items[32], Items[Stringi]},
-            {null, Items[WoodenStick], null}
+            {Item.ItemId.Stick, Item.ItemId.IronIngot, Item.ItemId.Stick},
+            {Item.ItemId.Strings, Item.ItemId.TripWireSource, Item.ItemId.Strings },
+            {Item.ItemId.None, Item.ItemId.Stick,Item.ItemId.None}
         };
-        Items.Add(new Item("Ñrossbow", ToolsSprites[9], new CraftRecipe(ÑrossbowRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.Crossbow, new CraftRecipe(ÑrossbowRecipe, 1)));
         //Workbench 34
-        var WorkbenchRecipe = new Item[,]
+        var WorkbenchRecipe = new Item.ItemId[,]
         {
-            {Items[WoodenPlanks], Items[WoodenPlanks]},
-            {Items[WoodenPlanks], Items[WoodenPlanks]}
+            {Item.ItemId.Boards, Item.ItemId.Boards},
+            {Item.ItemId.Boards, Item.ItemId.Boards}
         };
-        Items.Add(new Item("Workbench", MechanismsSprites[0], new CraftRecipe(WorkbenchRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.Workbench, new CraftRecipe(WorkbenchRecipe, 1)));
         //Wooden Chest 35
-        var WoodenChestRecipe = new Item[,]
+        var WoodenChestRecipe = new Item.ItemId[,]
         {
-            {Items[WoodenPlanks],Items[WoodenPlanks],Items[WoodenPlanks]},
-            {Items[WoodenPlanks],null,Items[WoodenPlanks]},
-            {Items[WoodenPlanks],Items[WoodenPlanks],Items[WoodenPlanks]}
+            {Item.ItemId.Boards,Item.ItemId.Boards,Item.ItemId.Boards},
+            {Item.ItemId.Boards,Item.ItemId.None,Item.ItemId.Boards},
+            {Item.ItemId.Boards,Item.ItemId.Boards,Item.ItemId.Boards}
         };
-        Items.Add(new Item("Wooden Chest", MechanismsSprites[1], new CraftRecipe(WoodenChestRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.WoodenChest, new CraftRecipe(WoodenChestRecipe, 1)));
         //Cobblestone 36
-        Items.Add(new Item("Cobblestone", BlockSprites[6]));
+        Items.Add(new Item(Item.ItemId.Cobblestone));
         //Stove 37
-        var StoveRecipe = new Item[,]
+        var StoveRecipe = new Item.ItemId[,]
         {
-            {Items[36],Items[36],Items[36] },
-            {Items[36],null,Items[36] },
-            {Items[36],Items[36],Items[36] },
+            {Item.ItemId.Cobblestone,Item.ItemId.Cobblestone,Item.ItemId.Cobblestone},
+            {Item.ItemId.Cobblestone,Item.ItemId.None ,Item.ItemId.Cobblestone },
+            {Item.ItemId.Cobblestone,Item.ItemId.Cobblestone,Item.ItemId.Cobblestone },
         };
-        Items.Add(new Item("Stove", MechanismsSprites[2], new CraftRecipe(StoveRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.Stove, new CraftRecipe(StoveRecipe, 1)));
         //Shield 38
-        var ShieldRecipe = new Item[,]
+        var ShieldRecipe = new Item.ItemId[,]
         {
-            {Items[WoodenPlanks], Items[Iron], Items[WoodenPlanks] },
-            {Items[WoodenPlanks], Items[WoodenPlanks], Items[WoodenPlanks] },
-            {null, Items[WoodenPlanks],null }
+            {Item.ItemId.Boards, Item.ItemId.IronIngot, Item.ItemId.Boards},
+            {Item.ItemId.Boards,Item.ItemId.Boards, Item.ItemId.Boards },
+            {Item.ItemId.None, Item.ItemId.Boards,Item.ItemId.None}
         };
-        Items.Add(new Item("Shield", ArmorSprites[4], new CraftRecipe(ShieldRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.Shield, new CraftRecipe(ShieldRecipe, 1)));
         //Cauldron 39
-        var CauldronRecipe = new Item[,]
+        var CauldronRecipe = new Item.ItemId[,]
         {
-            {Items[Iron], null, Items[Iron] },
-             {Items[Iron], null, Items[Iron] },
-              {Items[Iron],Items[Iron], Items[Iron] }
+            {Item.ItemId.IronIngot, Item.ItemId.None, Item.ItemId.IronIngot },
+             {Item.ItemId.IronIngot, Item.ItemId.None, Item.ItemId.IronIngot},
+              {Item.ItemId.IronIngot,Item.ItemId.IronIngot, Item.ItemId.IronIngot }
 
         };
-        Items.Add(new Item("Cauldron", ItemSprites[5], new CraftRecipe(CauldronRecipe,1)));
+        Items.Add(new Item(Item.ItemId.Cauldron, new CraftRecipe(CauldronRecipe,1)));
         //Iron Nugget 40
-        var IronNuggetRecipe = new Item[,]
+        var IronNuggetRecipe = new Item.ItemId[,]
         {
-            { Items[Iron] }
+            { Item.ItemId.IronIngot}
         };
-        Items.Add(new Item("Iron Nugget", ResourceSprites[6], new CraftRecipe(IronNuggetRecipe,9)));
-        //Lantern
-        var LanternRecipe = new Item[,]
+        Items.Add(new Item(Item.ItemId.IronNugget, new CraftRecipe(IronNuggetRecipe,9)));
+        //Lantern 41
+        var LanternRecipe = new Item.ItemId[,]
         {
-            {Items[40], Items[40], Items[40] },
-            {Items[40], Items[11], Items[40] },
-            {Items[40], Items[40], Items[40] },
+            {Item.ItemId.IronNugget, Item.ItemId.IronNugget, Item.ItemId.IronNugget },
+            {Item.ItemId.IronNugget, Item.ItemId.IronNugget, Item.ItemId.IronNugget },
+            {Item.ItemId.IronNugget, Item.ItemId.IronNugget, Item.ItemId.IronNugget },
         };
-        Items.Add(new Item("Lantern", ItemSprites[6], new CraftRecipe(LanternRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.Lantern, new CraftRecipe(LanternRecipe, 1)));
     }
 }
