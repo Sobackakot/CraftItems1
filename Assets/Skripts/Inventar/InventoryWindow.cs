@@ -8,10 +8,8 @@ public class InventoryWindow : MonoBehaviour
 
 
     public CraftController craftController;
-    public InventoryController inventoryController;
-
-    public ItemInSlot CurrentItemInSlot;
-
+    public InventoryController inventoryController; 
+    public ItemInSlot CurrentItemInSlot; 
     public Image currentItemImage;
     public TextMeshProUGUI currentItemText;
     

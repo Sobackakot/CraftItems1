@@ -2340,7 +2340,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &405618318
 GameObject:
@@ -5029,7 +5029,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 185447898}
         m_TargetAssemblyTypeName: InventoryWindow, Assembly-CSharp
-        m_MethodName: Open
+        m_MethodName: OpenInventoryCraftUI
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7820,7 +7820,7 @@ MonoBehaviour:
   FishingRodSprite: {fileID: 21300000, guid: 7d5bfb4c686b01a47b5e5c2b9f2ed639, type: 3}
   ShearsSprite: {fileID: 21300000, guid: 7f7ab44826c646c4c8ae44e6f9c45547, type: 3}
   FlintSteelSprite: {fileID: 21300000, guid: f737c6d3856692343a56eb92bd964ad0, type: 3}
-  "\u0421rossbowSprite": {fileID: 21300000, guid: 2e97f7396db05fb499520269648b3a6c, type: 3}
+  CrossbowSprite: {fileID: 0}
   CoalSprite: {fileID: 21300000, guid: 494c325596609a040a0d761551e8af12, type: 3}
   DiamondSprite: {fileID: 21300000, guid: 2bc606f4316742944a5e3826295e1205, type: 3}
   IronIngotSprite: {fileID: 21300000, guid: 111089a405a15d1408e31828dd9915a5, type: 3}
@@ -8262,6 +8262,7 @@ GameObject:
   - component: {fileID: 1527539799}
   - component: {fileID: 1527539801}
   - component: {fileID: 1527539800}
+  - component: {fileID: 1527539802}
   m_Layer: 5
   m_Name: CurrentItem
   m_TagString: Untagged
@@ -8328,6 +8329,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1527539798}
   m_CullTransparentMesh: 1
+--- !u!223 &1527539802
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527539798}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 1
+  m_TargetDisplay: 0
 --- !u!1 &1532323475
 GameObject:
   m_ObjectHideFlags: 0

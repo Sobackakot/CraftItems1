@@ -274,7 +274,7 @@ public class ItemsManager : MonoBehaviour
         var LanternRecipe = new Item.ItemId[,]
         {
             {Item.ItemId.IronNugget, Item.ItemId.IronNugget, Item.ItemId.IronNugget },
-            {Item.ItemId.IronNugget, Item.ItemId.IronNugget, Item.ItemId.IronNugget },
+            {Item.ItemId.IronNugget, Item.ItemId.Torch, Item.ItemId.IronNugget },
             {Item.ItemId.IronNugget, Item.ItemId.IronNugget, Item.ItemId.IronNugget },
         };
         Items.Add(new Item(Item.ItemId.Lantern, new CraftRecipe(LanternRecipe, 1)));

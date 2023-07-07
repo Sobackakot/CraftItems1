@@ -15,7 +15,7 @@ public class ItemsSprite : MonoBehaviour
     public Sprite FeatherSprite;
     public Sprite StringsSprite;
     public Sprite CauldronSprite;
-    public Sprite LanternSprite;
+    public Sprite LanternSprite; 
     public Sprite WoodBlockSprite;
     public Sprite BoardsSprite;
     public Sprite DiamondOreSprite;

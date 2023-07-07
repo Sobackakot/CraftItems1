@@ -13,7 +13,7 @@ public class ShowChallenge : MonoBehaviour
     [SerializeField] private ParticleSystem particlChallenge;
     [SerializeField] private ParticleSystem particlRezultSlot;
     [HideInInspector] public string nameItemSpriteChallenge;
-    [HideInInspector] public bool isNextImageChallenge = false;
+    [HideInInspector] public bool isNextImageChallenge = true;
     private int countClickBackImageChallenge = 0;
     private int Index = 0; 
     
@@ -57,7 +57,7 @@ public class ShowChallenge : MonoBehaviour
             nameItemSpriteChallenge = spriteChallenge[Index].name;
             StartCoroutine(CoroutineDisableParticle());
         }
-        isNextImageChallenge = false;
+        isNextImageChallenge = true;
     }
     public void ShowBackChalleng()
     {   
