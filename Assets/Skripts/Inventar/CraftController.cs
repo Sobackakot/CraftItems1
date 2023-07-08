@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine; 
 
 public class CraftController : MonoBehaviour
@@ -15,25 +16,37 @@ public class CraftController : MonoBehaviour
     public CraftSlot[,] craftSlot { get; private set; }
     public CraftResultSlot craftResultSlot;
 
-    public bool HasResultItem => craftResultSlot.ItemInSlot != null;
-    private bool isCraftingInProgress = false;
-    private string[] resourcesItemName = new string[18]
+    private bool isCraftingInProgress = false; 
+    private Item.ItemId [] CraftOrder { get; set; }
+    private int EndHorizontalIdex { get; set; }
+    private int EndVerticalIdex { get; set; }
+    private int StartHorizontalIndex { get; set; }
+    private int StartVerticalIndex { get; set; }
+    private int HorizontalIsNull { get; set; }
+    private int VerticalIsNull { get; set; }
+
+    public bool HasResultItem => craftResultSlot.ItemInSlot != null; 
+
+    private string[] resourcesItemName = new string[18] //List of SECONDARY CRAFTS
     {
         "Wood Block", "Boards","Stick","Coal Ore","Coal","Diamond Ore","Diamond",
-        "Gold Ore","Gold Ingot","Redstone Ore","Redstone","Iron Ingot","Flint","Feather","String","Trip Wire Source","Torch","Iron Nugget"
+        "Gold Ore","Gold Ingot","Redstone Ore","Redstone","Iron Ingot","Flint","Feather","String","Trip Wire Source","Torch","Iron Nugget" 
     };
     public void Awake()
     {
         m_AudioSource = GetComponent<AudioSource>(); 
         particlCraftSlot.Stop();
-    } 
-    public void Init()
+    }
+    //This method initializes the craftSlot array and creates the crafting grid.
+    //It instantiates slot prefabs and assigns them to the craftSlot array.
+    public void Init() 
     {   
         craftSlot = new CraftSlot[3,3];
         CreateSlotsPrefabs();
     }
-    
-    private void CreateSlotsPrefabs()
+    // This method creates the crafting grid by instantiating slot prefabs and placing them in the craft grid.
+    // It iterates over the craftSlot array and assigns each slot with the CraftSlot component.
+    private void CreateSlotsPrefabs() // Init  
     {
         for( int i = 0; i <craftSlot.GetLength(0);  i++ )
         {
@@ -44,156 +57,58 @@ public class CraftController : MonoBehaviour
             }
         }
     }
-    public void CheckCraft()
+    // !!! EXTERNOL METHODS !!!
+    //This method checks the crafting recipe based on the items present in the crafting slots.
+    //It determines the resulting item by comparing the CraftOrder array
+    //(representing the order of items in the slots) with the defined item recipes.
+    public void CheckCraft() 
     {
-        ItemInSlot newItem = null;
-
-        int currentRecipeHorizontal = 0;
-        int currentRecipeVertical = 0;
-        int currentRecipeHorizontalStartIndex = -1;
-        int currentRecipeVerticalStartIndex = -1;
-        int horizontalIsNull = 0;
-        int verticalIsNull = 0;
+        ItemInSlot NewItemcInResultSlot = null;
+        EndHorizontalIdex = 0;
+        EndVerticalIdex = 0;
+        StartHorizontalIndex = -1;
+        StartVerticalIndex = -1;
+        HorizontalIsNull = 0;
+        VerticalIsNull = 0;
         for (int i = 0; i < craftSlot.GetLength(0); i++)
         {
             for (int j = 0; j < craftSlot.GetLength(1); j++)
-            {
+            { 
                 if (craftSlot[i, j].HasItem)
                 {
-                    if (currentRecipeHorizontalStartIndex == -1)
-                        currentRecipeHorizontalStartIndex = i;
-                    currentRecipeHorizontal++;
-
-                    if (horizontalIsNull <3)
-                        horizontalIsNull =0;
+                    SetHorizontalIndexItem(i);
                     break;
-                }
-                else if(currentRecipeHorizontalStartIndex != -1)
+                } 
+                else if (StartHorizontalIndex != -1)
                 {
-                    if (i == 1 && !craftSlot[i, j].HasItem && horizontalIsNull != 3)
-                    {
-                        horizontalIsNull++;
-                        if (horizontalIsNull == 3)
-                        {   
-                            currentRecipeHorizontal++;
-                        }
-                    }
-                    else if (i ==2 && !craftSlot[i, j].HasItem)
-                    {
-                        if (horizontalIsNull == 3)
-                            horizontalIsNull --;
-                        else if(horizontalIsNull == 2)
-                            horizontalIsNull--;
-                        else if (horizontalIsNull == 1)
-                        {
-                            horizontalIsNull--;
-                            currentRecipeHorizontal--;
-                        } 
-                    }
+                    IncrementHorizontalNull(i,j);
+                    DecrementHorizontalNull(i,j);
                 } 
             }
         }
         for (int i = 0; i < craftSlot.GetLength(1); i++)
         {
             for (int j = 0; j < craftSlot.GetLength(0); j++)
-            {
-                if (craftSlot[j,i].HasItem)
+            { 
+                if (craftSlot[j, i].HasItem)
                 {
-                    if (currentRecipeVerticalStartIndex == -1)
-                        currentRecipeVerticalStartIndex = i; 
-                    currentRecipeVertical++;
-
-                    if (verticalIsNull <3)
-                        verticalIsNull=0;
+                    SetVerticalIndexItem(i);
                     break;
-                }
-               
-                else if(currentRecipeVerticalStartIndex != -1)
+                } 
+                if (StartVerticalIndex != -1)
                 {
-                    if (i== 1 && !craftSlot[j,i].HasItem && verticalIsNull != 3)
-                    {
-                        verticalIsNull++;
-                        if (verticalIsNull == 3)
-                        {
-                            currentRecipeVertical++;
-                        }
-                    }
-                    else if (i ==2 && !craftSlot[j, i].HasItem )
-                    {
-                        if (verticalIsNull == 3)
-                            verticalIsNull--;
-                        else if (verticalIsNull == 2)
-                            verticalIsNull --;
-                        else if (verticalIsNull == 1)
-                        {
-                            verticalIsNull--;
-                            currentRecipeVertical--;
-                        } 
-                    }
+                    IncrementVerticalNull(j,i);
+                    DecrementVerticalNull(j,i);
                 } 
             }
         }
-        var craftOrder = new Item.ItemId[currentRecipeHorizontal * currentRecipeVertical];
-        for (int orderId = 0, i = currentRecipeHorizontalStartIndex; i < currentRecipeHorizontalStartIndex + currentRecipeHorizontal; i++) 
-        {
-            for (int j = currentRecipeVerticalStartIndex; j < currentRecipeVerticalStartIndex + currentRecipeVertical; j++) 
-            {
-                if (craftSlot[i, j].HasItem)
-                {
-                    craftOrder[orderId++] = craftSlot[i, j].ItemInSlot.Item.itemId;
-                }
-                else if (currentRecipeVertical ==3 || currentRecipeHorizontal==3)
-                {
-                    craftOrder[orderId++] = Item.ItemId.None;
-                }
-            }
-        }
-        foreach (var item in ItemsManager.InstanceItemManager.Items)
-        {
-            if (item.HasRecipe && craftOrder.SequenceEqual(item.Recipe.RecipeItemOrder))
-            {
-                
-                newItem = new ItemInSlot(item , item.Recipe.Amount); 
-                break;
-            }
-        } 
-        if (newItem != null)
-        { 
-            if (ShowChallenge.InstanceChallenge.nameItemSpriteChallenge != null)
-            { 
-                for (int i = 0; i < resourcesItemName.Length; i++)
-                {
-                    string nameItem = resourcesItemName[i];
-                    if (nameItem == newItem.Item.GetNameItemId())
-                    {
-                        craftResultSlot.SetItem(newItem);
-                        m_AudioSource.PlayOneShot(craftSlotAoudio, 1f);
-                        particlCraftSlot.Play();
-                        StartCoroutine(CoroutineDisableParticle());
-                        return;
-                    }
-                }
-                if (ShowChallenge.InstanceChallenge.nameItemSpriteChallenge == newItem.Item.GetNameItemId())
-                {
-                    string copi = newItem.Item.GetNameItemId();
-                    craftResultSlot.SetItem(newItem);
-                    m_AudioSource.PlayOneShot(craftSlotAoudio, 1f);
-                    particlCraftSlot.Play();
-                    ShowChallenge.InstanceChallenge.isNextImageChallenge = true;
-                    isCraftingInProgress = true;
-                    StartCoroutine(CoroutineDisableParticle());
-                    IsQuestCraft = true;
-                    return;
-                }
-            }
-        }
-        else
-        {
-            craftResultSlot.ResetItem(); 
-            m_AudioSource.Stop();
-            particlCraftSlot.Stop();
-        }      
+        CreatingNewCraftingArray();
+        NewItemcInResultSlot = CheckCraftRecipe(NewItemcInResultSlot);
+        SetNewItemInResultSlot(NewItemcInResultSlot); 
     }
+    //This method crafts the item. It decreases the item amounts in the crafting slots
+    //by 1 and initiates the crafting progress coroutine.
+    //If crafting is already in progress, it doesn't perform any action.
     public void CraftItem()
     {
         for(int i = 0; i< craftSlot.GetLength(0); i++)
@@ -210,15 +125,195 @@ public class CraftController : MonoBehaviour
         if(!isCraftingInProgress)
         CheckCraft();
     }
-    private IEnumerator CoroutineDisableParticle()
+
+
+    // !!! INTERNOL METHODS !!!
+    //This method creates a new array (CraftOrder) that represents the order of items in the crafting slots.
+    //It iterates over the slots and populates the CraftOrder array accordingly.
+    private void CreatingNewCraftingArray() // CheckCraft 
+    {
+        CraftOrder = new Item.ItemId[EndHorizontalIdex * EndVerticalIdex];
+        for (int orderId = 0, i = StartHorizontalIndex; i < StartHorizontalIndex + EndHorizontalIdex; i++)
+        {
+            for (int j = StartVerticalIndex; j < StartVerticalIndex + EndVerticalIdex; j++)
+            {
+                if (craftSlot[i, j].HasItem)
+                {
+                    CraftOrder[orderId++] = craftSlot[i, j].ItemInSlot.Item.itemId;
+                }
+                else if (EndVerticalIdex == 3 || EndHorizontalIdex == 3)
+                {
+                    CraftOrder[orderId++] = Item.ItemId.None;
+                }
+            }
+        } 
+    }
+    //This method checks the crafting recipe by comparing the CraftOrder array with the defined item recipes.
+    //It iterates over the items in the game and checks if the recipe matches the CraftOrder. If a match is found, it returns the resulting item.
+    private ItemInSlot CheckCraftRecipe(ItemInSlot NewItemcInResultSlot) // CheckCraft 
+    {
+        foreach (var item in ItemsManager.InstanceItemManager.Items)
+        {
+            if (item.HasRecipe && CraftOrder.SequenceEqual(item.Recipe.RecipeItemOrder))
+            {
+                NewItemcInResultSlot = new ItemInSlot(item, item.Recipe.Amount);
+                break;
+            }
+        }
+        return NewItemcInResultSlot;
+    }
+    //This method sets the resulting item in the craft result slot based on the crafted item.
+    //If a resulting item is found, it sets the item in the craft result slot, plays the craft slot audio,
+    //and starts the particle system. If no resulting item is found, it resets the craft result slot and stops the audio and particle effects.
+    private void SetNewItemInResultSlot(ItemInSlot NewItemcInResultSlot) //CheckCraft 
+    {
+        if (NewItemcInResultSlot != null)
+        {
+            SetSecondaryItemInResultSlot(NewItemcInResultSlot);
+            SetResultChallengeItemInResultSlot(NewItemcInResultSlot);
+        }
+        else
+        {
+            craftResultSlot.ResetItem();
+            m_AudioSource.Stop();
+            particlCraftSlot.Stop();
+        }
+    }
+    //This method sets the resulting item in the craft result slot if it's a secondary resource item.
+    //It compares the resulting item with the list of secondary resource item names and sets it in the craft result slot if there's a match.
+    //It also plays the craft slot audio and starts the particle system.
+    private void SetSecondaryItemInResultSlot(ItemInSlot NewItemcInResultSlot) //SetNewItemInResultSlot  
+    {
+        for (int i = 0; i < resourcesItemName.Length; i++)
+        {
+            string nameItem = resourcesItemName[i];
+            if (nameItem == NewItemcInResultSlot.Item.GetNameItemId())
+            {
+                craftResultSlot.SetItem(NewItemcInResultSlot);
+                m_AudioSource.PlayOneShot(craftSlotAoudio, 1f);
+                particlCraftSlot.Play();
+                StartCoroutine(CoroutineDisableParticle());
+                return;
+            }
+        }
+    }
+    //This method sets the resulting item in the craft result slot if it matches the challenge item and updates the challenge progress.
+    //It compares the resulting item with the challenge item's name and sets it in the craft result slot if there's a match.
+    //It plays the craft slot audio and starts the particle system. It also sets the isNextImageChallenge flag in the challenge instance,
+    //indicating that the challenge progress should be updated.
+    private void SetResultChallengeItemInResultSlot(ItemInSlot NewItemcInResultSlot) // SetNewItemInResultSlot
+    {
+        if (ShowChallenge.InstanceChallenge?.nameItemSpriteChallenge == NewItemcInResultSlot.Item.GetNameItemId())
+        {
+            craftResultSlot.SetItem(NewItemcInResultSlot);
+            m_AudioSource.PlayOneShot(craftSlotAoudio, 1f);
+            particlCraftSlot.Play();
+            StartCoroutine(CoroutineDisableParticle());
+            ShowChallenge.InstanceChallenge.isNextImageChallenge = true;
+            isCraftingInProgress = true;
+            IsQuestCraft = true;
+            return;
+        }
+    }
+    //This method sets the starting and ending horizontal indices for the crafting slots.
+    //It is called when an item is found in the crafting slots and updates the StartHorizontalIndex and EndHorizontalIdex accordingly.
+    private void SetHorizontalIndexItem(int i) //CheckCraft -
+    {
+        if (StartHorizontalIndex == -1)
+            StartHorizontalIndex = i;
+        EndHorizontalIdex++;
+        if (HorizontalIsNull < 3)
+            HorizontalIsNull = 0; 
+    }
+    //This method sets the starting and ending vertical indices for the crafting slots.
+    //It is called when an item is found in the crafting slots and updates the StartVerticalIndex and EndVerticalIdex accordingly.
+    private void SetVerticalIndexItem(int i) //CheckCraft -
+    {
+        if (StartVerticalIndex == -1)
+            StartVerticalIndex = i;
+        EndVerticalIdex++;
+        if (VerticalIsNull < 3)
+            VerticalIsNull = 0; 
+    }
+    //This method increments the horizontal null count and adjusts the ending horizontal index based on empty slots.
+    //It is called when there are empty slots in the crafting grid and updates the HorizontalIsNull and EndHorizontalIdex accordingly.
+    private void IncrementHorizontalNull(int i, int j) //CheckCraft -
+    {
+        if (i == 1 && !craftSlot[i, j].HasItem && HorizontalIsNull != 3)
+        {
+            HorizontalIsNull++;
+            if (HorizontalIsNull == 3)
+            {
+                EndHorizontalIdex++;
+            }
+            return;
+        }
+    }
+    //This method decrements the horizontal null count and adjusts the ending horizontal index based on empty slots.
+    //It is called when there are empty slots in the crafting grid and updates the HorizontalIsNull and EndHorizontalIdex accordingly.
+    private void DecrementHorizontalNull(int i, int j) //CheckCraft -
+    {
+        if (i == 2 && !craftSlot[i, j].HasItem)
+        {
+            if (HorizontalIsNull == 3)
+                HorizontalIsNull--;
+            else if (HorizontalIsNull == 2)
+                HorizontalIsNull--;
+            else if (HorizontalIsNull == 1)
+            {
+                HorizontalIsNull--;
+                EndHorizontalIdex--;
+            }
+            return;
+        }
+    }
+    //This method increments the vertical null count and adjusts the ending vertical index based on empty slots.
+    //It is called when there are empty slots in the crafting grid and updates the VerticalIsNull and EndVerticalIdex accordingly.
+    private void IncrementVerticalNull(int j, int i) //CheckCraft -
+    {
+        if (i == 1 && !craftSlot[j, i].HasItem && VerticalIsNull != 3)
+        {
+            VerticalIsNull++;
+            if (VerticalIsNull == 3)
+            {
+                EndVerticalIdex++;
+            }
+            return;
+        }
+    }
+    //This method decrements the vertical null count and adjusts the ending vertical index based on empty slots.
+    //It is called when there are empty slots in the crafting grid and updates the VerticalIsNull and EndVerticalIdex accordingly.
+    private void DecrementVerticalNull(int j, int i) //CheckCraft 
+    {
+        if (i == 2 && !craftSlot[j, i].HasItem)
+        {
+            if (VerticalIsNull == 3)
+                VerticalIsNull--;
+            else if (VerticalIsNull == 2)
+                VerticalIsNull--;
+            else if (VerticalIsNull == 1)
+            {
+                VerticalIsNull--;
+                EndVerticalIdex--;
+            }
+            return;
+        }
+    }
+    //This coroutine method disables the particle system after a certain delay.
+    //It is called after the particle system is played and waits for a specified duration before stopping the particle system.
+    private IEnumerator CoroutineDisableParticle() //SetSecondaryItemInResultSlot 
     {
         yield return new WaitForSeconds(3);
         particlCraftSlot.Stop();
     }
-    private IEnumerator CoroutineCraftingProgress()
+    //This coroutine method manages the crafting progress.
+    //It sets the isCraftingInProgress flag to true and waits for a specified duration before setting it back to false.
+    //It is used to prevent repeated crafting actions during the crafting progress.
+    private IEnumerator CoroutineCraftingProgress() //CraftItem -
     { 
         yield return new WaitForSeconds(1);
         isCraftingInProgress = false;
     }
+
 }
 

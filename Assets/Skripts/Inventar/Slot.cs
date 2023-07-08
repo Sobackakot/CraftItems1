@@ -12,10 +12,11 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, I
 
     private Color defaultColor = new Color(140f / 255f, 140f / 255f, 140f / 255f, 1f);
     private Color highlightedColor = new Color(120f / 255f, 120f / 255f, 120f / 255f, 1f);
-    public ItemInSlot ItemInSlot { get; private set; }
-    private ItemInSlot currentItem { get; set; }
-    private int totalAmountItemInSlot { get; set; } 
+
     public const int maxItemAmount = 64;
+    public ItemInSlot ItemInSlot { get; private set; }
+    private ItemInSlot CurrentItem { get; set; }
+    private int TotalAmountItemInSlot { get; set; }  
     public bool HasItem => ItemInSlot != null;
     public void Awake()
     {
@@ -51,15 +52,15 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, I
         image.color = defaultColor;
         ShowNameObject.InstanceNameObject.OffOnText();
     }
-    // external methods!!!
+    // !!! EXTERNOL METHODS !!!
     public virtual void LeftMouseClick() //OnPointerClick
     {
-        currentItem = inventory.CurrentItemInSlot;
+        CurrentItem = inventory.CurrentItemInSlot;
         if (HasItem)
         {
-            if (currentItem == null)
+            if (CurrentItem == null)
                 PickUpItemsInSlot();
-            else if (ItemInSlot.Item != currentItem.Item)
+            else if (ItemInSlot.Item != CurrentItem.Item)
                 SwapingDifferentItems();
             else SetItemsInSlot();
         }
@@ -102,11 +103,11 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, I
         else 
             SwapingAmountItems(Items, amountCurrentItem);
     }
-    // internal methods!!!
+    // !!! INTERNOL METHODS !!!
     private void SumAmountItemsInSlot(ItemInSlot Items, int amountCurrentItem) // AddItem - The sum of the addition of items from the slot and the current
     {
-        totalAmountItemInSlot = ItemInSlot.Amount + amountCurrentItem;
-        if (totalAmountItemInSlot > maxItemAmount)
+        TotalAmountItemInSlot = ItemInSlot.Amount + amountCurrentItem;
+        if (TotalAmountItemInSlot > maxItemAmount)
             SetPartAmountItemsCurrent(Items, amountCurrentItem);
         else SetMaxAmountItemsInSlot(Items, amountCurrentItem);
     }
@@ -118,12 +119,12 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, I
     }
     private void SetMaxAmountItemsInSlot(ItemInSlot Items, int amountCurrentItem) //SumOfAddItem- Increment the amount of items in the slot at the expense of the current item
     {
-        ItemInSlot.Amount = totalAmountItemInSlot;
+        ItemInSlot.Amount = TotalAmountItemInSlot;
         RefreshUI();
     }
     private void SetPartAmountItemsCurrent(ItemInSlot Items, int amountCurrentItem) //SumOfAddItem - Fills the amount of items in the slot from the current item to the maximum
     {
-        int excessAmount = totalAmountItemInSlot - maxItemAmount;
+        int excessAmount = TotalAmountItemInSlot - maxItemAmount;
         ItemInSlot.Amount = maxItemAmount;
         inventory.SetCurrentItem(new ItemInSlot(Items.Item, excessAmount));
         RefreshUI();
@@ -136,20 +137,20 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, I
     private void SwapingDifferentItems() //LeftMouseClick - Swapping different items between slot and current one
     {
         inventory.SetCurrentItem(ItemInSlot);
-        SetItem(currentItem);
+        SetItem(CurrentItem);
     }
     private void SetItemsInSlot() //LeftMouseClick - Returns some of the items in the slot from the current
     {
-        AddItem(currentItem, currentItem.Amount);
+        AddItem(CurrentItem, CurrentItem.Amount);
         inventory.CheckCurrentItem();
         return;
     }
     private void SetAllItemsInSlot() //LeftMouseClick - Returns all items in the slot from the current
     {
         inventory.ResetCurrentItem();
-        if (currentItem != null)
+        if (CurrentItem != null)
         {
-            SetItem(currentItem);
+            SetItem(CurrentItem);
         }
     } 
     private void GetHalfAmount() // RightMouseClick - Takes items from the slot exactly half of the amount into the current items

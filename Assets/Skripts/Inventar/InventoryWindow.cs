@@ -4,8 +4,7 @@ using UnityEngine.UI;
 
 public class InventoryWindow : MonoBehaviour
 {
-    public static InventoryWindow InstanceInventory { get; private set; }
-
+    public static InventoryWindow InstanceInventory { get; private set; } 
 
     public CraftController craftController;
     public InventoryController inventoryController; 
