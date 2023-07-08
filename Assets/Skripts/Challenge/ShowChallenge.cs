@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class ShowChallenge : MonoBehaviour
 {
+    private ListObjectsImageRecipe listObjectImajeRecipe;
     public static ShowChallenge InstanceChallenge { get; private set; }
     [SerializeField] private Sprite[] spriteChallenge; 
     [SerializeField] private Image currentImageChallenge;
@@ -15,11 +16,12 @@ public class ShowChallenge : MonoBehaviour
     [HideInInspector] public string nameItemSpriteChallenge;
     [HideInInspector] public bool isNextImageChallenge = false;
     private int countClickBackImageChallenge = 0;
-    private int Index = 0; 
+    private int Index { get; set; } 
     
     public void Awake()
     {
         InstanceChallenge = this;
+        listObjectImajeRecipe = ListObjectsImageRecipe.InstanceListObjects;
     }
     public void Start()
     {
@@ -28,30 +30,22 @@ public class ShowChallenge : MonoBehaviour
         nameItemSpriteChallenge = spriteChallenge[Index].name; 
         StartCoroutine(CoroutineDisableParticle());
     }
+    //This method shows the next challenge image. It checks if there are any clicks
+    //on the back button (countClickBackImageChallenge) and decreases the count if it's not zero.
+    //It sets the isNextImageChallenge flag to true. If the flag is true, it deactivates the current challenge object,
+    //gets the next index for the challenge, updates the current image challenge, text, and the name of the sprite challenge.
+    //It also starts the coroutine to disable the particle system. Finally, it resets the isNextImageChallenge flag to false.
     public void ShowNextChalleng()
-    {   
-        StopCoroutine(CoroutineDisableParticle());
+    {
         if (countClickBackImageChallenge != 0)
         {
             countClickBackImageChallenge--;
             isNextImageChallenge = true;
-        } 
+        }
         if (isNextImageChallenge)
-        {
-            if (ListObjectsImageRecipe.InstanceListObjects != null)
-                ListObjectsImageRecipe.InstanceListObjects.objectsRecipe[Index].gameObject.SetActive(false);
-            if (Index < spriteChallenge.Length - 1)
-            {
-                Index++;
-                particlChallenge.Play();
-                particlRezultSlot.Play();
-            }
-            else
-            {
-                Index = spriteChallenge.Length - 1;
-            }
-            if (ListObjectsImageRecipe.InstanceListObjects != null)
-                ListObjectsImageRecipe.InstanceListObjects.objectsRecipe[Index].gameObject.SetActive(true);
+        { 
+            listObjectImajeRecipe.objectsRecipe[Index]?.gameObject.SetActive(false);
+            GetNextIndexChallenge();
             currentImageChallenge.sprite = spriteChallenge[Index];
             qurrentText.text = spriteChallenge[Index].name;
             nameItemSpriteChallenge = spriteChallenge[Index].name;
@@ -59,34 +53,55 @@ public class ShowChallenge : MonoBehaviour
         }
         isNextImageChallenge = false;
     }
+    //This method shows the previous challenge image.
+    //It deactivates the current challenge object, gets the previous index for the challenge,
+    //updates the current image challenge, text, and the name of the sprite challenge.
+    //It starts the coroutine to disable the particle system.
     public void ShowBackChalleng()
     {   
-        StopCoroutine(CoroutineDisableParticle()); 
-        if (ListObjectsImageRecipe.InstanceListObjects != null)
-            ListObjectsImageRecipe.InstanceListObjects.objectsRecipe[Index].gameObject.SetActive(false);
-        if (Index > 0)
-        {
-            Index--;
-            countClickBackImageChallenge++;
-            particlChallenge.Play();
-            particlRezultSlot.Play();
-        }
-        else
-        {
-            Index = 0;
-        }
-        if (ListObjectsImageRecipe.InstanceListObjects != null)
-            ListObjectsImageRecipe.InstanceListObjects.objectsRecipe[Index].gameObject.SetActive(true);
+        listObjectImajeRecipe.objectsRecipe[Index]?.gameObject.SetActive(false);
+        GetBackIndexChallenge();
         currentImageChallenge.sprite = spriteChallenge[Index];
         qurrentText.text = spriteChallenge[Index].name;
         nameItemSpriteChallenge = spriteChallenge[Index].name;
         StartCoroutine(CoroutineDisableParticle());
     }
+    //This method shows the current recipe image. It activates the current challenge object.
     public void ShowCurrentRecipiImage()
-    { 
-        if (ListObjectsImageRecipe.InstanceListObjects != null)
-            ListObjectsImageRecipe.InstanceListObjects.objectsRecipe[Index].gameObject.SetActive(true);
+    {
+         listObjectImajeRecipe.objectsRecipe[Index]?.gameObject.SetActive(true);
     }
+    //This method retrieves the next index for the challenge.
+    //If the current index is less than the total number of sprite challenges minus one,
+    //it increments the index, plays the particle systems, and returns the new index.
+    //If the current index is the last index, it returns the current index without incrementing.
+    private void GetNextIndexChallenge()
+    {
+        if (Index < spriteChallenge.Length - 1)
+        {   
+            particlChallenge.Play();
+            particlRezultSlot.Play();
+             Index++;
+        }
+        else Index = spriteChallenge.Length - 1;
+    }
+    //This method retrieves the previous index for the challenge.
+    //If the current index is greater than zero, it decrements the index,
+    //increments the count of clicks on the back button, plays the particle systems, and returns the new index.
+    //If the current index is zero, it returns the current index without decrementing.
+    private void GetBackIndexChallenge()
+    {
+        if (Index > 0)
+        { 
+            countClickBackImageChallenge++;
+            particlChallenge.Play();
+            particlRezultSlot.Play();
+            Index--;
+        }
+        else Index = 0; 
+    }
+    //This coroutine method disables the particle system after a certain delay.
+    //It waits for a specified duration and stops the particle system.
     private IEnumerator CoroutineDisableParticle()
     { 
         yield return new WaitForSeconds(3);
