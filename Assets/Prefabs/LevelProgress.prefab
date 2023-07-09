@@ -50,9 +50,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3579a726674d47e479d03ba117e035b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _starPrefab: {fileID: 4363079100941883088, guid: 82afac4248c5c6c4fa14f4ed0fa0c35a, type: 3}
+  _levelSize: 10
+  _slots:
+  - _name: Level1
+    _level: 1
+    _prefab: {fileID: 4363079100941883088, guid: 82afac4248c5c6c4fa14f4ed0fa0c35a, type: 3}
+  - _name: Level2
+    _level: 2
+    _prefab: {fileID: 4363079100941883088, guid: c13eb345db4e26e4fb2cc8ffd5340081, type: 3}
+  - _name: Level3
+    _level: 3
+    _prefab: {fileID: 4363079100941883088, guid: f46093a675d594c45ab5020ec62467b4, type: 3}
   _holder: {fileID: 1558674923745203554}
   _result: {fileID: 0}
+  _onUpdateLvl:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6301899293702166733
 MonoBehaviour:
   m_ObjectHideFlags: 0
