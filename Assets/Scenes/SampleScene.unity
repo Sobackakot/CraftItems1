@@ -9941,9 +9941,11 @@ MonoBehaviour:
   TNTSprite: {fileID: 21300000, guid: f4679029d38ba99448ce46a5a15ddad9, type: 3}
   RedstoneTorchSprite: {fileID: 21300000, guid: d8303384d2ffcf34cbf0deacb0f09f57, type: 3}
   CompassSprite: {fileID: 21300000, guid: dcaf9dd02d4954d49ab3073638e9edf5, type: 3}
-  GunpowderSprite: {fileID: 0}
-  HopperSprite: {fileID: 0}
-  TrolleySprite: {fileID: 0}
+  GunpowderSprite: {fileID: 21300000, guid: 7cff429ffc3b0ee45b9bc49106785bae, type: 3}
+  HopperSprite: {fileID: 21300000, guid: 014e677734fd8db43aa1e8f18f923193, type: 3}
+  TrolleySprite: {fileID: 21300000, guid: c2582fb542033f54e8bbda52bcb1e5d9, type: 3}
+  EchoShardSprite: {fileID: 21300000, guid: 5a0a0a34cbd62ce4ab3518f8259c4b09, type: 3}
+  QuartzSprite: {fileID: 21300000, guid: acc9dc7412a4ca6498a413afb1b316d3, type: 3}
 --- !u!1 &1427143449
 GameObject:
   m_ObjectHideFlags: 0
@@ -12993,11 +12995,30 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ae43cd53d54627041bbff6734e7cf0f8, type: 3}
   - {fileID: 21300000, guid: 7d5bfb4c686b01a47b5e5c2b9f2ed639, type: 3}
   - {fileID: 21300000, guid: f737c6d3856692343a56eb92bd964ad0, type: 3}
-  - {fileID: 21300000, guid: 83c27476607798946b9182da488dfa05, type: 3}
   - {fileID: 21300000, guid: 7239ae39f4017764cb3bef0a2f8d1c90, type: 3}
   - {fileID: 21300000, guid: 7f7ab44826c646c4c8ae44e6f9c45547, type: 3}
   - {fileID: 21300000, guid: 761308f9f74991148aaa19d26171a0a8, type: 3}
+  - {fileID: 21300000, guid: 83c27476607798946b9182da488dfa05, type: 3}
   - {fileID: 21300000, guid: ae9e2a0c8aa27c045a29296d0c60b2dd, type: 3}
+  - {fileID: 21300000, guid: f95dec2e024c3244588570bb3008c5dc, type: 3}
+  - {fileID: 21300000, guid: e19be3a90ac649a4d9db7dc82a91dc0b, type: 3}
+  - {fileID: 21300000, guid: 452fb275bdf52fc489bcaaf7d16c95c9, type: 3}
+  - {fileID: 21300000, guid: 3fc5f3d8bbbc9074e966c33e845d71ac, type: 3}
+  - {fileID: 21300000, guid: 0b30f6ef563c5224990fa4bb0903f1e6, type: 3}
+  - {fileID: 21300000, guid: ca12a3b7cedf87a4084d706cd08bbeee, type: 3}
+  - {fileID: 21300000, guid: 41c347caa333cdd45b9918600da6795c, type: 3}
+  - {fileID: 21300000, guid: ae9e2a0c8aa27c045a29296d0c60b2dd, type: 3}
+  - {fileID: 21300000, guid: ae9e2a0c8aa27c045a29296d0c60b2dd, type: 3}
+  - {fileID: 21300000, guid: ae9e2a0c8aa27c045a29296d0c60b2dd, type: 3}
+  - {fileID: 21300000, guid: ae9e2a0c8aa27c045a29296d0c60b2dd, type: 3}
+  - {fileID: 21300000, guid: ae9e2a0c8aa27c045a29296d0c60b2dd, type: 3}
+  - {fileID: 21300000, guid: ae9e2a0c8aa27c045a29296d0c60b2dd, type: 3}
+  - {fileID: 21300000, guid: ae9e2a0c8aa27c045a29296d0c60b2dd, type: 3}
+  - {fileID: 21300000, guid: ae9e2a0c8aa27c045a29296d0c60b2dd, type: 3}
+  - {fileID: 21300000, guid: ae9e2a0c8aa27c045a29296d0c60b2dd, type: 3}
+  - {fileID: 21300000, guid: ae9e2a0c8aa27c045a29296d0c60b2dd, type: 3}
+  - {fileID: 21300000, guid: ae9e2a0c8aa27c045a29296d0c60b2dd, type: 3}
+  - {fileID: 21300000, guid: 2e97f7396db05fb499520269648b3a6c, type: 3}
   currentImageChallenge: {fileID: 724322445}
   qurrentText: {fileID: 807564581}
   particlChallenge: {fileID: 49780411}
