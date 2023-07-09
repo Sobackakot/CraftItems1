@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spritesRecipe:
+  - {fileID: 21300000, guid: 442a9fc89c2c9d24e9b10e433e778418, type: 3}
   - {fileID: 21300000, guid: f27de6a1b2ae78241ad89c7fdc4fd4a6, type: 3}
   - {fileID: 21300000, guid: 8eb6d85f2c8e7b44f94039b5d29ad0c5, type: 3}
   qurrentSpriteRecipe: {fileID: 1368602762}
@@ -13007,17 +13008,17 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0b30f6ef563c5224990fa4bb0903f1e6, type: 3}
   - {fileID: 21300000, guid: ca12a3b7cedf87a4084d706cd08bbeee, type: 3}
   - {fileID: 21300000, guid: 41c347caa333cdd45b9918600da6795c, type: 3}
-  - {fileID: 21300000, guid: ae9e2a0c8aa27c045a29296d0c60b2dd, type: 3}
-  - {fileID: 21300000, guid: ae9e2a0c8aa27c045a29296d0c60b2dd, type: 3}
-  - {fileID: 21300000, guid: ae9e2a0c8aa27c045a29296d0c60b2dd, type: 3}
-  - {fileID: 21300000, guid: ae9e2a0c8aa27c045a29296d0c60b2dd, type: 3}
-  - {fileID: 21300000, guid: ae9e2a0c8aa27c045a29296d0c60b2dd, type: 3}
-  - {fileID: 21300000, guid: ae9e2a0c8aa27c045a29296d0c60b2dd, type: 3}
-  - {fileID: 21300000, guid: ae9e2a0c8aa27c045a29296d0c60b2dd, type: 3}
-  - {fileID: 21300000, guid: ae9e2a0c8aa27c045a29296d0c60b2dd, type: 3}
-  - {fileID: 21300000, guid: ae9e2a0c8aa27c045a29296d0c60b2dd, type: 3}
-  - {fileID: 21300000, guid: ae9e2a0c8aa27c045a29296d0c60b2dd, type: 3}
-  - {fileID: 21300000, guid: ae9e2a0c8aa27c045a29296d0c60b2dd, type: 3}
+  - {fileID: 21300000, guid: e9b8cb5a8b352214ca16007d692bbaab, type: 3}
+  - {fileID: 21300000, guid: 3a3607c26aa9fa945acfddf81d644a22, type: 3}
+  - {fileID: 21300000, guid: f11975db9fe30414faed13cefff2578f, type: 3}
+  - {fileID: 21300000, guid: 321bb58f5989aab49bd05cf3055f98a3, type: 3}
+  - {fileID: 21300000, guid: 1d9a3883482ce1b43867250c48eb9246, type: 3}
+  - {fileID: 21300000, guid: 89642007eb425d7458c1fc082f970d35, type: 3}
+  - {fileID: 21300000, guid: 864b26a7088b7084181726850ca5e473, type: 3}
+  - {fileID: 21300000, guid: ead72b31395fb8d498474409839c2aa1, type: 3}
+  - {fileID: 21300000, guid: 8e23421495a4cc94ea2283cfe75821c2, type: 3}
+  - {fileID: 21300000, guid: 5104a1a554bd2834682e5c777e018a2a, type: 3}
+  - {fileID: 21300000, guid: df2bc39acef56384cb9fcd53505eb462, type: 3}
   - {fileID: 21300000, guid: 2e97f7396db05fb499520269648b3a6c, type: 3}
   currentImageChallenge: {fileID: 724322445}
   qurrentText: {fileID: 807564581}
