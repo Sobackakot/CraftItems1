@@ -50,5 +50,8 @@ public class ItemsSprite : MonoBehaviour
     public Sprite WoodenChestSprite;
     public Sprite StoveSprite;
     public Sprite StickSprite;
-    public Sprite TripWireSourceSprite; 
+    public Sprite TripWireSourceSprite;
+    public Sprite SmoothStoneSprite;
+    public Sprite SandSprite;
+    public Sprite IronBlockSprite;
 }

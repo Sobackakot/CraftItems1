@@ -58,7 +58,10 @@ public class Item
         WoodenChest = 38, 
         Stove = 39, 
         Stick = 40, 
-        TripWireSource = 41 
+        TripWireSource = 41,
+        SmoothStone =42,
+        Sand =43,
+        IronBlock =44
     }
     public string GetNameItemId()
     {     
@@ -106,6 +109,9 @@ public class Item
             case ItemId.Stove: return "Stove";
             case ItemId.Stick: return "Stick";
             case ItemId.TripWireSource: return "Tripwire Wire Source";
+            case ItemId.SmoothStone: return "Smooth Stone";
+            case ItemId.Sand: return "Sand";
+            case ItemId.IronBlock: return "Iron Block";
 
             default:
                 return "Unknown Item";
@@ -160,7 +166,10 @@ public class Item
             case ItemId.WoodenChest: return ItemsSprite.Instance.WoodenChestSprite;
             case ItemId.Stove: return ItemsSprite.Instance.StoveSprite;
             case ItemId.Stick: return ItemsSprite.Instance.StickSprite;
-            case ItemId.TripWireSource: return ItemsSprite.Instance.TripWireSourceSprite; 
+            case ItemId.TripWireSource: return ItemsSprite.Instance.TripWireSourceSprite;
+            case ItemId.SmoothStone: return ItemsSprite.Instance.SmoothStoneSprite;
+            case ItemId.Sand: return ItemsSprite.Instance.SandSprite;
+            case ItemId.IronBlock: return ItemsSprite.Instance.IronBlockSprite;
         }
     }
 }
