@@ -5,8 +5,8 @@ public class StarSlot
 {
     [SerializeField] private string _name;
     [SerializeField] private int _level = 10;
-    [SerializeField] private GameObject _prefab;
+    [SerializeField] private Sprite _prefab;
 
     public int Level => _level;
-    public GameObject Prefab => _prefab;
+    public Sprite Icon => _prefab;
 }

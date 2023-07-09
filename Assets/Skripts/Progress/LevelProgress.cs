@@ -14,23 +14,21 @@ public class LevelProgress : MonoBehaviour
 
     private int _level = 1;
     private int _countCraft = 0;
-
-    private List<GameObject> _stars = new List<GameObject>();
-    private List<GameObject> _pool = new List<GameObject>();
+    private Star[] _stars;
 
     private void OnValidate()
     {
         _levelSize = _levelSize > 1 ? _levelSize : 1;
     }
 
-    public void Reset()
+
+    private void Awake()
     {
+        _stars = _holder.GetComponentsInChildren<Star>();
         foreach (var star in _stars)
         {
-            if (!_pool.Contains(star))
-                _pool.Add(star);
+            star.gameObject.SetActive(false);
         }
-        _stars.Clear();
     }
 
     private void OnEnable()
@@ -45,53 +43,36 @@ public class LevelProgress : MonoBehaviour
 
     public void UpdateProgress()
     {
-        _countCraft++;
-        AddStar();
         if (_countCraft >= _levelSize)
         {
             _level++;
+            _countCraft = 0;
             _onUpdateLvl.Invoke();
         }
+        AddStar(_stars[_countCraft]);
+        _countCraft++;
     }
 
-    private void AddStar()
+    private void AddStar(Star star)
     {
-        var star = CreateStar();
-        star.transform.SetAsFirstSibling();
-        if (_stars.Count >= _levelSize)
+        star.SetStar(GetStar());
+        if (!star.gameObject.activeSelf)
         {
-            var oldStar = _stars[0];
-            _stars.Remove(oldStar);
-            Destroy(oldStar);
-        }
-        _stars.Add(star);
-    }
-
-    private GameObject CreateStar()
-    {
-        if (_pool.Count > 0)
-        {
-            var star = _pool[0];
-            star.SetActive(true);
-            _pool.Remove(star);
-            return star;
-        }
-        else
-        {
-            return Instantiate(GetStar(), transform);
+            star.gameObject.SetActive(true);
         }
     }
 
-    private GameObject GetStar()
+
+    private Sprite GetStar()
     {
         foreach (var star in _slots)
         {
             if (star.Level == _level)
             {
-                return star.Prefab;
+                return star.Icon;
             }
         }
-        return _slots[_slots.Length-1].Prefab;
+        return _slots[_slots.Length-1].Icon;
     }
 
 }
