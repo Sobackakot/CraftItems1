@@ -70,7 +70,9 @@ public class Item
         Compass = 50,
         Gunpowder =51,
         Hopper =52,
-        Trolley =53
+        Trolley =53,
+        EchoShard = 54,
+        Quartz =55
     }
     public string GetNameItemId()
     {     
@@ -130,6 +132,8 @@ public class Item
             case ItemId.Gunpowder: return "Gunpowder";
             case ItemId.Hopper: return "Hopper";
             case ItemId.Trolley: return "Trolley";
+            case ItemId.EchoShard: return "EchoShard";
+            case ItemId.Quartz: return "Quartz";
 
             default:
                 return "Unknown Item";
@@ -197,6 +201,8 @@ public class Item
             case ItemId.Gunpowder: return ItemsSprite.Instance.GunpowderSprite;
             case ItemId.Hopper: return ItemsSprite.Instance.HopperSprite;
             case ItemId.Trolley: return ItemsSprite.Instance.TrolleySprite;
+            case ItemId.EchoShard: return ItemsSprite.Instance.EchoShardSprite;
+            case ItemId.Quartz: return ItemsSprite.Instance.QuartzSprite;
         }
     }
 }

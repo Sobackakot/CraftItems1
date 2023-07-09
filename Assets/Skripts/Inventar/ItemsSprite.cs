@@ -63,4 +63,6 @@ public class ItemsSprite : MonoBehaviour
     public Sprite GunpowderSprite;
     public Sprite HopperSprite;
     public Sprite TrolleySprite;
+    public Sprite EchoShardSprite;
+    public Sprite QuartzSprite;
 }
