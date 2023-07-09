@@ -27,10 +27,11 @@ public class CraftController : MonoBehaviour
 
     public bool HasResultItem => craftResultSlot.ItemInSlot != null; 
 
-    private string[] resourcesItemName = new string[18] //List of SECONDARY CRAFTS
+    private string[] resourcesItemName = new string[29] //List of SECONDARY CRAFTS
     {
         "Wood Block", "Boards","Stick","Coal Ore","Coal","Diamond Ore","Diamond",
-        "Gold Ore","Gold Ingot","Redstone Ore","Redstone","Iron Ingot","Flint","Feather","String","Trip Wire Source","Torch","Iron Nugget" 
+        "Gold Ore","Gold Ingot","Redstone Ore","Redstone","Iron Ingot","Flint","Feather","String","Trip Wire Source","Torch","Iron Nugget",
+        "Iron Block", "Half Block","Pressure Plate","Glass","RedstoneTorch","Compass","Wooden Chest", "TNT", "Stove","Hopper", "Trolley"
     };
     public void Awake()
     {

@@ -54,4 +54,13 @@ public class ItemsSprite : MonoBehaviour
     public Sprite SmoothStoneSprite;
     public Sprite SandSprite;
     public Sprite IronBlockSprite;
+    public Sprite GlassSprite;
+    public Sprite PressurePlateSprite;
+    public Sprite HalfBlockSprite;
+    public Sprite TNTSprite;
+    public Sprite RedstoneTorchSprite;
+    public Sprite CompassSprite;
+    public Sprite GunpowderSprite;
+    public Sprite HopperSprite;
+    public Sprite TrolleySprite;
 }

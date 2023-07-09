@@ -73,7 +73,7 @@ public class ItemsManager : MonoBehaviour
             {Item.ItemId.Coal},
             {Item.ItemId.Stick}, 
         };
-        Items.Add(new Item(Item.ItemId.Torch, new CraftRecipe(torchRecipe, 4)));
+        Items.Add(new Item(Item.ItemId.Torch, new CraftRecipe(torchRecipe, 1)));
         //Diamond Axe 12
         var diamondAxeRecipe = new Item.ItemId[,]
         {
@@ -244,7 +244,7 @@ public class ItemsManager : MonoBehaviour
         {
             {Item.ItemId.Cobblestone,Item.ItemId.Cobblestone,Item.ItemId.Cobblestone},
             {Item.ItemId.Cobblestone,Item.ItemId.None ,Item.ItemId.Cobblestone },
-            {Item.ItemId.Cobblestone,Item.ItemId.Cobblestone,Item.ItemId.Cobblestone },
+            {Item.ItemId.Cobblestone,Item.ItemId.Cobblestone,Item.ItemId.Cobblestone }
         };
         Items.Add(new Item(Item.ItemId.Stove, new CraftRecipe(StoveRecipe, 1)));
         //Shield 38
@@ -275,8 +275,83 @@ public class ItemsManager : MonoBehaviour
         {
             {Item.ItemId.IronNugget, Item.ItemId.IronNugget, Item.ItemId.IronNugget },
             {Item.ItemId.IronNugget, Item.ItemId.Torch, Item.ItemId.IronNugget },
-            {Item.ItemId.IronNugget, Item.ItemId.IronNugget, Item.ItemId.IronNugget },
+            {Item.ItemId.IronNugget, Item.ItemId.IronNugget, Item.ItemId.IronNugget }
         };
         Items.Add(new Item(Item.ItemId.Lantern, new CraftRecipe(LanternRecipe, 1)));
+        //Iron Block 42
+        var IronBlockRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.IronIngot, Item.ItemId.IronIngot, Item.ItemId.IronIngot }, 
+            {Item.ItemId.IronIngot, Item.ItemId.IronIngot, Item.ItemId.IronIngot },
+            {Item.ItemId.IronIngot, Item.ItemId.IronIngot, Item.ItemId.IronIngot }
+        };
+        Items.Add(new Item(Item.ItemId.IronBlock, new CraftRecipe(IronBlockRecipe, 1)));
+        //Half Block 43
+        var HalfBlockRecipe = new Item.ItemId[,]
+        {
+            
+            {Item.ItemId.Boards, Item.ItemId.Boards, Item.ItemId.Boards }
+        };
+        Items.Add(new Item(Item.ItemId.HalfBlock, new CraftRecipe(HalfBlockRecipe, 6)));
+        //Pressure Plate 44
+        var PressurePlateRecipe = new Item.ItemId[,]
+        {
+
+            {Item.ItemId.SmoothStone, Item.ItemId.SmoothStone}
+        };
+        Items.Add(new Item(Item.ItemId.PressurePlate, new CraftRecipe(PressurePlateRecipe, 1)));
+        //Glass 45
+        var GlassRecipe = new Item.ItemId[,]
+        {
+
+            {Item.ItemId.Sand}
+        };
+        Items.Add(new Item(Item.ItemId.Glass, new CraftRecipe(GlassRecipe, 4)));
+        //RedstoneTorch 46
+        var RedstoneTorchRecipe = new Item.ItemId[,]
+        { 
+            {Item.ItemId.Redstone},
+            {Item.ItemId.Stick}
+        };
+        Items.Add(new Item(Item.ItemId.RedstoneTorch, new CraftRecipe(RedstoneTorchRecipe, 1)));
+        //Compass 47
+        var CompassRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.None, Item.ItemId.IronIngot, Item.ItemId.None },
+            {Item.ItemId.IronIngot, Item.ItemId.Redstone, Item.ItemId.IronIngot },
+            {Item.ItemId.None, Item.ItemId.IronIngot, Item.ItemId.None }
+        };
+        Items.Add(new Item(Item.ItemId.Compass, new CraftRecipe(CompassRecipe, 1)));
+        //Gunpowder 48
+        Items.Add(new Item(Item.ItemId.Gunpowder));
+        //TNT 49
+        var TNTRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.Gunpowder, Item.ItemId.Sand, Item.ItemId.Gunpowder },
+            {Item.ItemId.Sand, Item.ItemId.Gunpowder, Item.ItemId.Sand   },
+            {Item.ItemId.Gunpowder, Item.ItemId.Sand, Item.ItemId.Gunpowder }
+        };
+        Items.Add(new Item(Item.ItemId.TNT, new CraftRecipe(TNTRecipe, 1)));
+        //Hopper 50 
+        var HopperRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.IronIngot, Item.ItemId.WoodenChest, Item.ItemId.IronIngot },
+            {Item.ItemId.IronIngot, Item.ItemId.IronIngot, Item.ItemId.IronIngot   },
+            {Item.ItemId.None, Item.ItemId.IronIngot, Item.ItemId.None }
+        };
+        Items.Add(new Item(Item.ItemId.Hopper, new CraftRecipe(HopperRecipe, 1)));
+        //Trolley 51
+        var TrolleyRecipe = new Item.ItemId[,]
+       {
+            {Item.ItemId.IronIngot, Item.ItemId.None, Item.ItemId.IronIngot },
+            {Item.ItemId.IronIngot, Item.ItemId.IronIngot, Item.ItemId.IronIngot   }
+            
+       };
+        Items.Add(new Item(Item.ItemId.Trolley, new CraftRecipe(TrolleyRecipe, 1)));
+        //Smooth Stone 52
+        Items.Add(new Item(Item.ItemId.SmoothStone));
+        //Sand 53
+        Items.Add(new Item(Item.ItemId.Sand));
     }
 }
+

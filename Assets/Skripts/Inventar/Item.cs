@@ -61,7 +61,16 @@ public class Item
         TripWireSource = 41,
         SmoothStone =42,
         Sand =43,
-        IronBlock =44
+        IronBlock =44,
+        Glass =45,
+        HalfBlock =46,
+        PressurePlate =47,
+        TNT = 48,
+        RedstoneTorch = 49,
+        Compass = 50,
+        Gunpowder =51,
+        Hopper =52,
+        Trolley =53
     }
     public string GetNameItemId()
     {     
@@ -112,6 +121,15 @@ public class Item
             case ItemId.SmoothStone: return "Smooth Stone";
             case ItemId.Sand: return "Sand";
             case ItemId.IronBlock: return "Iron Block";
+            case ItemId.Glass: return "Glass";
+            case ItemId.HalfBlock: return "Half Block";
+            case ItemId.PressurePlate: return "Pressure Plate";
+            case ItemId.TNT: return "TNT";
+            case ItemId.RedstoneTorch: return "Redstone Torch";
+            case ItemId.Compass: return "Compass";
+            case ItemId.Gunpowder: return "Gunpowder";
+            case ItemId.Hopper: return "Hopper";
+            case ItemId.Trolley: return "Trolley";
 
             default:
                 return "Unknown Item";
@@ -170,6 +188,15 @@ public class Item
             case ItemId.SmoothStone: return ItemsSprite.Instance.SmoothStoneSprite;
             case ItemId.Sand: return ItemsSprite.Instance.SandSprite;
             case ItemId.IronBlock: return ItemsSprite.Instance.IronBlockSprite;
+            case ItemId.Glass: return ItemsSprite.Instance.GlassSprite;
+            case ItemId.HalfBlock: return ItemsSprite.Instance.HalfBlockSprite;
+            case ItemId.PressurePlate: return ItemsSprite.Instance.PressurePlateSprite;
+            case ItemId.TNT: return ItemsSprite.Instance.TNTSprite;
+            case ItemId.RedstoneTorch: return ItemsSprite.Instance.RedstoneTorchSprite;
+            case ItemId.Compass: return ItemsSprite.Instance.CompassSprite;
+            case ItemId.Gunpowder: return ItemsSprite.Instance.GunpowderSprite;
+            case ItemId.Hopper: return ItemsSprite.Instance.HopperSprite;
+            case ItemId.Trolley: return ItemsSprite.Instance.TrolleySprite;
         }
     }
 }
