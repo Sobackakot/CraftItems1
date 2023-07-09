@@ -9,6 +9,7 @@ public class LevelProgress : MonoBehaviour
     [SerializeField] private StarSlot[] _slots;
     [SerializeField] private Transform _holder;
     [SerializeField] private CraftResultSlot _result;
+    [SerializeField] private InventoryUpdater _invetory;
     [Header("Event")]
     [SerializeField] private UnityEvent _onUpdateLvl;
 
@@ -51,6 +52,7 @@ public class LevelProgress : MonoBehaviour
         }
         AddStar(_stars[_countCraft]);
         _countCraft++;
+        _invetory.UpdateItem();
     }
 
     private void AddStar(Star star)
