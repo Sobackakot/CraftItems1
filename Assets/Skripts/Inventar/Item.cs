@@ -72,7 +72,28 @@ public class Item
         Hopper =52,
         Trolley =53,
         EchoShard = 54,
-        Quartz =55
+        Quartz =55,
+        Piston =56,
+        StickyPiston =57,
+        SlimeBall = 58,
+        RecoveryCompass =59,
+        TrolleyTNT =60,
+        TrolleyStove =61,
+        TrolleyChest = 62,
+        TrolleyHopper =63,
+        Anvil = 64,
+        DaylightSensor= 65,
+        Distributor =66,
+        Ejector = 67,
+        Observer = 68,
+        MeltingFurnace= 69,
+        Smokehouse =70,
+        Repeater = 71,
+        Ñomparator =72,
+        Rail = 73,
+        RailGoldenPowered = 74,
+        RailDetectorPowered =75
+
     }
     public string GetNameItemId()
     {     
@@ -119,7 +140,7 @@ public class Item
             case ItemId.WoodenChest: return "Wooden Chest";
             case ItemId.Stove: return "Stove";
             case ItemId.Stick: return "Stick";
-            case ItemId.TripWireSource: return "Tripwire Wire Source";
+            case ItemId.TripWireSource: return "Trip Wire Source";
             case ItemId.SmoothStone: return "Smooth Stone";
             case ItemId.Sand: return "Sand";
             case ItemId.IronBlock: return "Iron Block";
@@ -132,8 +153,28 @@ public class Item
             case ItemId.Gunpowder: return "Gunpowder";
             case ItemId.Hopper: return "Hopper";
             case ItemId.Trolley: return "Trolley";
-            case ItemId.EchoShard: return "EchoShard";
+            case ItemId.EchoShard: return "Echo Shard";
             case ItemId.Quartz: return "Quartz";
+            case ItemId.Piston: return "Piston";
+            case ItemId.StickyPiston: return "Sticky Piston";
+            case ItemId.SlimeBall: return "Slime Ball";
+            case ItemId.RecoveryCompass: return "Recovery Compass";
+            case ItemId.TrolleyTNT: return "Trolley TNT";
+            case ItemId.TrolleyStove: return "Trolley Stove";
+            case ItemId.TrolleyChest: return "Trolley Chest";
+            case ItemId.TrolleyHopper: return "Trolley Hopper";
+            case ItemId.Anvil: return "Anvil";
+            case ItemId.DaylightSensor: return "Daylight Sensor";
+            case ItemId.Distributor: return "Distributor";
+            case ItemId.Ejector: return "Ejector";
+            case ItemId.Observer: return "Observer";
+            case ItemId.MeltingFurnace: return "Melting Furnace";
+            case ItemId.Smokehouse: return "Smokehouse";
+            case ItemId.Repeater: return "Repeater";
+            case ItemId.Ñomparator: return "Ñomparator";
+            case ItemId.Rail: return "Rail";
+            case ItemId.RailGoldenPowered: return "Rail Golden Powered";
+            case ItemId.RailDetectorPowered: return "Rail Detector Powered";
 
             default:
                 return "Unknown Item";
@@ -203,6 +244,26 @@ public class Item
             case ItemId.Trolley: return ItemsSprite.Instance.TrolleySprite;
             case ItemId.EchoShard: return ItemsSprite.Instance.EchoShardSprite;
             case ItemId.Quartz: return ItemsSprite.Instance.QuartzSprite;
+            case ItemId.Piston: return ItemsSprite.Instance.PistonSprite;
+            case ItemId.StickyPiston: return ItemsSprite.Instance.StickyPistonSprite;
+            case ItemId.SlimeBall: return ItemsSprite.Instance.SlimeBallSprite;
+            case ItemId.RecoveryCompass: return ItemsSprite.Instance.RecoveryCompassSprite;
+            case ItemId.TrolleyTNT: return ItemsSprite.Instance.TrolleyTNTSprite;
+            case ItemId.TrolleyStove: return ItemsSprite.Instance.TrolleyStoveSprite;
+            case ItemId.TrolleyChest: return ItemsSprite.Instance.TrolleyChestSprite;
+            case ItemId.TrolleyHopper: return ItemsSprite.Instance.TrolleyHopperSprite;
+            case ItemId.Anvil: return ItemsSprite.Instance.AnvilSprite;
+            case ItemId.DaylightSensor: return ItemsSprite.Instance.DaylightSensorSprite;
+            case ItemId.Distributor: return ItemsSprite.Instance.DistributorSprite;
+            case ItemId.Ejector:  return ItemsSprite.Instance.EjectorSprite;
+            case ItemId.Observer: return ItemsSprite.Instance.ObserverSprite;
+            case ItemId.MeltingFurnace: return ItemsSprite.Instance.MeltingFurnaceSprite;
+            case ItemId.Smokehouse: return ItemsSprite.Instance.SmokehouseSprite;
+            case ItemId.Repeater: return ItemsSprite.Instance.RepeaterSprite;
+            case ItemId.Ñomparator: return ItemsSprite.Instance.ÑomparatorSprite;
+            case ItemId.Rail: return ItemsSprite.Instance.RailSprite;
+            case ItemId.RailGoldenPowered: return ItemsSprite.Instance.RailGoldenPoweredSprite;
+            case ItemId.RailDetectorPowered: return ItemsSprite.Instance.RailDetectorPoweredSprite;
         }
     }
 }

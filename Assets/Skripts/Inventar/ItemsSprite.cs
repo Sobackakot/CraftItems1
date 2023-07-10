@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.WSA;
 
 public class ItemsSprite : MonoBehaviour
 {
@@ -65,4 +66,24 @@ public class ItemsSprite : MonoBehaviour
     public Sprite TrolleySprite;
     public Sprite EchoShardSprite;
     public Sprite QuartzSprite;
+    public Sprite PistonSprite;
+    public Sprite StickyPistonSprite;
+    public Sprite SlimeBallSprite;
+    public Sprite RecoveryCompassSprite;
+    public Sprite TrolleyTNTSprite;
+    public Sprite TrolleyStoveSprite;
+    public Sprite TrolleyChestSprite;
+    public Sprite TrolleyHopperSprite;
+    public Sprite AnvilSprite;
+    public Sprite DaylightSensorSprite;
+    public Sprite DistributorSprite;
+    public Sprite EjectorSprite;
+    public Sprite ObserverSprite;
+    public Sprite MeltingFurnaceSprite;
+    public Sprite SmokehouseSprite;
+    public Sprite RepeaterSprite;
+    public Sprite ÑomparatorSprite;
+    public Sprite RailSprite;
+    public Sprite RailGoldenPoweredSprite;
+    public Sprite RailDetectorPoweredSprite;
 }

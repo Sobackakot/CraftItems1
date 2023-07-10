@@ -25,11 +25,11 @@ public class InventoryController : MonoBehaviour
         MainSlots[0, 1].SetItem(new ItemInSlot(itemsManager.Items[3], 63)); 
         MainSlots[0, 2].SetItem(new ItemInSlot(itemsManager.Items[5], 62)); 
         MainSlots[0, 3].SetItem(new ItemInSlot(itemsManager.Items[7], 61)); 
-        MainSlots[0, 4].SetItem(new ItemInSlot(itemsManager.Items[36], 60));
-        MainSlots[0, 5].SetItem(new ItemInSlot(itemsManager.Items[21], 59));
-        MainSlots[0, 6].SetItem(new ItemInSlot(itemsManager.Items[24], 61));
-        MainSlots[0, 7].SetItem(new ItemInSlot(itemsManager.Items[25], 60));
-        MainSlots[0, 8].SetItem(new ItemInSlot(itemsManager.Items[27], 59));
+        MainSlots[0, 4].SetItem(new ItemInSlot(itemsManager.Items[11], 60));
+        MainSlots[0, 5].SetItem(new ItemInSlot(itemsManager.Items[14], 59));
+        MainSlots[0, 6].SetItem(new ItemInSlot(itemsManager.Items[16], 61));
+        MainSlots[0, 7].SetItem(new ItemInSlot(itemsManager.Items[17], 60));
+        MainSlots[0, 8].SetItem(new ItemInSlot(itemsManager.Items[15], 59));
     }
     private void CreateSlotsPrefabs()
     {

@@ -9947,6 +9947,26 @@ MonoBehaviour:
   TrolleySprite: {fileID: 21300000, guid: c2582fb542033f54e8bbda52bcb1e5d9, type: 3}
   EchoShardSprite: {fileID: 21300000, guid: 5a0a0a34cbd62ce4ab3518f8259c4b09, type: 3}
   QuartzSprite: {fileID: 21300000, guid: acc9dc7412a4ca6498a413afb1b316d3, type: 3}
+  PistonSprite: {fileID: 21300000, guid: 9862742422410dc459e8465bbc6b2a36, type: 3}
+  StickyPistonSprite: {fileID: 21300000, guid: e9b8cb5a8b352214ca16007d692bbaab, type: 3}
+  SlimeBallSprite: {fileID: 21300000, guid: 2fe454fae40dcdf46940c80399e55019, type: 3}
+  RecoveryCompassSprite: {fileID: 21300000, guid: 3a3607c26aa9fa945acfddf81d644a22, type: 3}
+  TrolleyTNTSprite: {fileID: 21300000, guid: ca12a3b7cedf87a4084d706cd08bbeee, type: 3}
+  TrolleyStoveSprite: {fileID: 21300000, guid: 0b30f6ef563c5224990fa4bb0903f1e6, type: 3}
+  TrolleyChestSprite: {fileID: 21300000, guid: 3fc5f3d8bbbc9074e966c33e845d71ac, type: 3}
+  TrolleyHopperSprite: {fileID: 21300000, guid: 41c347caa333cdd45b9918600da6795c, type: 3}
+  AnvilSprite: {fileID: 21300000, guid: 5104a1a554bd2834682e5c777e018a2a, type: 3}
+  DaylightSensorSprite: {fileID: 21300000, guid: df2bc39acef56384cb9fcd53505eb462, type: 3}
+  DistributorSprite: {fileID: 21300000, guid: f11975db9fe30414faed13cefff2578f, type: 3}
+  EjectorSprite: {fileID: 21300000, guid: 864b26a7088b7084181726850ca5e473, type: 3}
+  ObserverSprite: {fileID: 21300000, guid: 1d9a3883482ce1b43867250c48eb9246, type: 3}
+  MeltingFurnaceSprite: {fileID: 21300000, guid: 321bb58f5989aab49bd05cf3055f98a3, type: 3}
+  SmokehouseSprite: {fileID: 21300000, guid: 89642007eb425d7458c1fc082f970d35, type: 3}
+  RepeaterSprite: {fileID: 21300000, guid: 8e23421495a4cc94ea2283cfe75821c2, type: 3}
+  "\u0421omparatorSprite": {fileID: 21300000, guid: ead72b31395fb8d498474409839c2aa1, type: 3}
+  RailSprite: {fileID: 21300000, guid: f95dec2e024c3244588570bb3008c5dc, type: 3}
+  RailGoldenPoweredSprite: {fileID: 21300000, guid: e19be3a90ac649a4d9db7dc82a91dc0b, type: 3}
+  RailDetectorPoweredSprite: {fileID: 21300000, guid: 452fb275bdf52fc489bcaaf7d16c95c9, type: 3}
 --- !u!1 &1427143449
 GameObject:
   m_ObjectHideFlags: 0
@@ -12609,7 +12629,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1896345111
 RectTransform:
   m_ObjectHideFlags: 0

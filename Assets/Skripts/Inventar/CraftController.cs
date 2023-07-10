@@ -1,3 +1,4 @@
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections;
 using System.Linq;
@@ -5,7 +6,7 @@ using UnityEngine;
 
 public class CraftController : MonoBehaviour
 {
-    private AudioSource m_AudioSource;
+    private AudioSource m_AudioSource; 
     [SerializeField] private AudioClip craftSlotAoudio;
     [SerializeField] private GameObject slotPrefab;
     [SerializeField] private Transform craftGrid;
@@ -25,11 +26,16 @@ public class CraftController : MonoBehaviour
 
     public bool HasResultItem => craftResultSlot.ItemInSlot != null; 
 
-    private string[] resourcesItemName = new string[29] //List of SECONDARY CRAFTS
+    private string[] resourcesItemName1 = new string[17] //List of SECONDARY CRAFTS
+    {
+        "Wood Block", "Boards","Stick","Coal Ore","Coal","Diamond Ore","Diamond",
+        "Gold Ore","Gold Ingot","Redstone Ore","Redstone","Iron Ingot","Flint","Feather","String","Torch","Iron Nugget"
+    };
+    private string[] resourcesItemName2 = new string[31] //List of SECONDARY CRAFTS
     {
         "Wood Block", "Boards","Stick","Coal Ore","Coal","Diamond Ore","Diamond",
         "Gold Ore","Gold Ingot","Redstone Ore","Redstone","Iron Ingot","Flint","Feather","String","Trip Wire Source","Torch","Iron Nugget",
-        "Iron Block", "Half Block","Pressure Plate","Glass","RedstoneTorch","Compass","Wooden Chest", "TNT", "Stove","Hopper", "Trolley"
+        "Iron Block", "Half Block","Pressure Plate","Glass","RedstoneTorch","Compass","Wooden Chest", "TNT", "Stove","Hopper", "Trolley","Bow","Piston"
     };
     public void Awake()
     {
@@ -94,7 +100,7 @@ public class CraftController : MonoBehaviour
                     SetVerticalIndexItem(i);
                     break;
                 } 
-                if (StartVerticalIndex != -1)
+                else if (StartVerticalIndex != -1)
                 {
                     IncrementVerticalNull(j,i);
                     DecrementVerticalNull(j,i);
@@ -183,9 +189,12 @@ public class CraftController : MonoBehaviour
     //It also plays the craft slot audio and starts the particle system.
     private void SetSecondaryItemInResultSlot(ItemInSlot NewItemcInResultSlot) //SetNewItemInResultSlot  
     {
-        for (int i = 0; i < resourcesItemName.Length; i++)
+        bool condition = ShowChallenge.InstanceChallenge.Index < 21; 
+        string [] selectedArray = condition ? resourcesItemName1 : resourcesItemName2; 
+
+        for (int i = 0; i < selectedArray.Length; i++)
         {
-            string nameItem = resourcesItemName[i];
+            string nameItem = selectedArray[i];
             if (nameItem == NewItemcInResultSlot.Item.GetNameItemId())
             {
                 craftResultSlot.SetItem(NewItemcInResultSlot);
