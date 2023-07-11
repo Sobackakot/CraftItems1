@@ -12,7 +12,18 @@ public class ItemsManager : MonoBehaviour
     {
         InstanceItemManager = this;
         RecipeItems();
-    }  
+    }
+
+    public Item GetItem(Item.ItemId type)
+    {
+        foreach (var item in Items)
+        {
+            if (item.itemId == type)
+                return item;
+        }
+        return null;
+    }
+
     private void RecipeItems()
     {
         Items = new List<Item>(); 
