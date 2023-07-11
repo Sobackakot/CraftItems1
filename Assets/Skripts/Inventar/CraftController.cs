@@ -35,7 +35,7 @@ public class CraftController : MonoBehaviour
     {
         "Wood Block", "Boards","Stick","Coal Ore","Coal","Diamond Ore","Diamond",
         "Gold Ore","Gold Ingot","Redstone Ore","Redstone","Iron Ingot","Flint","Feather","String","Trip Wire Source","Torch","Iron Nugget",
-        "Iron Block", "Half Block","Pressure Plate","Glass","RedstoneTorch","Compass","Wooden Chest", "TNT", "Stove","Hopper", "Trolley","Bow","Piston"
+        "Iron Block", "Half Block","Pressure Plate","Glass","Redstone Torch","Compass","Wooden Chest", "TNT", "Stove","Hopper", "Trolley","Bow","Piston"
     };
     public void Awake()
     {

@@ -231,8 +231,6 @@ public class ItemsManager : MonoBehaviour
             {Item.ItemId.None,Item.ItemId.IronIngot,Item.ItemId.None}
         };
         Items.Add(new Item(Item.ItemId.IronBucket, new CraftRecipe(iron_BucketRecipe, 1)));
-        
-
 
 
         // Arrow 39
@@ -346,8 +344,8 @@ public class ItemsManager : MonoBehaviour
         //Hopper 53 
         var HopperRecipe = new Item.ItemId[,]
         {
-            {Item.ItemId.IronIngot, Item.ItemId.WoodenChest, Item.ItemId.IronIngot },
-            {Item.ItemId.IronIngot, Item.ItemId.IronIngot, Item.ItemId.IronIngot   },
+            {Item.ItemId.IronIngot, Item.ItemId.None, Item.ItemId.IronIngot },
+            {Item.ItemId.IronIngot, Item.ItemId.WoodenChest, Item.ItemId.IronIngot   },
             {Item.ItemId.None, Item.ItemId.IronIngot, Item.ItemId.None }
         };
         Items.Add(new Item(Item.ItemId.Hopper, new CraftRecipe(HopperRecipe, 1)));
@@ -364,8 +362,8 @@ public class ItemsManager : MonoBehaviour
         var PistonRecipe = new Item.ItemId[,]
         {
             {Item.ItemId.Boards, Item.ItemId.Boards, Item.ItemId.Boards },
-            {Item.ItemId.Cauldron, Item.ItemId.IronIngot, Item.ItemId.Cauldron  },
-            {Item.ItemId.Cauldron, Item.ItemId.Redstone, Item.ItemId.Cauldron }
+            {Item.ItemId.Cobblestone, Item.ItemId.IronIngot, Item.ItemId.Cobblestone  },
+            {Item.ItemId.Cobblestone, Item.ItemId.Redstone, Item.ItemId.Cobblestone }
         };
         Items.Add(new Item(Item.ItemId.Piston, new CraftRecipe(PistonRecipe, 1)));
         //StickyPiston 56
@@ -375,8 +373,8 @@ public class ItemsManager : MonoBehaviour
             {Item.ItemId.Piston}
         };
         Items.Add(new Item(Item.ItemId.StickyPiston, new CraftRecipe(StickyPistonRecipe, 1)));
+         
 
-        
         //RecoveryCompass 57
         var RecoveryCompassRecipe = new Item.ItemId[,]
         {

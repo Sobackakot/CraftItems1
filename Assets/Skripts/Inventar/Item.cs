@@ -92,8 +92,7 @@ public class Item
         Ñomparator =72,
         Rail = 73,
         RailGoldenPowered = 74,
-        RailDetectorPowered =75
-
+        RailDetectorPowered =75 
     }
     public string GetNameItemId()
     {     
