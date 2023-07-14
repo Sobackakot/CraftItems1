@@ -92,7 +92,23 @@ public class Item
         Ñomparator =72,
         Rail = 73,
         RailGoldenPowered = 74,
-        RailDetectorPowered =75 
+        RailDetectorPowered =75,
+        ÑopperIngot= 76,
+        TinIngot = 77,
+        SulfurDust = 78,
+        SilverIngot = 79,
+        SilverDust = 80,
+        Silica= 81,
+        ObsidianDust = 82,
+        LeadIngot = 83,
+        LeadDust = 84,
+        Latex= 85,
+        LapisLazuliDust = 86,
+        Iridium = 87,
+        EnergyDust = 88,
+        DiamondDust = 89,
+        CoalDust = 90,
+        ClayDust=91
     }
     public string GetNameItemId()
     {     
@@ -174,9 +190,25 @@ public class Item
             case ItemId.Rail: return "Rail";
             case ItemId.RailGoldenPowered: return "Rail Golden Powered";
             case ItemId.RailDetectorPowered: return "Rail Detector Powered";
+            case ItemId.ÑopperIngot: return "Ñopper Ingot";
+            case ItemId.TinIngot: return "Tin Ingot";
+            case ItemId.SulfurDust: return "Sulfur Dust";
+            case ItemId.SilverIngot: return "Silver Ingot";
+            case ItemId.SilverDust: return "Silver Dust";
+            case ItemId.Silica: return "Silica";
+            case ItemId.ObsidianDust: return "Obsidian Dust";
+            case ItemId.LeadIngot: return "Lead Ingot";
+            case ItemId.LeadDust: return "Lead Dust";
+            case ItemId.Latex: return "Latex";
+            case ItemId.LapisLazuliDust: return "Lapis Lazuli Dust";
+            case ItemId.Iridium: return "Iridium";
+            case ItemId.EnergyDust: return "Energy Dust";
+            case ItemId.DiamondDust: return "Diamond Dust";
+            case ItemId.CoalDust: return "Coal Dust";
+            case ItemId.ClayDust: return "Clay Dust";
 
             default:
-                return "Unknown Item";
+                return "Unknown Item";  
         }
     }
     public Sprite GetSpriteItems() 
@@ -263,6 +295,22 @@ public class Item
             case ItemId.Rail: return ItemsSprite.Instance.RailSprite;
             case ItemId.RailGoldenPowered: return ItemsSprite.Instance.RailGoldenPoweredSprite;
             case ItemId.RailDetectorPowered: return ItemsSprite.Instance.RailDetectorPoweredSprite;
+            case ItemId.ÑopperIngot: return ItemsSprite.Instance.ÑopperIngotSprite;
+            case ItemId.TinIngot: return ItemsSprite.Instance.TinIngotSprite;
+            case ItemId.SulfurDust: return ItemsSprite.Instance.SulfurDustSprite;
+            case ItemId.SilverIngot: return ItemsSprite.Instance.SilverIngotSprite;
+            case ItemId.SilverDust: return ItemsSprite.Instance.SilverDustSprite;
+            case ItemId.Silica: return ItemsSprite.Instance.SilicaSprite;
+            case ItemId.ObsidianDust: return ItemsSprite.Instance.ObsidianDustSprite;
+            case ItemId.LeadIngot: return ItemsSprite.Instance.LeadIngotSprite;
+            case ItemId.LeadDust: return ItemsSprite.Instance.LeadDustSprite;
+            case ItemId.Latex: return ItemsSprite.Instance.LatexSprite;
+            case ItemId.LapisLazuliDust: return ItemsSprite.Instance.LapisLazuliDustSprite;
+            case ItemId.Iridium: return ItemsSprite.Instance.IridiumSprite;
+            case ItemId.EnergyDust: return ItemsSprite.Instance.EnergyDustSprite;
+            case ItemId.DiamondDust: return ItemsSprite.Instance.DiamondDustSprite;
+            case ItemId.CoalDust: return ItemsSprite.Instance.CoalDustSprite;
+            case ItemId.ClayDust: return ItemsSprite.Instance.ClayDustSprite;
         }
     }
 }

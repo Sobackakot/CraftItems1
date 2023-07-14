@@ -86,4 +86,20 @@ public class ItemsSprite : MonoBehaviour
     public Sprite RailSprite;
     public Sprite RailGoldenPoweredSprite;
     public Sprite RailDetectorPoweredSprite;
+    public Sprite ÑopperIngotSprite;
+    public Sprite TinIngotSprite;
+    public Sprite SulfurDustSprite;
+    public Sprite SilverIngotSprite;
+    public Sprite SilverDustSprite;
+    public Sprite SilicaSprite;
+    public Sprite ObsidianDustSprite;
+    public Sprite LeadIngotSprite;
+    public Sprite LeadDustSprite;
+    public Sprite LatexSprite;
+    public Sprite LapisLazuliDustSprite;
+    public Sprite IridiumSprite;
+    public Sprite EnergyDustSprite;
+    public Sprite DiamondDustSprite;
+    public Sprite CoalDustSprite;
+    public Sprite ClayDustSprite;
 }
