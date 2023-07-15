@@ -156,7 +156,41 @@ public class Item
         ÑopperPlate = 136,
         ÑopperShell = 137,
         ÑopperWireIsolated = 138,
-        ÑopperWire = 139
+        ÑopperWire = 139,
+        AdvancedBattery = 140,
+        AdvancedWiringDiagram = 141,
+        AzuretronCrystal = 142,
+        Battery = 143,
+        Coil = 144,
+        CoolingCore = 145,
+        CoolingRod = 146,
+        CoolingRods = 147,
+        DoubleCoolingRods = 148,
+        ElectricLamp = 149,
+        ElectricMotor = 150,
+        EnergyCrystal = 151,
+        EngineBooster = 152,
+        FortifiedStone = 153,
+        FrequencyBinder = 154,
+        GravityEngine = 155,
+        HeatCapacityReactorCladding = 156,
+        HeatCapacityReactor = 157,
+        HeatExchanger =158,
+        HeatSink = 159,
+        ImprovedHeatDissipation = 160,
+        ImprovedHeatExchanger = 161,
+        MainMachineBody = 162,
+        MemoryCrystal = 163,
+        NeutronReflector = 164,
+        NotChargedBattery = 165,
+        RefrigerantCapsule = 166,
+        ReinforcedGlass = 167,
+        SuperConductorInsulation = 168,
+        Superconductor = 169,
+        ThickenedNeutronReflector = 170,
+        UnfiredMemoryCrystal = 171,
+        UniversalLiquidCapsule = 172,
+        WiringDiagram = 173, 
     }
     public string GetNameItemId()
     {     
@@ -301,6 +335,39 @@ public class Item
             case ItemId.ÑopperShell: return "Ñopper Shell";
             case ItemId.ÑopperWireIsolated: return "Ñopper Wire Isolated";
             case ItemId.ÑopperWire: return "Ñopper Wire";
+            case ItemId.AdvancedBattery: return "Advanced Battery";
+            case ItemId.AdvancedWiringDiagram: return "Advanced Wiring Diagram";
+            case ItemId.AzuretronCrystal: return "Azuretron Crystal";
+            case ItemId.Battery: return "Battery";
+            case ItemId.Coil: return "Coil";
+            case ItemId.CoolingCore: return "Cooling Core";
+            case ItemId.CoolingRod: return "Cooling Rod";
+            case ItemId.CoolingRods: return "Cooling Rods";
+            case ItemId.DoubleCoolingRods: return "Double Cooling Rods";
+            case ItemId.ElectricLamp: return "Electric Lamp";
+            case ItemId.ElectricMotor: return "Electric Motor";
+            case ItemId.EnergyCrystal: return "Energy Crystal";
+            case ItemId.EngineBooster: return "Engine Booster";
+            case ItemId.FortifiedStone: return "Fortified Stone";
+            case ItemId.FrequencyBinder: return "Frequency Binder";
+            case ItemId.GravityEngine: return "Gravity Engine";
+            case ItemId.HeatCapacityReactorCladding: return "Heat Capacity Reactor Cladding";
+            case ItemId.HeatExchanger: return "Heat Exchanger";
+            case ItemId.HeatSink: return "Heat Sink";
+            case ItemId.ImprovedHeatDissipation: return "Improved Heat Dissipation";
+            case ItemId.ImprovedHeatExchanger: return "Improved Heat Exchanger";
+            case ItemId.MainMachineBody: return "Main Machine Body";
+            case ItemId.MemoryCrystal: return "Memory Crystal";
+            case ItemId.NeutronReflector: return "Neutron Reflector";
+            case ItemId.NotChargedBattery: return "Not Charged Battery";
+            case ItemId.RefrigerantCapsule: return "Refrigerant Capsule";
+            case ItemId.ReinforcedGlass: return "Reinforced Glass";
+            case ItemId.SuperConductorInsulation: return "Super Conductor Insulation";
+            case ItemId.Superconductor: return "Superconductor";
+            case ItemId.ThickenedNeutronReflector: return "Thickened Neutron Reflector";
+            case ItemId.UnfiredMemoryCrystal: return "Unfired Memory Crystal";
+            case ItemId.UniversalLiquidCapsule: return "Universal Liquid Capsule";
+            case ItemId.WiringDiagram: return "Wiring Diagram"; 
             default:
                 return "Unknown Item";  
         }
@@ -452,6 +519,39 @@ public class Item
             case ItemId.ÑopperShell: return ItemsSprite.Instance.ÑopperShellSprite;
             case ItemId.ÑopperWireIsolated: return ItemsSprite.Instance.ÑopperWireIsolatedSprite;
             case ItemId.ÑopperWire: return ItemsSprite.Instance.ÑopperWireSprite;
+            case ItemId.AdvancedBattery: return ItemsSprite.Instance.AdvancedBatterySprite;
+            case ItemId.AdvancedWiringDiagram: return ItemsSprite.Instance.AdvancedWiringDiagramSprite;
+            case ItemId.AzuretronCrystal: return ItemsSprite.Instance.AzuretronCrystalSprite;
+            case ItemId.Battery: return ItemsSprite.Instance.BatterySprite;
+            case ItemId.Coil: return ItemsSprite.Instance.CoilSprite;
+            case ItemId.CoolingCore: return ItemsSprite.Instance.CoolingCoreSprite;
+            case ItemId.CoolingRod: return ItemsSprite.Instance.CoolingRodSprite;
+            case ItemId.CoolingRods: return ItemsSprite.Instance.CoolingRodsSprite;
+            case ItemId.DoubleCoolingRods: return ItemsSprite.Instance.DoubleCoolingRodsSprite;
+            case ItemId.ElectricLamp: return ItemsSprite.Instance.ElectricLampSprite;
+            case ItemId.ElectricMotor: return ItemsSprite.Instance.ElectricMotorSprite;
+            case ItemId.EnergyCrystal: return ItemsSprite.Instance.EnergyCrystalSprite;
+            case ItemId.EngineBooster: return ItemsSprite.Instance.EngineBoosterSprite;
+            case ItemId.FortifiedStone: return ItemsSprite.Instance.FortifiedStoneSprite;
+            case ItemId.FrequencyBinder: return ItemsSprite.Instance.FrequencyBinderSprite;
+            case ItemId.GravityEngine: return ItemsSprite.Instance.GravityEngineSprite;
+            case ItemId.HeatCapacityReactorCladding: return ItemsSprite.Instance.HeatCapacityReactorCladdingSprite;
+            case ItemId.HeatExchanger: return ItemsSprite.Instance.HeatExchangerSprite;
+            case ItemId.HeatSink: return ItemsSprite.Instance.HeatSinkSprite;
+            case ItemId.ImprovedHeatDissipation: return ItemsSprite.Instance.ImprovedHeatDissipationSprite;
+            case ItemId.ImprovedHeatExchanger: return ItemsSprite.Instance.ImprovedHeatExchangerSprite;
+            case ItemId.MainMachineBody: return ItemsSprite.Instance.MainMachineBodySprite;
+            case ItemId.MemoryCrystal: return ItemsSprite.Instance.MemoryCrystalSprite;
+            case ItemId.NeutronReflector: return ItemsSprite.Instance.NeutronReflectorSprite;
+            case ItemId.NotChargedBattery: return ItemsSprite.Instance.NotChargedBatterySprite;
+            case ItemId.RefrigerantCapsule: return ItemsSprite.Instance.RefrigerantCapsuleSprite;
+            case ItemId.SuperConductorInsulation: return ItemsSprite.Instance.SuperConductorInsulationSprite;
+            case ItemId.Superconductor: return ItemsSprite.Instance.SuperconductorSprite;
+            case ItemId.ThickenedNeutronReflector: return ItemsSprite.Instance.ThickenedNeutronReflectorSprite;
+            case ItemId.UnfiredMemoryCrystal: return ItemsSprite.Instance.UnfiredMemoryCrystalSprite;
+            case ItemId.UniversalLiquidCapsule: return ItemsSprite.Instance.UniversalLiquidCapsuleSprite;
+            case ItemId.WiringDiagram: return ItemsSprite.Instance.WiringDiagramSprite;
+            case ItemId.ReinforcedGlass: return ItemsSprite.Instance.ReinforcedGlassSprite;    
         }
     }
 }

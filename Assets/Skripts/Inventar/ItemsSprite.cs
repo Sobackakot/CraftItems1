@@ -1,7 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.WSA;
+using static UnityEditor.Experimental.GraphView.Port;
 using static UnityEngine.UI.GridLayoutGroup;
 
 public class ItemsSprite : MonoBehaviour
@@ -151,4 +155,37 @@ public class ItemsSprite : MonoBehaviour
     public Sprite ÑopperShellSprite;
     public Sprite ÑopperWireIsolatedSprite;
     public Sprite ÑopperWireSprite;
+    public Sprite AdvancedBatterySprite;
+    public Sprite AdvancedWiringDiagramSprite;
+    public Sprite AzuretronCrystalSprite;
+    public Sprite BatterySprite;
+    public Sprite CoilSprite;
+    public Sprite CoolingCoreSprite;
+    public Sprite CoolingRodSprite;
+    public Sprite CoolingRodsSprite;
+    public Sprite DoubleCoolingRodsSprite;
+    public Sprite ElectricLampSprite;
+    public Sprite ElectricMotorSprite;
+    public Sprite EnergyCrystalSprite;
+    public Sprite EngineBoosterSprite;
+    public Sprite FortifiedStoneSprite;
+    public Sprite FrequencyBinderSprite;
+    public Sprite GravityEngineSprite;
+    public Sprite HeatCapacityReactorCladdingSprite;
+    public Sprite HeatExchangerSprite;
+    public Sprite HeatSinkSprite;
+    public Sprite ImprovedHeatDissipationSprite;
+    public Sprite ImprovedHeatExchangerSprite;
+    public Sprite MainMachineBodySprite;
+    public Sprite MemoryCrystalSprite;
+    public Sprite NeutronReflectorSprite;
+    public Sprite NotChargedBatterySprite;
+    public Sprite RefrigerantCapsuleSprite;
+    public Sprite SuperConductorInsulationSprite;
+    public Sprite SuperconductorSprite;
+    public Sprite ThickenedNeutronReflectorSprite;
+    public Sprite UnfiredMemoryCrystalSprite;
+    public Sprite UniversalLiquidCapsuleSprite;
+    public Sprite WiringDiagramSprite;
+    public Sprite ReinforcedGlassSprite;
 }
