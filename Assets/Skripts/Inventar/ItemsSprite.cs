@@ -4,8 +4,11 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Timeline;
 using UnityEngine.WSA;
+using static Unity.VisualScripting.Antlr3.Runtime.Tree.TreeWizard;
 using static UnityEditor.Experimental.GraphView.Port;
+using static UnityEngine.EventSystems.EventTrigger;
 using static UnityEngine.UI.GridLayoutGroup;
 
 public class ItemsSprite : MonoBehaviour
@@ -102,6 +105,7 @@ public class ItemsSprite : MonoBehaviour
     public Sprite LeadIngotSprite;
     public Sprite LeadDustSprite;
     public Sprite LatexSprite;
+    public Sprite LapisLazuliOreSprite;
     public Sprite LapisLazuliDustSprite;
     public Sprite IridiumSprite;
     public Sprite EnergyDustSprite;
@@ -113,6 +117,7 @@ public class ItemsSprite : MonoBehaviour
     public Sprite LeadOreSprite;
     public Sprite ObsidianSprite;
     public Sprite TinOreSprite;
+    public Sprite GlowingStoneSprite; 
     public Sprite HammerSprite;
     public Sprite WireCuttersSprite;
     public Sprite BronzePlateSprite;
@@ -148,6 +153,7 @@ public class ItemsSprite : MonoBehaviour
     public Sprite TinPlateSprite;
     public Sprite TinShellSprite;
     public Sprite TinWireIsolatedSprite;
+    public Sprite TinDustSprite;
     public Sprite TinWireSprite;
     public Sprite ÑarbonFiberFabricSprite;
     public Sprite ÑarbonFiberSprite;
@@ -188,4 +194,39 @@ public class ItemsSprite : MonoBehaviour
     public Sprite UniversalLiquidCapsuleSprite;
     public Sprite WiringDiagramSprite;
     public Sprite ReinforcedGlassSprite;
+    public Sprite MiningLaserSprite;
+    public Sprite IronFurnaceSprite;
+    public Sprite GeneratorSprite;
+    public Sprite ElectricOvenSprite;
+    public Sprite EnergyStorageSprite;
+    public Sprite MediumVoltageTransformerSprite;
+    public Sprite HighVoltageTransformerSprite;
+    public Sprite MultifunctionalEnergySaverSprite;
+    public Sprite TeleportSprite;
+    public Sprite SolarBatterySprite;
+    public Sprite CrusherSprite;
+    public Sprite ÑompressorSprite;
+    public Sprite ExtractorSprite;
+    public Sprite InductionOvenSprite;
+    public Sprite GeothermalGeneratorSprite;
+    public Sprite NuclearReactorSprite;
+    public Sprite NuclearBombSprite;
+    public Sprite MultiFunctionalStorageUnitSprite;
+    public Sprite ExtraHighVoltageTransformerSprite;
+    public Sprite MatterProducerSprite;
+    public Sprite ReplicatorSprite;
+    public Sprite ScannerSprite;
+    public Sprite TemplateGuardianSprite;
+    public Sprite EnergyPackSprite;
+    public Sprite ElectricJetpackSprite;
+    public Sprite ImprovedLappackSprite;
+    public Sprite UltimateLappackSprite;
+    public Sprite NightVisionDeviceSprite;
+    public Sprite NanoHelmetSprite;
+    public Sprite NanofiberVestSprite;
+    public Sprite NanoLeggingsSprite;
+    public Sprite NanoBootsSprite;
+    public Sprite ImprovedElectricJetpackSprite;
+    public Sprite QuantumVestSprite;
+    public Sprite GraviChestplateSprite;
 }

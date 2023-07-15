@@ -1,3 +1,4 @@
+using System.Numerics;
 using System.Security.Cryptography;
 using UnityEngine; 
 
@@ -190,7 +191,45 @@ public class Item
         ThickenedNeutronReflector = 170,
         UnfiredMemoryCrystal = 171,
         UniversalLiquidCapsule = 172,
-        WiringDiagram = 173, 
+        WiringDiagram = 173,
+        MiningLaser = 174,
+        SolarBattery = 175,
+        Crusher = 176,
+        Ñompressor =177,
+        Extractor = 178,
+        InductionOven = 179,
+        GeothermalGenerator  = 180,
+        NuclearReactor = 181,
+        NuclearBomb = 182,
+        IronFurnace = 183,
+        Generator = 184,
+        ElectricOven = 185,
+        EnergyStorage = 186,
+        MediumVoltageTransformer = 187,
+        HighVoltageTransformer = 188,
+        MultifunctionalEnergySaver = 189,
+        Teleport = 190,
+        MultiFunctionalStorageUnit = 191,
+        ExtraHighVoltageTransformer = 192,
+        MatterProducer = 193,
+        Replicator = 194,
+        Scanner = 195,
+        TemplateGuardian = 196,
+        EnergyPack = 197,
+        ElectricJetpack = 198,
+        ImprovedLappack = 199,
+        UltimateLappack = 200,
+        NightVisionDevice = 201,
+        NanoHelmet = 202,
+        NanofiberVest = 203,
+        NanoLeggings = 204,
+        NanoBoots = 205,
+        ImprovedElectricJetpack = 206,
+        QuantumVest= 207,
+        GraviChestplate = 208,
+        TinDust = 209,
+        GlowingStone = 210,
+        LapisLazuliOre= 211
     }
     public string GetNameItemId()
     {     
@@ -329,6 +368,7 @@ public class Item
             case ItemId.TinShell: return "Tin Shell";
             case ItemId.TinWireIsolated: return "Tin Wire Isolated";
             case ItemId.TinWire: return "Tin Wire";
+            case ItemId.TinDust: return "Tin Dust";
             case ItemId.ÑarbonFiberFabric: return "Ñarbon Fiber Fabric";
             case ItemId.ÑarbonFiber: return "Ñarbon Fiber";
             case ItemId.ÑopperPlate: return "Ñopper Plate";
@@ -367,7 +407,44 @@ public class Item
             case ItemId.ThickenedNeutronReflector: return "Thickened Neutron Reflector";
             case ItemId.UnfiredMemoryCrystal: return "Unfired Memory Crystal";
             case ItemId.UniversalLiquidCapsule: return "Universal Liquid Capsule";
-            case ItemId.WiringDiagram: return "Wiring Diagram"; 
+            case ItemId.WiringDiagram: return "Wiring Diagram";
+            case ItemId.MiningLaser: return "Mining Laser";
+            case ItemId.IronFurnace: return "Iron Furnace";
+            case ItemId.Generator: return "Generator";
+            case ItemId.ElectricOven: return "Electric Oven";
+            case ItemId.EnergyStorage: return "Energy Storage";
+            case ItemId.MediumVoltageTransformer: return "Medium Voltage Transformer";
+            case ItemId.HighVoltageTransformer: return "High Voltage Transformer";
+            case ItemId.MultifunctionalEnergySaver: return "Multifunctional Energy Saver";
+            case ItemId.Teleport: return "Teleport";
+            case ItemId.SolarBattery: return "Solar Battery";
+            case ItemId.Crusher: return "Crusher";
+            case ItemId.Ñompressor: return "Ñompressor";
+            case ItemId.Extractor: return "Extractor"; 
+            case ItemId.InductionOven: return "Induction Oven";
+            case ItemId.GeothermalGenerator: return "Geothermal Generator";
+            case ItemId.NuclearReactor: return "Nuclear Reactor";
+            case ItemId.NuclearBomb: return "Nuclear Bomb";
+            case ItemId.MultiFunctionalStorageUnit: return "Multi-Functional Storage Unit";
+            case ItemId.ExtraHighVoltageTransformer: return "Extra High Voltage Transformer";
+            case ItemId.MatterProducer: return "Matter Producer";
+            case ItemId.Replicator: return "Replicator";
+            case ItemId.Scanner: return "Scanner";
+            case ItemId.TemplateGuardian: return "TemplateGuardian";
+            case ItemId.EnergyPack: return "Energy Pack";
+            case ItemId.ElectricJetpack: return "Electric Jetpack";
+            case ItemId.ImprovedLappack: return "Improved Lappack";
+            case ItemId.UltimateLappack: return "Ultimate Lappack";
+            case ItemId.NightVisionDevice: return "Night-Vision Device";
+            case ItemId.NanoHelmet: return "Nano Helmet";
+            case ItemId.NanofiberVest: return "Nanofiber Vest";
+            case ItemId.NanoLeggings: return "Nano Leggings";
+            case ItemId.NanoBoots: return "Nano Boots";
+            case ItemId.ImprovedElectricJetpack: return "Improved Electric Jetpack";
+            case ItemId.QuantumVest: return "Quantum Vest";
+            case ItemId.GraviChestplate: return "Gravi Chestplate";
+            case ItemId.GlowingStone: return "Glowing Stone";
+            case ItemId.LapisLazuliOre: return "Lapis Lazuli Ore";
             default:
                 return "Unknown Item";  
         }
@@ -477,6 +554,7 @@ public class Item
             case ItemId.LeadOre: return ItemsSprite.Instance.LeadOreSprite;
             case ItemId.Obsidian: return ItemsSprite.Instance.ObsidianSprite;
             case ItemId.TinOre: return ItemsSprite.Instance.TinOreSprite;
+            case ItemId.TinDust: return ItemsSprite.Instance.TinDustSprite;
             case ItemId.Hammer: return ItemsSprite.Instance.HammerSprite;
             case ItemId.WireCutters: return ItemsSprite.Instance.WireCuttersSprite;
             case ItemId.BronzeIngot: return ItemsSprite.Instance.BronzeIngotSprite;
@@ -551,7 +629,44 @@ public class Item
             case ItemId.UnfiredMemoryCrystal: return ItemsSprite.Instance.UnfiredMemoryCrystalSprite;
             case ItemId.UniversalLiquidCapsule: return ItemsSprite.Instance.UniversalLiquidCapsuleSprite;
             case ItemId.WiringDiagram: return ItemsSprite.Instance.WiringDiagramSprite;
-            case ItemId.ReinforcedGlass: return ItemsSprite.Instance.ReinforcedGlassSprite;    
+            case ItemId.ReinforcedGlass: return ItemsSprite.Instance.ReinforcedGlassSprite;
+            case ItemId.MiningLaser: return ItemsSprite.Instance.MiningLaserSprite;
+            case ItemId.IronFurnace: return ItemsSprite.Instance.IronFurnaceSprite;
+            case ItemId.Generator: return ItemsSprite.Instance.GeneratorSprite;
+            case ItemId.ElectricOven: return ItemsSprite.Instance.ElectricOvenSprite;
+            case ItemId.EnergyStorage: return ItemsSprite.Instance.EnergyStorageSprite;
+            case ItemId.MediumVoltageTransformer: return ItemsSprite.Instance.MediumVoltageTransformerSprite;
+            case ItemId.HighVoltageTransformer: return ItemsSprite.Instance.HighVoltageTransformerSprite;
+            case ItemId.MultifunctionalEnergySaver: return ItemsSprite.Instance.MultifunctionalEnergySaverSprite;
+            case ItemId.Teleport: return ItemsSprite.Instance.TeleportSprite;
+            case ItemId.SolarBattery: return ItemsSprite.Instance.SolarBatterySprite;
+            case ItemId.Crusher: return ItemsSprite.Instance.CrusherSprite;
+            case ItemId.Ñompressor: return ItemsSprite.Instance.ÑompressorSprite;
+            case ItemId.Extractor: return ItemsSprite.Instance.ExtractorSprite;
+            case ItemId.InductionOven: return ItemsSprite.Instance.InductionOvenSprite;
+            case ItemId.GeothermalGenerator: return ItemsSprite.Instance.GeothermalGeneratorSprite;
+            case ItemId.NuclearReactor: return ItemsSprite.Instance.NuclearReactorSprite;
+            case ItemId.NuclearBomb: return ItemsSprite.Instance.NuclearBombSprite;
+            case ItemId.MultiFunctionalStorageUnit: return ItemsSprite.Instance.MultiFunctionalStorageUnitSprite;
+            case ItemId.ExtraHighVoltageTransformer: return ItemsSprite.Instance.ExtraHighVoltageTransformerSprite;
+            case ItemId.MatterProducer: return ItemsSprite.Instance.MatterProducerSprite;
+            case ItemId.Replicator: return ItemsSprite.Instance.ReplicatorSprite;
+            case ItemId.Scanner: return ItemsSprite.Instance.ScannerSprite;
+            case ItemId.TemplateGuardian: return ItemsSprite.Instance.TemplateGuardianSprite;
+            case ItemId.EnergyPack: return ItemsSprite.Instance.EnergyPackSprite;
+            case ItemId.ElectricJetpack: return ItemsSprite.Instance.ElectricJetpackSprite;
+            case ItemId.ImprovedLappack: return ItemsSprite.Instance.ImprovedLappackSprite;
+            case ItemId.UltimateLappack: return ItemsSprite.Instance.UltimateLappackSprite;
+            case ItemId.NightVisionDevice: return ItemsSprite.Instance.NightVisionDeviceSprite;
+            case ItemId.NanoHelmet: return ItemsSprite.Instance.NanoHelmetSprite;
+            case ItemId.NanofiberVest: return ItemsSprite.Instance.NanofiberVestSprite;
+            case ItemId.NanoLeggings: return ItemsSprite.Instance.NanoLeggingsSprite;
+            case ItemId.NanoBoots: return ItemsSprite.Instance.NanoBootsSprite;
+            case ItemId.ImprovedElectricJetpack: return ItemsSprite.Instance.ImprovedElectricJetpackSprite;
+            case ItemId.QuantumVest: return ItemsSprite.Instance.QuantumVestSprite;
+            case ItemId.GraviChestplate: return ItemsSprite.Instance.GraviChestplateSprite;
+            case ItemId.GlowingStone: return ItemsSprite.Instance.GlowingStoneSprite;
+            case ItemId.LapisLazuliOre: return ItemsSprite.Instance.LapisLazuliOreSprite;
         }
     }
 }
