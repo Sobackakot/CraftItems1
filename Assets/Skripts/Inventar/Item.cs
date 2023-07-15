@@ -108,7 +108,55 @@ public class Item
         EnergyDust = 88,
         DiamondDust = 89,
         CoalDust = 90,
-        ClayDust=91
+        ClayDust=91,
+        ClayBlock = 92,
+        CopperOre = 93,
+        LeadOre =94,
+        Obsidian =95,
+        TinOre =96,
+        Hammer = 97,
+        WireCutters =98,
+        BronzeIngot= 99,
+        BronzePlate = 100,
+        BronzeShell = 101,
+        CarbonFiber = 102,
+        CompositeIngot = 103,
+        Composite = 104,
+        DoubleInsulatedGoldWire = 105,
+        Faucet = 106,
+        FiberglassWire =107,
+        GlassPanel = 108,
+        GoldPlate = 109,
+        GoldenShell =110,
+        GoldenWireIsolated =111,
+        GoldenWire = 112,
+        HardenedIronPlate=113,
+        HighVoltageDoubleInsulatedWire =114,
+        HighVoltageWireInsulated = 115,
+        HighVoltageWire = 116,
+        IronPlate = 117,
+        IronShell = 118,
+        IronTurningMold = 119,
+        LapisLazuliPlate = 120,
+        LeadPlate = 121,
+        LeadSheath =122,
+        ReactorShell = 123,
+        ReinforcedIridiumPlate = 124,
+        Rubber = 125,
+        SolidBronzePlate = 126,
+        ThickCopperPlate = 127,
+        ThickGoldPlate = 128,
+        ThickLeadPlate = 129,
+        TinPlate = 130,
+        TinShell = 131,
+        TinWireIsolated = 132,
+        TinWire = 133,
+        ÑarbonFiberFabric = 134,
+        ÑarbonFiber = 135,
+        ÑopperPlate = 136,
+        ÑopperShell = 137,
+        ÑopperWireIsolated = 138,
+        ÑopperWire = 139
     }
     public string GetNameItemId()
     {     
@@ -206,7 +254,53 @@ public class Item
             case ItemId.DiamondDust: return "Diamond Dust";
             case ItemId.CoalDust: return "Coal Dust";
             case ItemId.ClayDust: return "Clay Dust";
-
+            case ItemId.ClayBlock: return "Clay Block";
+            case ItemId.CopperOre: return "Copper Ore";
+            case ItemId.LeadOre: return "Lead Ore";
+            case ItemId.Obsidian: return "Obsidian";
+            case ItemId.TinOre: return "Tin Ore";
+            case ItemId.Hammer: return "Hammer";
+            case ItemId.WireCutters: return "Wire Cutters";
+            case ItemId.BronzeIngot: return "Bronze Ingot";
+            case ItemId.BronzePlate: return "Bronze Plate";
+            case ItemId.BronzeShell: return "Bronze Shell";
+            case ItemId.CarbonFiber: return "Carbon Fiber";
+            case ItemId.CompositeIngot: return "Composite Ingot";
+            case ItemId.Composite: return "Composite";
+            case ItemId.DoubleInsulatedGoldWire: return "Double Insulated Gold Wire";
+            case ItemId.Faucet: return "Faucet";
+            case ItemId.FiberglassWire: return "Fiberglass Wire";
+            case ItemId.GlassPanel: return "Glass Panel";
+            case ItemId.GoldPlate: return "Gold Plate";
+            case ItemId.GoldenShell: return "Golden Shell";
+            case ItemId.GoldenWireIsolated: return "Golden Wire Isolated";
+            case ItemId.HardenedIronPlate: return "Hardened Iron Plate";
+            case ItemId.HighVoltageDoubleInsulatedWire: return "High Voltage Double Insulated Wire";
+            case ItemId.HighVoltageWireInsulated: return "High Voltage Wire Insulated";
+            case ItemId.HighVoltageWire: return "High Voltage Wire";
+            case ItemId.IronPlate: return "Iron Plate";
+            case ItemId.IronShell: return "Iron Shell";
+            case ItemId.IronTurningMold: return "Iron Turning Mold";
+            case ItemId.LapisLazuliPlate: return "Lapis Lazuli Plate";
+            case ItemId.LeadPlate: return "Lead Plate";
+            case ItemId.LeadSheath: return "Lead Sheath";
+            case ItemId.ReactorShell: return "Reactor Shell";
+            case ItemId.ReinforcedIridiumPlate: return "Reinforced Iridium Plate";
+            case ItemId.Rubber: return "Rubber";
+            case ItemId.SolidBronzePlate: return "Solid Bronze Plate";
+            case ItemId.ThickCopperPlate: return "Thick Copper Plate";
+            case ItemId.ThickGoldPlate: return "Thick Gold Plate";
+            case ItemId.ThickLeadPlate: return "Thick Lead Plate";
+            case ItemId.TinPlate: return "Tin Plate";
+            case ItemId.TinShell: return "Tin Shell";
+            case ItemId.TinWireIsolated: return "Tin Wire Isolated";
+            case ItemId.TinWire: return "Tin Wire";
+            case ItemId.ÑarbonFiberFabric: return "Ñarbon Fiber Fabric";
+            case ItemId.ÑarbonFiber: return "Ñarbon Fiber";
+            case ItemId.ÑopperPlate: return "Ñopper Plate";
+            case ItemId.ÑopperShell: return "Ñopper Shell";
+            case ItemId.ÑopperWireIsolated: return "Ñopper Wire Isolated";
+            case ItemId.ÑopperWire: return "Ñopper Wire";
             default:
                 return "Unknown Item";  
         }
@@ -311,6 +405,53 @@ public class Item
             case ItemId.DiamondDust: return ItemsSprite.Instance.DiamondDustSprite;
             case ItemId.CoalDust: return ItemsSprite.Instance.CoalDustSprite;
             case ItemId.ClayDust: return ItemsSprite.Instance.ClayDustSprite;
+            case ItemId.CopperOre: return ItemsSprite.Instance.CopperOreSprite;
+            case ItemId.ClayBlock: return ItemsSprite.Instance.ClayBlockSprite;
+            case ItemId.LeadOre: return ItemsSprite.Instance.LeadOreSprite;
+            case ItemId.Obsidian: return ItemsSprite.Instance.ObsidianSprite;
+            case ItemId.TinOre: return ItemsSprite.Instance.TinOreSprite;
+            case ItemId.Hammer: return ItemsSprite.Instance.HammerSprite;
+            case ItemId.WireCutters: return ItemsSprite.Instance.WireCuttersSprite;
+            case ItemId.BronzeIngot: return ItemsSprite.Instance.BronzeIngotSprite;
+            case ItemId.BronzePlate: return ItemsSprite.Instance.BronzePlateSprite;
+            case ItemId.BronzeShell: return ItemsSprite.Instance.BronzeShellSprite;
+            case ItemId.CarbonFiber: return ItemsSprite.Instance.CarbonFiberSprite;
+            case ItemId.CompositeIngot: return ItemsSprite.Instance.CompositeIngotSprite;
+            case ItemId.Composite: return ItemsSprite.Instance.CompositeSprite;
+            case ItemId.DoubleInsulatedGoldWire: return ItemsSprite.Instance.DoubleInsulatedGoldWireSprite;
+            case ItemId.Faucet: return ItemsSprite.Instance.FaucetSprite;
+            case ItemId.FiberglassWire: return ItemsSprite.Instance.FiberglassWireSprite;
+            case ItemId.GlassPanel: return ItemsSprite.Instance.GlassPanelSprite;
+            case ItemId.GoldPlate: return ItemsSprite.Instance.GoldPlateSprite;
+            case ItemId.GoldenShell: return ItemsSprite.Instance.GoldenShellSprite;
+            case ItemId.GoldenWireIsolated: return ItemsSprite.Instance.GoldenWireIsolatedSprite;
+            case ItemId.HardenedIronPlate: return ItemsSprite.Instance.HardenedIronPlateSprite;
+            case ItemId.HighVoltageDoubleInsulatedWire: return ItemsSprite.Instance.HighVoltageDoubleInsulatedWireSprite;
+            case ItemId.HighVoltageWireInsulated: return ItemsSprite.Instance.HighVoltageWireInsulatedSprite;
+            case ItemId.HighVoltageWire: return ItemsSprite.Instance.HighVoltageWireSprite;
+            case ItemId.IronPlate: return ItemsSprite.Instance.IronPlateSprite;
+            case ItemId.IronShell: return ItemsSprite.Instance.IronShellSprite;
+            case ItemId.IronTurningMold: return ItemsSprite.Instance.IronTurningMoldSprite;
+            case ItemId.LapisLazuliPlate: return ItemsSprite.Instance.LapisLazuliPlateSprite;
+            case ItemId.LeadPlate: return ItemsSprite.Instance.LeadPlateSprite;
+            case ItemId.LeadSheath: return ItemsSprite.Instance.LeadSheathSprite;
+            case ItemId.ReactorShell: return ItemsSprite.Instance.ReactorShellSprite;
+            case ItemId.ReinforcedIridiumPlate: return ItemsSprite.Instance.ReinforcedIridiumPlateSprite;
+            case ItemId.Rubber: return ItemsSprite.Instance.RubberSprite;
+            case ItemId.SolidBronzePlate: return ItemsSprite.Instance.SolidBronzePlateSprite;
+            case ItemId.ThickCopperPlate: return ItemsSprite.Instance.ThickCopperPlateSprite;
+            case ItemId.ThickGoldPlate: return ItemsSprite.Instance.ThickGoldPlateSprite;
+            case ItemId.ThickLeadPlate: return ItemsSprite.Instance.ThickLeadPlateSprite;
+            case ItemId.TinPlate: return ItemsSprite.Instance.TinPlateSprite;
+            case ItemId.TinShell: return ItemsSprite.Instance.TinShellSprite;
+            case ItemId.TinWireIsolated: return ItemsSprite.Instance.TinWireIsolatedSprite;
+            case ItemId.TinWire:return ItemsSprite.Instance.TinWireSprite;
+            case ItemId.ÑarbonFiberFabric: return ItemsSprite.Instance.ÑarbonFiberFabricSprite;
+            case ItemId.ÑarbonFiber: return ItemsSprite.Instance.ÑarbonFiberSprite;
+            case ItemId.ÑopperPlate: return ItemsSprite.Instance.ÑopperPlateSprite;
+            case ItemId.ÑopperShell: return ItemsSprite.Instance.ÑopperShellSprite;
+            case ItemId.ÑopperWireIsolated: return ItemsSprite.Instance.ÑopperWireIsolatedSprite;
+            case ItemId.ÑopperWire: return ItemsSprite.Instance.ÑopperWireSprite;
         }
     }
 }

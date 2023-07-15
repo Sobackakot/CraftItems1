@@ -11287,6 +11287,70 @@ MonoBehaviour:
   RailSprite: {fileID: 21300000, guid: f95dec2e024c3244588570bb3008c5dc, type: 3}
   RailGoldenPoweredSprite: {fileID: 21300000, guid: e19be3a90ac649a4d9db7dc82a91dc0b, type: 3}
   RailDetectorPoweredSprite: {fileID: 21300000, guid: 452fb275bdf52fc489bcaaf7d16c95c9, type: 3}
+  "\u0421opperIngotSprite": {fileID: 21300000, guid: 5b987aaac8a7f114d8d63ea7efdfcf31, type: 3}
+  TinIngotSprite: {fileID: 21300000, guid: bf539240ac52c6f42a7996444f9b8f04, type: 3}
+  SulfurDustSprite: {fileID: 21300000, guid: b1c9a07c17e19a64097a384b5c7acbf4, type: 3}
+  SilverIngotSprite: {fileID: 21300000, guid: 85bceb44af9d3bb49b6faaa49229cf04, type: 3}
+  BronzeIngotSprite: {fileID: 21300000, guid: 38660c1ab1925bc47bbc3c55081d738e, type: 3}
+  SilverDustSprite: {fileID: 21300000, guid: 0059bd7114cfe294882774479a828dd8, type: 3}
+  SilicaSprite: {fileID: 21300000, guid: 98371f0f01caa2f4eafcbdab3fe6378f, type: 3}
+  ObsidianDustSprite: {fileID: 21300000, guid: f04810f3e9d29a14bba91604d9c4e1fb, type: 3}
+  LeadIngotSprite: {fileID: 21300000, guid: 5a21bb3fce2530044830786306f7dc7a, type: 3}
+  LeadDustSprite: {fileID: 21300000, guid: 00335d6921fb77943b7862fb7b5278d1, type: 3}
+  LatexSprite: {fileID: 21300000, guid: e651929b3f07ba146885e1b78dac327e, type: 3}
+  LapisLazuliDustSprite: {fileID: 21300000, guid: 5380dde3719d8ed4a86531373466bd5d, type: 3}
+  IridiumSprite: {fileID: 21300000, guid: 32eadf007c524574d933dae381d11d54, type: 3}
+  EnergyDustSprite: {fileID: 21300000, guid: 4cc50f89dfeb99b43b8a42985dee7d99, type: 3}
+  DiamondDustSprite: {fileID: 21300000, guid: 623c266a82e234245b9244a8ae27abfc, type: 3}
+  CoalDustSprite: {fileID: 21300000, guid: ff5b17b4c4457d244ba2a26702bac62e, type: 3}
+  ClayDustSprite: {fileID: 21300000, guid: ad439d395f74382408374a8e6fc749d5, type: 3}
+  ClayBlockSprite: {fileID: 21300000, guid: 6cb3a496ba87ca84492d13ed7aea540d, type: 3}
+  CopperOreSprite: {fileID: 21300000, guid: 78839006392efdc43832972212016d32, type: 3}
+  LeadOreSprite: {fileID: 21300000, guid: 7d72c9dc6b725ab44af14d3beabd2903, type: 3}
+  ObsidianSprite: {fileID: 21300000, guid: c6b82485e98625d4d94d17e1a7bf3667, type: 3}
+  TinOreSprite: {fileID: 21300000, guid: a27e3bfb5f52f9b409e99a729b1c3118, type: 3}
+  HammerSprite: {fileID: 21300000, guid: 5758f953e3c9fa74a9d869e13bf84406, type: 3}
+  WireCuttersSprite: {fileID: 21300000, guid: 6e3d4fe3f4bd04744afbfe2cdd4004a9, type: 3}
+  BronzePlateSprite: {fileID: 21300000, guid: e474ffeed3d7aa547a9d69c8734b6c84, type: 3}
+  BronzeShellSprite: {fileID: 21300000, guid: 8181a92b5e582584e88177cf08e4311f, type: 3}
+  CarbonFiberSprite: {fileID: 21300000, guid: fdf71b0495cc4d34f9cbf48b3e320e3d, type: 3}
+  CompositeIngotSprite: {fileID: 21300000, guid: 00ce8c694983f0e4db22a36fa2d0710d, type: 3}
+  CompositeSprite: {fileID: 21300000, guid: 5ab763aaaeec56e4398b6f90f0d66f26, type: 3}
+  DoubleInsulatedGoldWireSprite: {fileID: 21300000, guid: 55f3d7a0f6e147a47b74d7470883cc60, type: 3}
+  FaucetSprite: {fileID: 21300000, guid: d6cfa8a278d766e4c8bcad2b0cdf4b76, type: 3}
+  FiberglassWireSprite: {fileID: 21300000, guid: 7dd67bbbd7af24a40b0bfc5cba1beca7, type: 3}
+  GlassPanelSprite: {fileID: 21300000, guid: f10b50a2da2e12546858527b412bf171, type: 3}
+  GoldPlateSprite: {fileID: 21300000, guid: b5baf6c4f02f17048bd7a229bd503425, type: 3}
+  GoldenShellSprite: {fileID: 21300000, guid: 2d9318b292ffb8c4796f322877b44ca2, type: 3}
+  GoldenWireIsolatedSprite: {fileID: 21300000, guid: becc107651c2c8145a743b6c9d43bc8b, type: 3}
+  GoldenWireSprite: {fileID: 21300000, guid: db56adf423b7d594e9807365b8f90492, type: 3}
+  HardenedIronPlateSprite: {fileID: 21300000, guid: c8f274d75bd85384baabcb1d7bdd39dc, type: 3}
+  HighVoltageDoubleInsulatedWireSprite: {fileID: 21300000, guid: 337ecf5fafe40bb4f9fba76bb05c5b06, type: 3}
+  HighVoltageWireInsulatedSprite: {fileID: 21300000, guid: dad4817e4a4598d47b61c8d3f2780794, type: 3}
+  HighVoltageWireSprite: {fileID: 21300000, guid: 4746558ce5d676041970316b8735c137, type: 3}
+  IronPlateSprite: {fileID: 21300000, guid: 0ee02a0608399c6489c0f7e612228f26, type: 3}
+  IronShellSprite: {fileID: 21300000, guid: 42255f0032a62e543b1a6069961448bb, type: 3}
+  IronTurningMoldSprite: {fileID: 21300000, guid: aa326d3135355014293543866dd6cfe0, type: 3}
+  LapisLazuliPlateSprite: {fileID: 21300000, guid: 4f03efd0621cc194e95024706b97b618, type: 3}
+  LeadPlateSprite: {fileID: 21300000, guid: 99f75a3bda0a63541a794d16fcb5e021, type: 3}
+  LeadSheathSprite: {fileID: 21300000, guid: c3d75a202b6f5f44eab027d1e511985b, type: 3}
+  ReactorShellSprite: {fileID: 21300000, guid: 64cee070ae995c64ba5ba7c430d021f4, type: 3}
+  ReinforcedIridiumPlateSprite: {fileID: 21300000, guid: 2d26648a4f645824a9e75405fcb1e505, type: 3}
+  RubberSprite: {fileID: 21300000, guid: 0e97b0552bcd61f4c8b0679279ea6da3, type: 3}
+  SolidBronzePlateSprite: {fileID: 21300000, guid: c0c8140d47b869442b26f68f7fcb8275, type: 3}
+  ThickCopperPlateSprite: {fileID: 21300000, guid: d76c0cd0e1d09ce4e9b1125d55ebd305, type: 3}
+  ThickGoldPlateSprite: {fileID: 21300000, guid: 6419895ee7863f64b97a9b1969e9fe70, type: 3}
+  ThickLeadPlateSprite: {fileID: 21300000, guid: 3e9d0885be3b9c8488671e0778980316, type: 3}
+  TinPlateSprite: {fileID: 21300000, guid: e91d17f1736ab3442ac7fe74d2afd44c, type: 3}
+  TinShellSprite: {fileID: 21300000, guid: 1b118e22a344e7e4bbc128481dbc575a, type: 3}
+  TinWireIsolatedSprite: {fileID: 21300000, guid: c4074b41d73d85b40a546022cff8f434, type: 3}
+  TinWireSprite: {fileID: 21300000, guid: 53af914a1a15d384088ac63b7bcbcb2f, type: 3}
+  "\u0421arbonFiberFabricSprite": {fileID: 21300000, guid: 17f87157c8dede94e964fb489646dcc3, type: 3}
+  "\u0421arbonFiberSprite": {fileID: 21300000, guid: 5af35a34d6c653141a7a992f5d3a52af, type: 3}
+  "\u0421opperPlateSprite": {fileID: 21300000, guid: 0ae60d688e1820d48a929d1451078237, type: 3}
+  "\u0421opperShellSprite": {fileID: 21300000, guid: 6b50b1aa642c9534b84471c30f2a9813, type: 3}
+  "\u0421opperWireIsolatedSprite": {fileID: 21300000, guid: e7bcfe14c9eaae5499735d1d35fcb305, type: 3}
+  "\u0421opperWireSprite": {fileID: 21300000, guid: 2409f49977fb54a4787fd0eac3100c80, type: 3}
 --- !u!1 &1427143449
 GameObject:
   m_ObjectHideFlags: 0
