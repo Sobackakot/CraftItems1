@@ -229,7 +229,9 @@ public class Item
         GraviChestplate = 208,
         TinDust = 209,
         GlowingStone = 210,
-        LapisLazuliOre= 211
+        LapisLazuliOre= 211,
+        TeslaCoil = 212,
+        IronBars = 213
     }
     public string GetNameItemId()
     {     
@@ -445,6 +447,8 @@ public class Item
             case ItemId.GraviChestplate: return "Gravi Chestplate";
             case ItemId.GlowingStone: return "Glowing Stone";
             case ItemId.LapisLazuliOre: return "Lapis Lazuli Ore";
+            case ItemId.TeslaCoil: return "Tesla Coil";
+            case ItemId.IronBars: return "Iron Bars";
             default:
                 return "Unknown Item";  
         }
@@ -667,6 +671,8 @@ public class Item
             case ItemId.GraviChestplate: return ItemsSprite.Instance.GraviChestplateSprite;
             case ItemId.GlowingStone: return ItemsSprite.Instance.GlowingStoneSprite;
             case ItemId.LapisLazuliOre: return ItemsSprite.Instance.LapisLazuliOreSprite;
+            case ItemId.TeslaCoil: return ItemsSprite.Instance.TeslaCoilSprite;
+            case ItemId.IronBars: return ItemsSprite.Instance.IronBarsSprite;   
         }
     }
 }

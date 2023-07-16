@@ -140,6 +140,7 @@ public class ItemsSprite : MonoBehaviour
     public Sprite IronPlateSprite;
     public Sprite IronShellSprite;
     public Sprite IronTurningMoldSprite;
+    public Sprite IronBarsSprite;
     public Sprite LapisLazuliPlateSprite;
     public Sprite LeadPlateSprite;
     public Sprite LeadSheathSprite;
@@ -188,6 +189,7 @@ public class ItemsSprite : MonoBehaviour
     public Sprite NotChargedBatterySprite;
     public Sprite RefrigerantCapsuleSprite;
     public Sprite SuperConductorInsulationSprite;
+    public Sprite TeslaCoilSprite;
     public Sprite SuperconductorSprite;
     public Sprite ThickenedNeutronReflectorSprite;
     public Sprite UnfiredMemoryCrystalSprite;
@@ -229,4 +231,5 @@ public class ItemsSprite : MonoBehaviour
     public Sprite ImprovedElectricJetpackSprite;
     public Sprite QuantumVestSprite;
     public Sprite GraviChestplateSprite;
+    
 }
