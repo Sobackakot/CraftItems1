@@ -1,15 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Timeline;
-using UnityEngine.WSA;
-using static Unity.VisualScripting.Antlr3.Runtime.Tree.TreeWizard;
-using static UnityEditor.Experimental.GraphView.Port;
-using static UnityEngine.EventSystems.EventTrigger;
-using static UnityEngine.UI.GridLayoutGroup;
 
 public class ItemsSprite : MonoBehaviour
 {

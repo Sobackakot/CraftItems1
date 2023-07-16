@@ -14,7 +14,7 @@ public class ShowChallenge : MonoBehaviour
     [SerializeField] private ParticleSystem particlChallenge;
     [SerializeField] private ParticleSystem particlRezultSlot;
     [HideInInspector] public string nameItemSpriteChallenge;
-    [HideInInspector] public bool isNextImageChallenge = true;
+    [HideInInspector] public bool isNextImageChallenge = false;
     private int countClickBackImageChallenge = 0;
     [HideInInspector] public int Index { get; set; } 
     
@@ -51,7 +51,7 @@ public class ShowChallenge : MonoBehaviour
             nameItemSpriteChallenge = spriteChallenge[Index].name;
             StartCoroutine(CoroutineDisableParticle());
         }
-        isNextImageChallenge = true;
+        isNextImageChallenge = false;
     }
     //This method shows the previous challenge image.
     //It deactivates the current challenge object, gets the previous index for the challenge,
