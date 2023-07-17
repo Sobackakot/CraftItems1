@@ -174,7 +174,7 @@ public class Item
         FortifiedStone = 153,
         FrequencyBinder = 154,
         GravityEngine = 155,
-        HeatCapacityReactorCladding = 156,
+        HeatIntensiveReactorPlate = 156,
         HeatCapacityReactor = 157,
         HeatExchanger =158,
         HeatSink = 159,
@@ -226,12 +226,15 @@ public class Item
         NanoBoots = 205,
         ImprovedElectricJetpack = 206,
         QuantumVest= 207,
-        GraviChestplate = 208,
+        GraviChestPlate = 208,
         TinDust = 209,
         GlowingStone = 210,
         LapisLazuliOre= 211,
         TeslaCoil = 212,
-        IronBars = 213
+        IronBars = 213,
+        ReactorChamber = 214,
+        ImprovedMachineBody =215,
+        HardenedIronBar =216
     }
     public string GetNameItemId()
     {     
@@ -393,7 +396,7 @@ public class Item
             case ItemId.FortifiedStone: return "Fortified Stone";
             case ItemId.FrequencyBinder: return "Frequency Binder";
             case ItemId.GravityEngine: return "Gravity Engine";
-            case ItemId.HeatCapacityReactorCladding: return "Heat Capacity Reactor Cladding";
+            case ItemId.HeatIntensiveReactorPlate: return "Heat-Intensive Reactor Plate";
             case ItemId.HeatExchanger: return "Heat Exchanger";
             case ItemId.HeatSink: return "Heat Sink";
             case ItemId.ImprovedHeatDissipation: return "Improved Heat Dissipation";
@@ -444,11 +447,14 @@ public class Item
             case ItemId.NanoBoots: return "Nano Boots";
             case ItemId.ImprovedElectricJetpack: return "Improved Electric Jetpack";
             case ItemId.QuantumVest: return "Quantum Vest";
-            case ItemId.GraviChestplate: return "Gravi Chestplate";
+            case ItemId.GraviChestPlate: return "Gravi Chest Plate";
             case ItemId.GlowingStone: return "Glowing Stone";
             case ItemId.LapisLazuliOre: return "Lapis Lazuli Ore";
             case ItemId.TeslaCoil: return "Tesla Coil";
             case ItemId.IronBars: return "Iron Bars";
+            case ItemId.ReactorChamber: return "Reactor Chamber";
+            case ItemId.ImprovedMachineBody: return "Improved Machine Body";
+            case ItemId.HardenedIronBar: return "Hardened Iron Bar";
             default:
                 return "Unknown Item";  
         }
@@ -617,7 +623,7 @@ public class Item
             case ItemId.FortifiedStone: return ItemsSprite.Instance.FortifiedStoneSprite;
             case ItemId.FrequencyBinder: return ItemsSprite.Instance.FrequencyBinderSprite;
             case ItemId.GravityEngine: return ItemsSprite.Instance.GravityEngineSprite;
-            case ItemId.HeatCapacityReactorCladding: return ItemsSprite.Instance.HeatCapacityReactorCladdingSprite;
+            case ItemId.HeatIntensiveReactorPlate: return ItemsSprite.Instance.HeatIntensiveReactorPlateSprite;
             case ItemId.HeatExchanger: return ItemsSprite.Instance.HeatExchangerSprite;
             case ItemId.HeatSink: return ItemsSprite.Instance.HeatSinkSprite;
             case ItemId.ImprovedHeatDissipation: return ItemsSprite.Instance.ImprovedHeatDissipationSprite;
@@ -668,11 +674,14 @@ public class Item
             case ItemId.NanoBoots: return ItemsSprite.Instance.NanoBootsSprite;
             case ItemId.ImprovedElectricJetpack: return ItemsSprite.Instance.ImprovedElectricJetpackSprite;
             case ItemId.QuantumVest: return ItemsSprite.Instance.QuantumVestSprite;
-            case ItemId.GraviChestplate: return ItemsSprite.Instance.GraviChestplateSprite;
+            case ItemId.GraviChestPlate: return ItemsSprite.Instance.GraviChestPlateSprite;
             case ItemId.GlowingStone: return ItemsSprite.Instance.GlowingStoneSprite;
             case ItemId.LapisLazuliOre: return ItemsSprite.Instance.LapisLazuliOreSprite;
             case ItemId.TeslaCoil: return ItemsSprite.Instance.TeslaCoilSprite;
-            case ItemId.IronBars: return ItemsSprite.Instance.IronBarsSprite;   
+            case ItemId.IronBars: return ItemsSprite.Instance.IronBarsSprite;
+            case ItemId.ReactorChamber: return ItemsSprite.Instance.ReactorChamberSprite;
+            case ItemId.ImprovedMachineBody: return ItemsSprite.Instance.ImprovedMachineBodySprite;
+            case ItemId.HardenedIronBar: return ItemsSprite.Instance.HardenedIronBarSprite;
         }
     }
 }

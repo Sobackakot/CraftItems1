@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ItemsSprite : MonoBehaviour
@@ -47,6 +48,7 @@ public class ItemsSprite : MonoBehaviour
     public Sprite RedstoneSprite;
     public Sprite FlintSprite;
     public Sprite IronNuggetSprite;
+    public Sprite HardenedIronBarSprite;
     public Sprite WorkbenchSprite;
     public Sprite WoodenChestSprite;
     public Sprite StoveSprite;
@@ -170,12 +172,13 @@ public class ItemsSprite : MonoBehaviour
     public Sprite FortifiedStoneSprite;
     public Sprite FrequencyBinderSprite;
     public Sprite GravityEngineSprite;
-    public Sprite HeatCapacityReactorCladdingSprite;
+    public Sprite HeatIntensiveReactorPlateSprite;
     public Sprite HeatExchangerSprite;
     public Sprite HeatSinkSprite;
     public Sprite ImprovedHeatDissipationSprite;
     public Sprite ImprovedHeatExchangerSprite;
     public Sprite MainMachineBodySprite;
+    public Sprite ImprovedMachineBodySprite;
     public Sprite MemoryCrystalSprite;
     public Sprite NeutronReflectorSprite;
     public Sprite NotChargedBatterySprite;
@@ -189,7 +192,7 @@ public class ItemsSprite : MonoBehaviour
     public Sprite WiringDiagramSprite;
     public Sprite ReinforcedGlassSprite;
     public Sprite MiningLaserSprite;
-    public Sprite IronFurnaceSprite;
+    public Sprite IronFurnaceSprite; 
     public Sprite GeneratorSprite;
     public Sprite ElectricOvenSprite;
     public Sprite EnergyStorageSprite;
@@ -197,6 +200,7 @@ public class ItemsSprite : MonoBehaviour
     public Sprite HighVoltageTransformerSprite;
     public Sprite MultifunctionalEnergySaverSprite;
     public Sprite TeleportSprite;
+    public Sprite ReactorChamberSprite;
     public Sprite SolarBatterySprite;
     public Sprite CrusherSprite;
     public Sprite ÑompressorSprite;
@@ -222,6 +226,6 @@ public class ItemsSprite : MonoBehaviour
     public Sprite NanoBootsSprite;
     public Sprite ImprovedElectricJetpackSprite;
     public Sprite QuantumVestSprite;
-    public Sprite GraviChestplateSprite;
+    public Sprite GraviChestPlateSprite;
     
 }

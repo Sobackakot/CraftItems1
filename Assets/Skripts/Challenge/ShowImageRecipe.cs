@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,7 @@ public class ShowImageRecipe : MonoBehaviour
     public static ShowImageRecipe InstanceRecipe { get; private set; }
     [SerializeField] private Sprite[] spritesRecipe;
     [SerializeField] private Image qurrentSpriteRecipe;
+    [SerializeField] private TextMeshProUGUI textNameRecipe;
     private int IndexSprite = 0;
     public void Awake()
     {
@@ -16,6 +18,7 @@ public class ShowImageRecipe : MonoBehaviour
     public void Start()
     {
         qurrentSpriteRecipe.sprite = spritesRecipe[0];
+        textNameRecipe.text = spritesRecipe[0].name;
     }
     public void ShowNextRecipeImage()
     {   
@@ -24,6 +27,7 @@ public class ShowImageRecipe : MonoBehaviour
         else
             IndexSprite++;
         qurrentSpriteRecipe.sprite = spritesRecipe[IndexSprite];
+        textNameRecipe.text = spritesRecipe[IndexSprite].name;
     }
     public void ShowBackRecipeImage()
     {
@@ -32,5 +36,6 @@ public class ShowImageRecipe : MonoBehaviour
         else
             IndexSprite--;
         qurrentSpriteRecipe.sprite = spritesRecipe[IndexSprite];
+        textNameRecipe.text = spritesRecipe[IndexSprite].name;
     }
 }
