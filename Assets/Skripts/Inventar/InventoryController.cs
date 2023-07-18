@@ -56,7 +56,7 @@ public class InventoryController : MonoBehaviour
     private void InitTestInventory()
     {
         MainSlots = new Slot[1,9];  
-        AdditionalSlots = new Slot[3,9];
+        AdditionalSlots = new Slot[9,9];
         CreateSlotsPrefabs();
         //MainSlots[0, 0].SetItem(new ItemInSlot(itemsManager.Items[0], 64)); 
         //MainSlots[0, 1].SetItem(new ItemInSlot(itemsManager.Items[3], 63)); 
