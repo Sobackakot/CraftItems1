@@ -91,6 +91,7 @@ public class ItemsSprite : MonoBehaviour
     public Sprite ÑopperIngotSprite;
     public Sprite TinIngotSprite;
     public Sprite SulfurDustSprite;
+    public Sprite SilverOreSprite;
     public Sprite SilverIngotSprite;
     public Sprite BronzeIngotSprite;
     public Sprite SilverDustSprite;

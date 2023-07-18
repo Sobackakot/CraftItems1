@@ -234,7 +234,8 @@ public class Item
         IronBars = 213,
         ReactorChamber = 214,
         ImprovedMachineBody =215,
-        HardenedIronBar =216
+        HardenedIronBar =216,
+        SilverOre =217
     }
     public string GetNameItemId()
     {     
@@ -455,6 +456,7 @@ public class Item
             case ItemId.ReactorChamber: return "Reactor Chamber";
             case ItemId.ImprovedMachineBody: return "Improved Machine Body";
             case ItemId.HardenedIronBar: return "Hardened Iron Bar";
+            case ItemId.SilverOre: return "Silver Ore";
             default:
                 return "Unknown Item";  
         }
@@ -682,6 +684,7 @@ public class Item
             case ItemId.ReactorChamber: return ItemsSprite.Instance.ReactorChamberSprite;
             case ItemId.ImprovedMachineBody: return ItemsSprite.Instance.ImprovedMachineBodySprite;
             case ItemId.HardenedIronBar: return ItemsSprite.Instance.HardenedIronBarSprite;
+            case ItemId.SilverOre: return ItemsSprite.Instance.SilverOreSprite;
         }
     }
 }
