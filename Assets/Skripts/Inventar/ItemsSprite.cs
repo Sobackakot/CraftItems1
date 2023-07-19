@@ -84,7 +84,7 @@ public class ItemsSprite : MonoBehaviour
     public Sprite MeltingFurnaceSprite;
     public Sprite SmokehouseSprite;
     public Sprite RepeaterSprite;
-    public Sprite ÑomparatorSprite;
+    public Sprite ComparatorSprite;
     public Sprite RailSprite;
     public Sprite RailGoldenPoweredSprite;
     public Sprite RailDetectorPoweredSprite;
@@ -92,7 +92,7 @@ public class ItemsSprite : MonoBehaviour
 
 
 
-    public Sprite ÑopperIngotSprite;
+    public Sprite CopperIngotSprite;
     public Sprite TinIngotSprite;
     public Sprite SulfurDustSprite;
     public Sprite SilverOreSprite;
@@ -122,8 +122,7 @@ public class ItemsSprite : MonoBehaviour
     public Sprite HammerSprite;
     public Sprite WireCuttersSprite;
     public Sprite BronzePlateSprite;
-    public Sprite BronzeShellSprite;
-    public Sprite CarbonFiberSprite;
+    public Sprite BronzeShellSprite; 
     public Sprite CompositeIngotSprite;
     public Sprite CompositeSprite;
     public Sprite DoubleInsulatedGoldWireSprite;
@@ -158,12 +157,12 @@ public class ItemsSprite : MonoBehaviour
     public Sprite TinDustSprite;
     public Sprite TinWireSprite;
     public Sprite CarbonFiberPlasticSprite;
-    public Sprite ÑarbonFiberFabricSprite;
-    public Sprite ÑarbonFiberSprite;
-    public Sprite ÑopperPlateSprite;
-    public Sprite ÑopperShellSprite;
-    public Sprite ÑopperWireIsolatedSprite;
-    public Sprite ÑopperWireSprite;
+    public Sprite CarbonFiberFabricSprite;
+    public Sprite CarbonFiberSprite;
+    public Sprite CopperPlateSprite;
+    public Sprite CopperShellSprite;
+    public Sprite CopperWireIsolatedSprite;
+    public Sprite CopperWireSprite;
     public Sprite AdvancedBatterySprite;
     public Sprite AdvancedWiringDiagramSprite;
     public Sprite AzuretronCrystalSprite;
@@ -211,7 +210,7 @@ public class ItemsSprite : MonoBehaviour
     public Sprite ReactorChamberSprite;
     public Sprite SolarBatterySprite;
     public Sprite CrusherSprite;
-    public Sprite ÑompressorSprite;
+    public Sprite CompressorSprite;
     public Sprite ExtractorSprite;
     public Sprite InductionOvenSprite;
     public Sprite GeothermalGeneratorSprite;

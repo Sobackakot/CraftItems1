@@ -1,8 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using static UnityEngine.UI.GridLayoutGroup;
+using UnityEngine; 
 
 public class ItemsManager : MonoBehaviour
 {
@@ -36,7 +35,14 @@ public class ItemsManager : MonoBehaviour
             {Item.ItemId.WoodBlock}
         };
         Items.Add(new Item(Item.ItemId.Boards,  new CraftRecipe(woodenPlanksRecipe, 4)));
-
+        //Faucet
+        var FaucetRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.None, Item.ItemId.IronIngot, Item.ItemId.None},
+            {Item.ItemId.IronIngot, Item.ItemId.IronIngot, Item.ItemId.IronIngot},
+            {Item.ItemId.IronIngot, Item.ItemId.None, Item.ItemId.None}
+        };
+        Items.Add(new Item(Item.ItemId.Faucet, new CraftRecipe(FaucetRecipe, 1)));
         //Wooden Stick 2
         var woodenStickRecipe = new Item.ItemId[,]
         {
@@ -62,12 +68,36 @@ public class ItemsManager : MonoBehaviour
         Items.Add(new Item(Item.ItemId.Diamond, new CraftRecipe(DiamondRecipe, 4)));
         //GoldOre 7
         Items.Add(new Item(Item.ItemId.GoldOre));
-        //Gold 8
-        var GoldRecipe = new Item.ItemId[,]
+        //GoldIngot 8
+        var GoldIngotRecipe = new Item.ItemId[,]
         {
             {Item.ItemId.GoldOre}
         };
-        Items.Add(new Item(Item.ItemId.GoldIngot, new CraftRecipe(GoldRecipe, 4)));
+        Items.Add(new Item(Item.ItemId.GoldIngot, new CraftRecipe(GoldIngotRecipe, 4)));
+        //GoldPlate
+        var GoldPlateRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.GoldIngot,Item.ItemId.Hammer}
+        }; 
+        Items.Add(new Item(Item.ItemId.GoldPlate, new CraftRecipe(GoldPlateRecipe, 1))); 
+        //GoldenShell
+        var GoldenShellRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.GoldPlate,Item.ItemId.Hammer}
+        };
+        Items.Add(new Item(Item.ItemId.GoldenShell, new CraftRecipe(GoldenShellRecipe, 1)));
+        //GoldenWire
+        var GoldenWireRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.GoldPlate,Item.ItemId.WireCutters}
+        };
+        Items.Add(new Item(Item.ItemId.GoldenWire, new CraftRecipe(GoldenWireRecipe, 4)));
+        //DoubleInsulatedGoldWire
+        var DoubleInsulatedGoldWireRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.Rubber,Item.ItemId.Rubber, Item.ItemId.GoldenWire}
+        };
+        Items.Add(new Item(Item.ItemId.DoubleInsulatedGoldWire, new CraftRecipe(DoubleInsulatedGoldWireRecipe, 1)));
         //RedstoneOre 9
         Items.Add(new Item(Item.ItemId.RedstoneOre));
         //Redstone 10
@@ -78,12 +108,24 @@ public class ItemsManager : MonoBehaviour
         Items.Add(new Item(Item.ItemId.Redstone, new CraftRecipe(redstonRecipe, 4))); 
         //Iron Ore 11
         Items.Add(new Item(Item.ItemId.IronOre));
-        //Iron 12
-        var IronRecipe = new Item.ItemId[,]
+        //IronIngot 12
+        var IronIngotRecipe = new Item.ItemId[,]
         {
             {Item.ItemId.IronOre}
         };
-        Items.Add(new Item(Item.ItemId.IronIngot, new CraftRecipe(IronRecipe, 4)));
+        Items.Add(new Item(Item.ItemId.IronIngot, new CraftRecipe(IronIngotRecipe, 4)));
+        //IronPlate
+        var IronPlateRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.IronIngot,Item.ItemId.Hammer}
+        };
+        Items.Add(new Item(Item.ItemId.IronPlate, new CraftRecipe(IronPlateRecipe, 1)));
+        //IronShell
+        var IronShellRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.IronPlate,Item.ItemId.Hammer}
+        };
+        Items.Add(new Item(Item.ItemId.IronShell, new CraftRecipe(IronShellRecipe, 1)));
         //Iron Block 13
         var IronBlockRecipe = new Item.ItemId[,]
         {
@@ -92,6 +134,25 @@ public class ItemsManager : MonoBehaviour
             {Item.ItemId.IronIngot, Item.ItemId.IronIngot, Item.ItemId.IronIngot }
         };
         Items.Add(new Item(Item.ItemId.IronBlock, new CraftRecipe(IronBlockRecipe, 1)));
+        // IronBars
+        var IronBarsRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.IronIngot, Item.ItemId.IronIngot, Item.ItemId.IronIngot },
+            {Item.ItemId.IronIngot, Item.ItemId.IronIngot, Item.ItemId.IronIngot }
+        };
+        Items.Add(new Item(Item.ItemId.IronBars, new CraftRecipe(IronBarsRecipe, 1)));
+        //IronTurningMold
+        var IronTurningMoldRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.IronIngot, Item.ItemId.IronShell, Item.ItemId.IronIngot }
+        };
+        Items.Add(new Item(Item.ItemId.IronTurningMold, new CraftRecipe(IronTurningMoldRecipe, 1)));
+        //Iron Nugget 23
+        var IronNuggetRecipe = new Item.ItemId[,]
+        {
+            { Item.ItemId.IronIngot}
+        };
+        Items.Add(new Item(Item.ItemId.IronNugget, new CraftRecipe(IronNuggetRecipe, 9)));
         //flint 14
         Items.Add(new Item(Item.ItemId.Flint));
         //feather 15
@@ -115,10 +176,17 @@ public class ItemsManager : MonoBehaviour
         Items.Add(new Item(Item.ItemId.Hammer));
         //WireCutters
         Items.Add(new Item(Item.ItemId.WireCutters));
+        //Latex
+        Items.Add(new Item(Item.ItemId.Latex));
+        //Rubber
+        var RubberRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.Latex}
+        };
+        Items.Add(new Item(Item.ItemId.Rubber, new CraftRecipe(RubberRecipe, 4)));
         //ClayBlock
         Items.Add(new Item(Item.ItemId.ClayBlock));
-        //CopperOre
-        Items.Add(new Item(Item.ItemId.CopperOre));
+        
         //GlowingStone
         Items.Add(new Item(Item.ItemId.GlowingStone));
         //GlowstoneDust
@@ -129,8 +197,7 @@ public class ItemsManager : MonoBehaviour
         Items.Add(new Item(Item.ItemId.GlowstoneDust, new CraftRecipe(GlowstoneDustRecipe, 4)));
         //LapisLazuliOre
         Items.Add(new Item(Item.ItemId.LapisLazuliOre));
-        //LeadOre
-        Items.Add(new Item(Item.ItemId.LeadOre));
+        
         //Obsidian
         Items.Add(new Item(Item.ItemId.Obsidian));
         //ObsidianDust
@@ -139,32 +206,105 @@ public class ItemsManager : MonoBehaviour
             {Item.ItemId.Obsidian}
         };
         Items.Add(new Item(Item.ItemId.ObsidianDust, new CraftRecipe(ObsidianDustRecipe, 4)));
-        //SilverOre
-        Items.Add(new Item(Item.ItemId.SilverOre));
-        //TinOre
-        Items.Add(new Item(Item.ItemId.SilverOre));
+        
         //HardenedIronBar
         Items.Add(new Item(Item.ItemId.HardenedIronBar));
+        //HardenedIronPlate
+        var HardenedIronPlateRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.HardenedIronBar, Item.ItemId.Hammer}
+        };
+        Items.Add(new Item(Item.ItemId.HardenedIronPlate, new CraftRecipe(HardenedIronPlateRecipe, 1)));
+        //HighVoltageWire
+        var HighVoltageWireRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.HardenedIronPlate, Item.ItemId.WireCutters}
+        };
+        Items.Add(new Item(Item.ItemId.HighVoltageWire, new CraftRecipe(HighVoltageWireRecipe, 4)));
+        //HighVoltageWireInsulated
+        var HighVoltageWireInsulatedRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.Rubber,Item.ItemId.Rubber,Item.ItemId.HighVoltageWire}
+        };
+        Items.Add(new Item(Item.ItemId.HighVoltageWireInsulated, new CraftRecipe(HighVoltageWireInsulatedRecipe, 1)));
+        //HighVoltageDoubleInsulatedWire
+        var HighVoltageDoubleInsulatedWireRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.Rubber,Item.ItemId.HighVoltageWireInsulated}
+        };
+        Items.Add(new Item(Item.ItemId.HighVoltageDoubleInsulatedWire, new CraftRecipe(HighVoltageDoubleInsulatedWireRecipe, 1)));
+        //CopperOre
+        Items.Add(new Item(Item.ItemId.CopperOre));
         //ÑopperIngot
         var ÑopperIngotRecipe = new Item.ItemId[,]
         {
             {Item.ItemId.CopperOre}
         };
-        Items.Add(new Item(Item.ItemId.ÑopperIngot, new CraftRecipe(ÑopperIngotRecipe, 4)));
-
+        Items.Add(new Item(Item.ItemId.CopperIngot, new CraftRecipe(ÑopperIngotRecipe, 4)));
+        //ÑopperPlate
+        var ÑopperPlateRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.CopperIngot,Item.ItemId.Hammer}
+        };
+        Items.Add(new Item(Item.ItemId.CopperPlate, new CraftRecipe(ÑopperPlateRecipe, 1)));
+        //ÑopperShell
+        var ÑopperShellRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.CopperPlate,Item.ItemId.Hammer}
+        };
+        Items.Add(new Item(Item.ItemId.CopperShell, new CraftRecipe(ÑopperShellRecipe, 1)));
+        //ÑopperWire
+        var ÑopperWireRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.CopperPlate,Item.ItemId.WireCutters}
+        };
+        Items.Add(new Item(Item.ItemId.CopperWire, new CraftRecipe(ÑopperWireRecipe, 4)));
+        //ÑopperWireIsolated
+        var ÑopperWireIsolatedRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.Rubber,Item.ItemId.CopperWire}
+        };
+        Items.Add(new Item(Item.ItemId.CopperWireIsolated, new CraftRecipe(ÑopperWireIsolatedRecipe, 1)));
+        //TinOre
+        Items.Add(new Item(Item.ItemId.TinOre));
         //TinIngot
         var TinIngotRecipe = new Item.ItemId[,]
         {
             {Item.ItemId.TinOre}
         };
         Items.Add(new Item(Item.ItemId.TinIngot, new CraftRecipe(TinIngotRecipe, 4)));
+        //TinPlate
+        var TinPlateRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.TinIngot, Item.ItemId.Hammer}
+        };
+        Items.Add(new Item(Item.ItemId.TinPlate, new CraftRecipe(TinPlateRecipe, 1)));
+        //TinShell
+        var TinShellRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.TinPlate, Item.ItemId.Hammer}
+        };
+        Items.Add(new Item(Item.ItemId.TinShell, new CraftRecipe(TinShellRecipe, 1)));
         //TinDust
         var TinDustRecipe = new Item.ItemId[,]
         {
             {Item.ItemId.TinIngot}
         };
         Items.Add(new Item(Item.ItemId.TinDust, new CraftRecipe(TinDustRecipe, 4)));
-
+        //TinWire
+        var TinWireRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.TinPlate, Item.ItemId.WireCutters}
+        };
+        Items.Add(new Item(Item.ItemId.TinWire, new CraftRecipe(TinWireRecipe, 4)));
+        //TinWireIsolated
+        var TinWireIsolatedRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.Rubber, Item.ItemId.TinWire}
+        };
+        Items.Add(new Item(Item.ItemId.TinWireIsolated, new CraftRecipe(TinWireIsolatedRecipe, 1)));
+        //SilverOre
+        Items.Add(new Item(Item.ItemId.SilverOre));
         //SilverIngot 
         var SilverIngotRecipe = new Item.ItemId[,]
         {
@@ -176,12 +316,12 @@ public class ItemsManager : MonoBehaviour
         {
             {Item.ItemId.SilverIngot }
         };
-        Items.Add(new Item(Item.ItemId.SilverDust, new CraftRecipe(SilverDustRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.SilverDust, new CraftRecipe(SilverDustRecipe, 4)));
         //BronzeIngot
         var BronzeIngotRecipe = new Item.ItemId[,]
         {
-            {Item.ItemId.ÑopperIngot,Item.ItemId.ÑopperIngot},
-            {Item.ItemId.ÑopperIngot,Item.ItemId.TinIngot}
+            {Item.ItemId.CopperIngot,Item.ItemId.CopperIngot},
+            {Item.ItemId.CopperIngot,Item.ItemId.TinIngot}
         };
         Items.Add(new Item(Item.ItemId.BronzeIngot, new CraftRecipe(BronzeIngotRecipe, 4)));
         //BronzePlate
@@ -196,18 +336,46 @@ public class ItemsManager : MonoBehaviour
             {Item.ItemId.BronzePlate,Item.ItemId.Hammer}
         };
         Items.Add(new Item(Item.ItemId.BronzeShell, new CraftRecipe(BronzeShellRecipe, 1)));
+        //LeadOre
+        Items.Add(new Item(Item.ItemId.LeadOre));
         //LeadIngot
         var LeadIngotRecipe = new Item.ItemId[,]
         {
             {Item.ItemId.LeadOre}
         };
         Items.Add(new Item(Item.ItemId.LeadIngot, new CraftRecipe(LeadIngotRecipe, 4)));
+        //LeadPlate
+        var LeadPlateRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.LeadIngot, Item.ItemId.Hammer}
+        };
+        Items.Add(new Item(Item.ItemId.LeadPlate, new CraftRecipe(LeadPlateRecipe, 1)));
+        //LeadSheath
+        var LeadSheathRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.LeadPlate, Item.ItemId.Hammer}
+        };
+        Items.Add(new Item(Item.ItemId.LeadSheath, new CraftRecipe(LeadSheathRecipe, 1)));
+        //ThickLeadPlate
+        var ThickLeadPlateRecipe = new Item.ItemId[,]
+        {
+             {Item.ItemId.LeadPlate, Item.ItemId.LeadPlate, Item.ItemId.LeadPlate},
+            {Item.ItemId.LeadPlate, Item.ItemId.LeadPlate, Item.ItemId.LeadPlate},
+            {Item.ItemId.LeadPlate, Item.ItemId.LeadPlate, Item.ItemId.LeadPlate}
+        };
+        Items.Add(new Item(Item.ItemId.ThickLeadPlate, new CraftRecipe(ThickLeadPlateRecipe, 1)));
         //LeadDust
         var LeadDustRecipe = new Item.ItemId[,]
         {
             {Item.ItemId.LeadIngot}
         };
         Items.Add(new Item(Item.ItemId.LeadDust, new CraftRecipe(LeadDustRecipe, 4)));
+        //ReactorShell
+        var ReactorShellRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.LeadPlate, Item.ItemId.Composite}
+        };
+        Items.Add(new Item(Item.ItemId.ReactorShell, new CraftRecipe(ReactorShellRecipe, 1)));
         //SulfurDust
         var SulfurDustRecipe = new Item.ItemId[,]
         {
@@ -238,17 +406,17 @@ public class ItemsManager : MonoBehaviour
              {Item.ItemId.CoalDust, Item.ItemId.CoalDust},
              {Item.ItemId.CoalDust, Item.ItemId.CoalDust} 
         };
-        Items.Add(new Item(Item.ItemId.ÑarbonFiber, new CraftRecipe(ÑarbonFiberRecipe, 1))); 
+        Items.Add(new Item(Item.ItemId.CarbonFiber, new CraftRecipe(ÑarbonFiberRecipe, 1))); 
         //ÑarbonFiberFabric
         var ÑarbonFiberFabricRecipe = new Item.ItemId[,]
         {
-             {Item.ItemId.ÑarbonFiber, Item.ItemId.ÑarbonFiber} 
+             {Item.ItemId.CarbonFiber, Item.ItemId.CarbonFiber} 
         };
-        Items.Add(new Item(Item.ItemId.ÑarbonFiberFabric, new CraftRecipe(ÑarbonFiberFabricRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.CarbonFiberFabric, new CraftRecipe(ÑarbonFiberFabricRecipe, 1)));
         //CarbonFiberPlastic
         var CarbonFiberPlasticRecipe = new Item.ItemId[,]
         {
-             {Item.ItemId.ÑarbonFiberFabric, Item.ItemId.ÑarbonFiberFabric}
+             {Item.ItemId.CarbonFiberFabric, Item.ItemId.CarbonFiberFabric}
         };
         Items.Add(new Item(Item.ItemId.CarbonFiberPlastic, new CraftRecipe(CarbonFiberPlasticRecipe, 1)));
         //DiamondDust
@@ -259,6 +427,14 @@ public class ItemsManager : MonoBehaviour
         Items.Add(new Item(Item.ItemId.DiamondDust, new CraftRecipe(DiamondDustRecipe, 4)));
         //Iridium
         Items.Add(new Item(Item.ItemId.Iridium));
+        //ReinforcedIridiumPlate
+        var ReinforcedIridiumPlateRecipe = new Item.ItemId[,]
+        {
+             {Item.ItemId.Iridium, Item.ItemId.Iridium, Item.ItemId.Iridium},
+            {Item.ItemId.Composite, Item.ItemId.Diamond, Item.ItemId.Composite},
+            {Item.ItemId.Iridium, Item.ItemId.Iridium, Item.ItemId.Iridium}
+        };
+        Items.Add(new Item(Item.ItemId.ReinforcedIridiumPlate, new CraftRecipe(ReinforcedIridiumPlateRecipe, 1)));
         //LapisLazuli
         var LapisLazuliRecipe = new Item.ItemId[,]
         {
@@ -270,15 +446,15 @@ public class ItemsManager : MonoBehaviour
         {
             {Item.ItemId.LapisLazuli}
         };
+        
         Items.Add(new Item(Item.ItemId.LapisLazuliDust, new CraftRecipe(LapisLazuliDustRecipe, 4)));
-        //Latex
-        Items.Add(new Item(Item.ItemId.Latex));
-        //Rubber
-        var RubberRecipe = new Item.ItemId[,]
+        //LapisLazuliPlate
+        var LapisLazuliPlateRecipe = new Item.ItemId[,]
         {
-            {Item.ItemId.Latex}
+             {Item.ItemId.LapisLazuli, Item.ItemId.Hammer} 
         };
-        Items.Add(new Item(Item.ItemId.Rubber, new CraftRecipe(RubberRecipe, 4)));
+        Items.Add(new Item(Item.ItemId.LapisLazuliPlate, new CraftRecipe(LapisLazuliPlateRecipe, 1)));
+       
         //EnergyDust
         var EnergyDustRecipe = new Item.ItemId[,]
         {
@@ -287,21 +463,43 @@ public class ItemsManager : MonoBehaviour
             {Item.ItemId.Redstone, Item.ItemId.DiamondDust, Item.ItemId.Redstone}
         };
         Items.Add(new Item(Item.ItemId.EnergyDust, new CraftRecipe(EnergyDustRecipe, 4)));
-
-
-
-
-
-
-
-
-
-        //Iron Nugget 23
-        var IronNuggetRecipe = new Item.ItemId[,]
+        //CompositeIngot
+        var CompositeIngotRecipe = new Item.ItemId[,]
         {
-            { Item.ItemId.IronIngot}
+             {Item.ItemId.IronIngot, Item.ItemId.IronIngot, Item.ItemId.IronIngot},
+            {Item.ItemId.BronzeIngot, Item.ItemId.BronzeIngot, Item.ItemId.BronzeIngot},
+            {Item.ItemId.TinIngot, Item.ItemId.TinIngot, Item.ItemId.TinIngot}
         };
-        Items.Add(new Item(Item.ItemId.IronNugget, new CraftRecipe(IronNuggetRecipe, 9)));
+        Items.Add(new Item(Item.ItemId.CompositeIngot, new CraftRecipe(CompositeIngotRecipe, 1)));
+        //Composite
+        var CompositeRecipe = new Item.ItemId[,]
+        {
+             {Item.ItemId.CompositeIngot, Item.ItemId.Hammer}
+             
+        };
+        Items.Add(new Item(Item.ItemId.Composite, new CraftRecipe(CompositeRecipe, 1)));
+        //FiberglassWire
+        var FiberglassWireRecipe = new Item.ItemId[,]
+        {
+             {Item.ItemId.Glass, Item.ItemId.Glass, Item.ItemId.Glass},
+            {Item.ItemId.EnergyDust, Item.ItemId.SilverDust, Item.ItemId.EnergyDust},
+            {Item.ItemId.Glass, Item.ItemId.Glass, Item.ItemId.Glass}
+        };
+        Items.Add(new Item(Item.ItemId.FiberglassWire, new CraftRecipe(FiberglassWireRecipe, 4)));
+        //AdvancedBattery
+        var AdvancedBatteryRecipe = new Item.ItemId[,]
+        {
+             {Item.ItemId.CopperWireIsolated, Item.ItemId.BronzeShell, Item.ItemId.CopperWireIsolated},
+            {Item.ItemId.BronzeShell, Item.ItemId.SulfurDust, Item.ItemId.BronzeShell},
+            {Item.ItemId.BronzeShell, Item.ItemId.LeadDust, Item.ItemId.BronzeShell}
+        };
+        Items.Add(new Item(Item.ItemId.AdvancedBattery, new CraftRecipe(AdvancedBatteryRecipe, 1)));
+
+
+
+
+
+
         //Half Block 24
         var HalfBlockRecipe = new Item.ItemId[,]
         {
@@ -311,18 +509,23 @@ public class ItemsManager : MonoBehaviour
         Items.Add(new Item(Item.ItemId.HalfBlock, new CraftRecipe(HalfBlockRecipe, 6)));
         //Pressure Plate 25
         var PressurePlateRecipe = new Item.ItemId[,]
-        {
-
+        { 
             {Item.ItemId.SmoothStone, Item.ItemId.SmoothStone}
         };
         Items.Add(new Item(Item.ItemId.PressurePlate, new CraftRecipe(PressurePlateRecipe, 1)));
         //Glass 26
         var GlassRecipe = new Item.ItemId[,]
-        {
-
+        { 
             {Item.ItemId.Sand}
         };
         Items.Add(new Item(Item.ItemId.Glass, new CraftRecipe(GlassRecipe, 4)));
+        //GlassPanel
+        var GlassPanelRecipe = new Item.ItemId[,]
+        { 
+            {Item.ItemId.Glass , Item.ItemId.Glass , Item.ItemId.Glass },
+            {Item.ItemId.Glass, Item.ItemId.Glass , Item.ItemId.Glass }
+        };
+        Items.Add(new Item(Item.ItemId.GlassPanel, new CraftRecipe(GlassPanelRecipe, 4)));
         //RedstoneTorch 27
         var RedstoneTorchRecipe = new Item.ItemId[,]
         {
@@ -664,7 +867,7 @@ public class ItemsManager : MonoBehaviour
             {Item.ItemId.RedstoneTorch, Item.ItemId.Quartz, Item.ItemId.RedstoneTorch},
             {Item.ItemId.SmoothStone, Item.ItemId.SmoothStone, Item.ItemId.SmoothStone}
         };
-        Items.Add(new Item(Item.ItemId.Ñomparator, new CraftRecipe(ÑomparatorRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.Comparator, new CraftRecipe(ÑomparatorRecipe, 1)));
         //Rail 71
         var RailRecipe = new Item.ItemId[,]
         {

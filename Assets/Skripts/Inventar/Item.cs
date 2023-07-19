@@ -90,11 +90,11 @@ public class Item
         MeltingFurnace= 69,
         Smokehouse =70,
         Repeater = 71,
-        Ñomparator =72,
+        Comparator =72,
         Rail = 73,
         RailGoldenPowered = 74,
         RailDetectorPowered =75,
-        ÑopperIngot= 76,
+        CopperIngot= 76,
         TinIngot = 77,
         SulfurDust = 78,
         SilverIngot = 79,
@@ -119,8 +119,7 @@ public class Item
         WireCutters =98,
         BronzeIngot= 99,
         BronzePlate = 100,
-        BronzeShell = 101,
-        CarbonFiber = 102,
+        BronzeShell = 101, 
         CompositeIngot = 103,
         Composite = 104,
         DoubleInsulatedGoldWire = 105,
@@ -152,12 +151,12 @@ public class Item
         TinShell = 131,
         TinWireIsolated = 132,
         TinWire = 133,
-        ÑarbonFiberFabric = 134,
-        ÑarbonFiber = 135,
-        ÑopperPlate = 136,
-        ÑopperShell = 137,
-        ÑopperWireIsolated = 138,
-        ÑopperWire = 139,
+        CarbonFiberFabric = 134,
+        CarbonFiber = 135,
+        CopperPlate = 136,
+        CopperShell = 137,
+        CopperWireIsolated = 138,
+        CopperWire = 139,
         AdvancedBattery = 140,
         AdvancedWiringDiagram = 141,
         AzuretronCrystal = 142,
@@ -195,7 +194,7 @@ public class Item
         MiningLaser = 174,
         SolarBattery = 175,
         Crusher = 176,
-        Ñompressor =177,
+        Compressor =177,
         Extractor = 178,
         InductionOven = 179,
         GeothermalGenerator  = 180,
@@ -316,11 +315,11 @@ public class Item
             case ItemId.MeltingFurnace: return "Melting Furnace";
             case ItemId.Smokehouse: return "Smokehouse";
             case ItemId.Repeater: return "Repeater";
-            case ItemId.Ñomparator: return "Ñomparator";
+            case ItemId.Comparator: return "Comparator";
             case ItemId.Rail: return "Rail";
             case ItemId.RailGoldenPowered: return "Rail Golden Powered";
             case ItemId.RailDetectorPowered: return "Rail Detector Powered";
-            case ItemId.ÑopperIngot: return "Ñopper Ingot";
+            case ItemId.CopperIngot: return "Copper Ingot";
             case ItemId.TinIngot: return "Tin Ingot";
             case ItemId.SulfurDust: return "Sulfur Dust";
             case ItemId.SilverIngot: return "Silver Ingot";
@@ -345,8 +344,7 @@ public class Item
             case ItemId.WireCutters: return "Wire Cutters";
             case ItemId.BronzeIngot: return "Bronze Ingot";
             case ItemId.BronzePlate: return "Bronze Plate";
-            case ItemId.BronzeShell: return "Bronze Shell";
-            case ItemId.CarbonFiber: return "Carbon Fiber";
+            case ItemId.BronzeShell: return "Bronze Shell"; 
             case ItemId.CompositeIngot: return "Composite Ingot";
             case ItemId.Composite: return "Composite";
             case ItemId.DoubleInsulatedGoldWire: return "Double Insulated Gold Wire";
@@ -378,12 +376,12 @@ public class Item
             case ItemId.TinWireIsolated: return "Tin Wire Isolated";
             case ItemId.TinWire: return "Tin Wire";
             case ItemId.TinDust: return "Tin Dust";
-            case ItemId.ÑarbonFiberFabric: return "Ñarbon Fiber Fabric";
-            case ItemId.ÑarbonFiber: return "Ñarbon Fiber";
-            case ItemId.ÑopperPlate: return "Ñopper Plate";
-            case ItemId.ÑopperShell: return "Ñopper Shell";
-            case ItemId.ÑopperWireIsolated: return "Ñopper Wire Isolated";
-            case ItemId.ÑopperWire: return "Ñopper Wire";
+            case ItemId.CarbonFiberFabric: return "Carbon Fiber Fabric";
+            case ItemId.CarbonFiber: return "Carbon Fiber";
+            case ItemId.CopperPlate: return "Copper Plate";
+            case ItemId.CopperShell: return "Copper Shell";
+            case ItemId.CopperWireIsolated: return "Copper Wire Isolated";
+            case ItemId.CopperWire: return "Copper Wire";
             case ItemId.AdvancedBattery: return "Advanced Battery";
             case ItemId.AdvancedWiringDiagram: return "Advanced Wiring Diagram";
             case ItemId.AzuretronCrystal: return "Azuretron Crystal";
@@ -428,7 +426,7 @@ public class Item
             case ItemId.Teleport: return "Teleport";
             case ItemId.SolarBattery: return "Solar Battery";
             case ItemId.Crusher: return "Crusher";
-            case ItemId.Ñompressor: return "Ñompressor";
+            case ItemId.Compressor: return "Compressor";
             case ItemId.Extractor: return "Extractor"; 
             case ItemId.InductionOven: return "Induction Oven";
             case ItemId.GeothermalGenerator: return "Geothermal Generator";
@@ -547,11 +545,11 @@ public class Item
             case ItemId.MeltingFurnace: return ItemsSprite.Instance.MeltingFurnaceSprite;
             case ItemId.Smokehouse: return ItemsSprite.Instance.SmokehouseSprite;
             case ItemId.Repeater: return ItemsSprite.Instance.RepeaterSprite;
-            case ItemId.Ñomparator: return ItemsSprite.Instance.ÑomparatorSprite;
+            case ItemId.Comparator: return ItemsSprite.Instance.ComparatorSprite;
             case ItemId.Rail: return ItemsSprite.Instance.RailSprite;
             case ItemId.RailGoldenPowered: return ItemsSprite.Instance.RailGoldenPoweredSprite;
             case ItemId.RailDetectorPowered: return ItemsSprite.Instance.RailDetectorPoweredSprite;
-            case ItemId.ÑopperIngot: return ItemsSprite.Instance.ÑopperIngotSprite;
+            case ItemId.CopperIngot: return ItemsSprite.Instance.CopperIngotSprite;
             case ItemId.TinIngot: return ItemsSprite.Instance.TinIngotSprite;
             case ItemId.SulfurDust: return ItemsSprite.Instance.SulfurDustSprite;
             case ItemId.SilverIngot: return ItemsSprite.Instance.SilverIngotSprite;
@@ -609,12 +607,11 @@ public class Item
             case ItemId.TinShell: return ItemsSprite.Instance.TinShellSprite;
             case ItemId.TinWireIsolated: return ItemsSprite.Instance.TinWireIsolatedSprite;
             case ItemId.TinWire:return ItemsSprite.Instance.TinWireSprite;
-            case ItemId.ÑarbonFiberFabric: return ItemsSprite.Instance.ÑarbonFiberFabricSprite;
-            case ItemId.ÑarbonFiber: return ItemsSprite.Instance.ÑarbonFiberSprite;
-            case ItemId.ÑopperPlate: return ItemsSprite.Instance.ÑopperPlateSprite;
-            case ItemId.ÑopperShell: return ItemsSprite.Instance.ÑopperShellSprite;
-            case ItemId.ÑopperWireIsolated: return ItemsSprite.Instance.ÑopperWireIsolatedSprite;
-            case ItemId.ÑopperWire: return ItemsSprite.Instance.ÑopperWireSprite;
+            case ItemId.CarbonFiberFabric: return ItemsSprite.Instance.CarbonFiberFabricSprite; 
+            case ItemId.CopperPlate: return ItemsSprite.Instance.CopperPlateSprite;
+            case ItemId.CopperShell: return ItemsSprite.Instance.CopperShellSprite;
+            case ItemId.CopperWireIsolated: return ItemsSprite.Instance.CopperWireIsolatedSprite;
+            case ItemId.CopperWire: return ItemsSprite.Instance.CopperWireSprite;
             case ItemId.AdvancedBattery: return ItemsSprite.Instance.AdvancedBatterySprite;
             case ItemId.AdvancedWiringDiagram: return ItemsSprite.Instance.AdvancedWiringDiagramSprite;
             case ItemId.AzuretronCrystal: return ItemsSprite.Instance.AzuretronCrystalSprite;
@@ -659,7 +656,7 @@ public class Item
             case ItemId.Teleport: return ItemsSprite.Instance.TeleportSprite;
             case ItemId.SolarBattery: return ItemsSprite.Instance.SolarBatterySprite;
             case ItemId.Crusher: return ItemsSprite.Instance.CrusherSprite;
-            case ItemId.Ñompressor: return ItemsSprite.Instance.ÑompressorSprite;
+            case ItemId.Compressor: return ItemsSprite.Instance.CompressorSprite;
             case ItemId.Extractor: return ItemsSprite.Instance.ExtractorSprite;
             case ItemId.InductionOven: return ItemsSprite.Instance.InductionOvenSprite;
             case ItemId.GeothermalGenerator: return ItemsSprite.Instance.GeothermalGeneratorSprite;
