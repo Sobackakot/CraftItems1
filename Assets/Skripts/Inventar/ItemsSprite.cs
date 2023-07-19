@@ -88,6 +88,10 @@ public class ItemsSprite : MonoBehaviour
     public Sprite RailSprite;
     public Sprite RailGoldenPoweredSprite;
     public Sprite RailDetectorPoweredSprite;
+    
+
+
+
     public Sprite ÑopperIngotSprite;
     public Sprite TinIngotSprite;
     public Sprite SulfurDustSprite;
@@ -101,6 +105,7 @@ public class ItemsSprite : MonoBehaviour
     public Sprite LeadDustSprite;
     public Sprite LatexSprite;
     public Sprite LapisLazuliOreSprite;
+    public Sprite LapisLazuliSprite;
     public Sprite LapisLazuliDustSprite;
     public Sprite IridiumSprite;
     public Sprite EnergyDustSprite;
@@ -113,6 +118,7 @@ public class ItemsSprite : MonoBehaviour
     public Sprite ObsidianSprite;
     public Sprite TinOreSprite;
     public Sprite GlowingStoneSprite; 
+    public Sprite GlowstoneDustSprite;
     public Sprite HammerSprite;
     public Sprite WireCuttersSprite;
     public Sprite BronzePlateSprite;
@@ -151,6 +157,7 @@ public class ItemsSprite : MonoBehaviour
     public Sprite TinWireIsolatedSprite;
     public Sprite TinDustSprite;
     public Sprite TinWireSprite;
+    public Sprite CarbonFiberPlasticSprite;
     public Sprite ÑarbonFiberFabricSprite;
     public Sprite ÑarbonFiberSprite;
     public Sprite ÑopperPlateSprite;

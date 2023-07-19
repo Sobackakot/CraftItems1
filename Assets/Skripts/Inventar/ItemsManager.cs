@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.UI.GridLayoutGroup;
 
 public class ItemsManager : MonoBehaviour
 {
@@ -109,6 +110,192 @@ public class ItemsManager : MonoBehaviour
         Items.Add(new Item(Item.ItemId.EchoShard));
         //Quartz 22
         Items.Add(new Item(Item.ItemId.Quartz));
+
+        //Hammer
+        Items.Add(new Item(Item.ItemId.Hammer));
+        //WireCutters
+        Items.Add(new Item(Item.ItemId.WireCutters));
+        //ClayBlock
+        Items.Add(new Item(Item.ItemId.ClayBlock));
+        //CopperOre
+        Items.Add(new Item(Item.ItemId.CopperOre));
+        //GlowingStone
+        Items.Add(new Item(Item.ItemId.GlowingStone));
+        //GlowstoneDust
+        var GlowstoneDustRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.GlowingStone}
+        };
+        Items.Add(new Item(Item.ItemId.GlowstoneDust, new CraftRecipe(GlowstoneDustRecipe, 4)));
+        //LapisLazuliOre
+        Items.Add(new Item(Item.ItemId.LapisLazuliOre));
+        //LeadOre
+        Items.Add(new Item(Item.ItemId.LeadOre));
+        //Obsidian
+        Items.Add(new Item(Item.ItemId.Obsidian));
+        //ObsidianDust
+        var ObsidianDustRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.Obsidian}
+        };
+        Items.Add(new Item(Item.ItemId.ObsidianDust, new CraftRecipe(ObsidianDustRecipe, 4)));
+        //SilverOre
+        Items.Add(new Item(Item.ItemId.SilverOre));
+        //TinOre
+        Items.Add(new Item(Item.ItemId.SilverOre));
+        //HardenedIronBar
+        Items.Add(new Item(Item.ItemId.HardenedIronBar));
+        //ÑopperIngot
+        var ÑopperIngotRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.CopperOre}
+        };
+        Items.Add(new Item(Item.ItemId.ÑopperIngot, new CraftRecipe(ÑopperIngotRecipe, 4)));
+
+        //TinIngot
+        var TinIngotRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.TinOre}
+        };
+        Items.Add(new Item(Item.ItemId.TinIngot, new CraftRecipe(TinIngotRecipe, 4)));
+        //TinDust
+        var TinDustRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.TinIngot}
+        };
+        Items.Add(new Item(Item.ItemId.TinDust, new CraftRecipe(TinDustRecipe, 4)));
+
+        //SilverIngot 
+        var SilverIngotRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.SilverOre}
+        };
+        Items.Add(new Item(Item.ItemId.SilverIngot, new CraftRecipe(SilverIngotRecipe, 4)));
+        //SilverDust
+        var SilverDustRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.SilverIngot }
+        };
+        Items.Add(new Item(Item.ItemId.SilverDust, new CraftRecipe(SilverDustRecipe, 1)));
+        //BronzeIngot
+        var BronzeIngotRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.ÑopperIngot,Item.ItemId.ÑopperIngot},
+            {Item.ItemId.ÑopperIngot,Item.ItemId.TinIngot}
+        };
+        Items.Add(new Item(Item.ItemId.BronzeIngot, new CraftRecipe(BronzeIngotRecipe, 4)));
+        //BronzePlate
+        var BronzePlateRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.BronzeIngot,Item.ItemId.Hammer}
+        };
+        Items.Add(new Item(Item.ItemId.BronzePlate, new CraftRecipe(BronzePlateRecipe, 1)));
+        //BronzeShell
+        var BronzeShellRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.BronzePlate,Item.ItemId.Hammer}
+        };
+        Items.Add(new Item(Item.ItemId.BronzeShell, new CraftRecipe(BronzeShellRecipe, 1)));
+        //LeadIngot
+        var LeadIngotRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.LeadOre}
+        };
+        Items.Add(new Item(Item.ItemId.LeadIngot, new CraftRecipe(LeadIngotRecipe, 4)));
+        //LeadDust
+        var LeadDustRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.LeadIngot}
+        };
+        Items.Add(new Item(Item.ItemId.LeadDust, new CraftRecipe(LeadDustRecipe, 4)));
+        //SulfurDust
+        var SulfurDustRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.Gunpowder }
+        };
+        Items.Add(new Item(Item.ItemId.SulfurDust, new CraftRecipe(SulfurDustRecipe, 1)));
+        //ClayDust
+        var ClayDustRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.ClayBlock }
+        };
+        Items.Add(new Item(Item.ItemId.ClayDust, new CraftRecipe(ClayDustRecipe, 4)));
+        //Silica
+        var SilicaRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.ClayDust}
+        };
+        Items.Add(new Item(Item.ItemId.Silica, new CraftRecipe(SilicaRecipe, 1)));
+        //CoalDust
+        var CoalDustRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.Coal}
+        };
+        Items.Add(new Item(Item.ItemId.CoalDust, new CraftRecipe(CoalDustRecipe, 4)));
+        //ÑarbonFiber
+        var ÑarbonFiberRecipe = new Item.ItemId[,]
+        {
+             {Item.ItemId.CoalDust, Item.ItemId.CoalDust},
+             {Item.ItemId.CoalDust, Item.ItemId.CoalDust} 
+        };
+        Items.Add(new Item(Item.ItemId.ÑarbonFiber, new CraftRecipe(ÑarbonFiberRecipe, 1))); 
+        //ÑarbonFiberFabric
+        var ÑarbonFiberFabricRecipe = new Item.ItemId[,]
+        {
+             {Item.ItemId.ÑarbonFiber, Item.ItemId.ÑarbonFiber} 
+        };
+        Items.Add(new Item(Item.ItemId.ÑarbonFiberFabric, new CraftRecipe(ÑarbonFiberFabricRecipe, 1)));
+        //CarbonFiberPlastic
+        var CarbonFiberPlasticRecipe = new Item.ItemId[,]
+        {
+             {Item.ItemId.ÑarbonFiberFabric, Item.ItemId.ÑarbonFiberFabric}
+        };
+        Items.Add(new Item(Item.ItemId.CarbonFiberPlastic, new CraftRecipe(CarbonFiberPlasticRecipe, 1)));
+        //DiamondDust
+        var DiamondDustRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.Diamond}
+        };
+        Items.Add(new Item(Item.ItemId.DiamondDust, new CraftRecipe(DiamondDustRecipe, 4)));
+        //Iridium
+        Items.Add(new Item(Item.ItemId.Iridium));
+        //LapisLazuli
+        var LapisLazuliRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.LapisLazuliOre}
+        };
+        Items.Add(new Item(Item.ItemId.LapisLazuli, new CraftRecipe(LapisLazuliRecipe, 4)));
+        //LapisLazuliDust
+        var LapisLazuliDustRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.LapisLazuli}
+        };
+        Items.Add(new Item(Item.ItemId.LapisLazuliDust, new CraftRecipe(LapisLazuliDustRecipe, 4)));
+        //Latex
+        Items.Add(new Item(Item.ItemId.Latex));
+        //Rubber
+        var RubberRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.Latex}
+        };
+        Items.Add(new Item(Item.ItemId.Rubber, new CraftRecipe(RubberRecipe, 4)));
+        //EnergyDust
+        var EnergyDustRecipe = new Item.ItemId[,]
+        {
+             {Item.ItemId.Redstone, Item.ItemId.DiamondDust, Item.ItemId.Redstone},
+            {Item.ItemId.DiamondDust, Item.ItemId.Redstone, Item.ItemId.DiamondDust},
+            {Item.ItemId.Redstone, Item.ItemId.DiamondDust, Item.ItemId.Redstone}
+        };
+        Items.Add(new Item(Item.ItemId.EnergyDust, new CraftRecipe(EnergyDustRecipe, 4)));
+
+
+
+
+
+
+
+
+
         //Iron Nugget 23
         var IronNuggetRecipe = new Item.ItemId[,]
         {

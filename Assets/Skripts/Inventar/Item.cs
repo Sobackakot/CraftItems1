@@ -235,7 +235,10 @@ public class Item
         ReactorChamber = 214,
         ImprovedMachineBody =215,
         HardenedIronBar =216,
-        SilverOre =217
+        SilverOre =217,
+        GlowstoneDust = 218,
+        LapisLazuli = 219,
+        CarbonFiberPlastic = 220
     }
     public string GetNameItemId()
     {     
@@ -457,6 +460,9 @@ public class Item
             case ItemId.ImprovedMachineBody: return "Improved Machine Body";
             case ItemId.HardenedIronBar: return "Hardened Iron Bar";
             case ItemId.SilverOre: return "Silver Ore";
+            case ItemId.GlowstoneDust: return " Glowstone Dust";
+            case ItemId.LapisLazuli: return "Lapis Lazuli";
+            case ItemId.CarbonFiberPlastic: return "Carbon Fiber Plastic";
             default:
                 return "Unknown Item";  
         }
@@ -685,6 +691,9 @@ public class Item
             case ItemId.ImprovedMachineBody: return ItemsSprite.Instance.ImprovedMachineBodySprite;
             case ItemId.HardenedIronBar: return ItemsSprite.Instance.HardenedIronBarSprite;
             case ItemId.SilverOre: return ItemsSprite.Instance.SilverOreSprite;
+            case ItemId.GlowstoneDust: return ItemsSprite.Instance.GlowstoneDustSprite;
+            case ItemId.LapisLazuli: return ItemsSprite.Instance.LapisLazuliSprite;
+            case ItemId.CarbonFiberPlastic: return ItemsSprite.Instance.CarbonFiberPlasticSprite;
         }
     }
 }
