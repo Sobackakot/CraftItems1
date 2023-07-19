@@ -85,7 +85,7 @@ public class CraftResultSlot : Slot
         ResetItem();
         inventoryWindow.craftController.CraftItem();
         inventoryWindow.RefreshCurrentItemText();
-        //challenge.ShowNextChalleng();
+        challenge.ShowNextChalleng();
     }
     private void GetAmountHasItem() //RightMouseClick ,LeftMouseClick
     {
