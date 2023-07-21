@@ -235,7 +235,8 @@ public class Item
         HardenedIronBar =216,
         SilverOre =217,
         GlowstoneDust = 218,
-        LapisLazuli = 219, 
+        LapisLazuli = 219,
+        Accelerator = 220
     }
     public string GetNameItemId()
     {     
@@ -458,6 +459,7 @@ public class Item
             case ItemId.GlowstoneDust: return " Glowstone Dust";
             case ItemId.LapisLazuli: return "Lapis Lazuli";
             case ItemId.CarbonFiberPlastic: return "Carbon Fiber Plastic";
+            case ItemId.Accelerator: return "Accelerator";
             default:
                 return "Unknown Item";  
         }
@@ -687,6 +689,7 @@ public class Item
             case ItemId.GlowstoneDust: return ItemsSprite.Instance.GlowstoneDustSprite;
             case ItemId.LapisLazuli: return ItemsSprite.Instance.LapisLazuliSprite;
             case ItemId.CarbonFiberPlastic: return ItemsSprite.Instance.CarbonFiberPlasticSprite;
+            case ItemId.Accelerator: return ItemsSprite.Instance.AcceleratorSprite;
         }
     }
 }

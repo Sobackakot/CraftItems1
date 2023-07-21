@@ -1,5 +1,6 @@
 
-using System.Collections.Generic; 
+using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine; 
 
 public class ItemsManager : MonoBehaviour
@@ -614,13 +615,145 @@ public class ItemsManager : MonoBehaviour
         //AzuretronCrystal
         var AzuretronCrystalRecipe = new Item.ItemId[,]
         {
-            {Item.ItemId.Redstone, Item.ItemId.GlowstoneDust, Item.ItemId.Redstone},
-            {Item.ItemId.LapisLazuli, Item.ItemId.WiringDiagram, Item.ItemId.LapisLazuli},
-            {Item.ItemId.Redstone, Item.ItemId.GlowstoneDust, Item.ItemId.Redstone}
+            {Item.ItemId.LapisLazuliDust, Item.ItemId.AdvancedWiringDiagram, Item.ItemId.LapisLazuliDust},
+            {Item.ItemId.LapisLazuliDust, Item.ItemId.EnergyCrystal, Item.ItemId.LapisLazuliDust},
+            {Item.ItemId.LapisLazuliDust, Item.ItemId.AdvancedWiringDiagram, Item.ItemId.LapisLazuliDust}
         };
         Items.Add(new Item(Item.ItemId.AzuretronCrystal, new CraftRecipe(AzuretronCrystalRecipe, 1)));
-
-
+        //CoolingRod
+        var CoolingRodRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.None, Item.ItemId.TinPlate, Item.ItemId.None},
+            {Item.ItemId.TinPlate, Item.ItemId.RefrigerantCapsule, Item.ItemId.TinPlate},
+            {Item.ItemId.None, Item.ItemId.TinPlate, Item.ItemId.None}
+        };
+        Items.Add(new Item(Item.ItemId.CoolingRod, new CraftRecipe(CoolingRodRecipe, 1)));
+        //CoolingRods
+        var CoolingRodsRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.TinPlate, Item.ItemId.TinPlate, Item.ItemId.TinPlate},
+            {Item.ItemId.CoolingRod, Item.ItemId.CoolingRod, Item.ItemId.CoolingRod},
+            {Item.ItemId.TinPlate, Item.ItemId.TinPlate, Item.ItemId.TinPlate}
+        };
+        Items.Add(new Item(Item.ItemId.CoolingRods, new CraftRecipe(CoolingRodsRecipe, 1)));
+        //HeatExchanger
+        var HeatExchangerRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.CopperPlate, Item.ItemId.WiringDiagram, Item.ItemId.CopperPlate},
+            {Item.ItemId.TinPlate, Item.ItemId.CopperPlate, Item.ItemId.TinPlate},
+            {Item.ItemId.CopperPlate, Item.ItemId.TinPlate, Item.ItemId.CopperPlate}
+        };
+        Items.Add(new Item(Item.ItemId.HeatExchanger, new CraftRecipe(HeatExchangerRecipe, 1)));
+        //ImprovedHeatExchanger
+        var ImprovedHeatExchangerRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.LapisLazuliPlate, Item.ItemId.WiringDiagram, Item.ItemId.LapisLazuliPlate},
+            {Item.ItemId.HeatExchanger, Item.ItemId.CopperPlate, Item.ItemId.HeatExchanger},
+            {Item.ItemId.LapisLazuliPlate, Item.ItemId.WiringDiagram, Item.ItemId.LapisLazuliPlate}
+        };
+        Items.Add(new Item(Item.ItemId.ImprovedHeatExchanger, new CraftRecipe(ImprovedHeatExchangerRecipe, 1)));
+        //CoolingCore
+        var CoolingCoreRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.CoolingRods, Item.ItemId.ImprovedHeatExchanger, Item.ItemId.CoolingRods},
+            {Item.ItemId.HeatIntensiveReactorPlate, Item.ItemId.ReinforcedIridiumPlate, Item.ItemId.HeatIntensiveReactorPlate},
+            {Item.ItemId.CoolingRods, Item.ItemId.ImprovedHeatExchanger, Item.ItemId.CoolingRods}
+        };
+        Items.Add(new Item(Item.ItemId.CoolingCore, new CraftRecipe(CoolingCoreRecipe, 1)));
+        //DoubleCoolingRods
+        var DoubleCoolingRodsRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.TinPlate, Item.ItemId.CoolingRods, Item.ItemId.TinPlate},
+            {Item.ItemId.TinPlate, Item.ItemId.IronPlate, Item.ItemId.TinPlate},
+            {Item.ItemId.TinPlate, Item.ItemId.CoolingRods, Item.ItemId.TinPlate}
+        };
+        Items.Add(new Item(Item.ItemId.DoubleCoolingRods, new CraftRecipe(DoubleCoolingRodsRecipe, 1)));
+        //ElectricMotor
+        var ElectricMotorRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.None, Item.ItemId.TinShell, Item.ItemId.None},
+            {Item.ItemId.Coil, Item.ItemId.IronIngot, Item.ItemId.Coil},
+            {Item.ItemId.None, Item.ItemId.TinShell, Item.ItemId.None}
+        };
+        Items.Add(new Item(Item.ItemId.ElectricMotor, new CraftRecipe(ElectricMotorRecipe, 1)));
+        //FrequencyBinder
+        var FrequencyBinderRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.WiringDiagram, Item.ItemId.CopperWireIsolated}
+        };
+        Items.Add(new Item(Item.ItemId.FrequencyBinder, new CraftRecipe(FrequencyBinderRecipe, 1)));
+        //HeatSink
+        var HeatSinkRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.IronBars, Item.ItemId.IronPlate, Item.ItemId.IronBars},
+            {Item.ItemId.IronPlate, Item.ItemId.ElectricMotor, Item.ItemId.IronPlate},
+            {Item.ItemId.IronBars, Item.ItemId.IronPlate, Item.ItemId.IronBars}
+        };
+        Items.Add(new Item(Item.ItemId.HeatSink, new CraftRecipe(HeatSinkRecipe, 1)));
+        //ImprovedHeatDissipation
+        var ImprovedHeatDissipationRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.Diamond, Item.ItemId.HeatSink, Item.ItemId.Diamond},
+            {Item.ItemId.IronBars, Item.ItemId.ReactorShell, Item.ItemId.IronBars},
+            {Item.ItemId.Diamond, Item.ItemId.HeatSink, Item.ItemId.Diamond}
+        };
+        Items.Add(new Item(Item.ItemId.ImprovedHeatDissipation, new CraftRecipe(ImprovedHeatDissipationRecipe, 1)));
+        //MainMachineBody
+        var MainMachineBodyRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.IronPlate, Item.ItemId.IronPlate, Item.ItemId.IronPlate},
+            {Item.ItemId.IronPlate, Item.ItemId.None, Item.ItemId.IronPlate},
+            {Item.ItemId.IronPlate, Item.ItemId.IronPlate, Item.ItemId.IronPlate}
+        };
+        Items.Add(new Item(Item.ItemId.MainMachineBody, new CraftRecipe(MainMachineBodyRecipe, 1)));
+        //ImprovedMachineBody
+        var ImprovedMachineBodyRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.HardenedIronPlate, Item.ItemId.CarbonFiberPlastic, Item.ItemId.HardenedIronPlate},
+            {Item.ItemId.Composite, Item.ItemId.MainMachineBody, Item.ItemId.Composite},
+            {Item.ItemId.HardenedIronPlate, Item.ItemId.CarbonFiberPlastic, Item.ItemId.HardenedIronPlate}
+        };
+        Items.Add(new Item(Item.ItemId.ImprovedMachineBody, new CraftRecipe(ImprovedMachineBodyRecipe, 1)));
+        //ThickenedNeutronReflector
+        var ThickenedNeutronReflectorRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.CopperPlate, Item.ItemId.NeutronReflector, Item.ItemId.CopperPlate},
+            {Item.ItemId.NeutronReflector, Item.ItemId.CopperPlate, Item.ItemId.NeutronReflector},
+            {Item.ItemId.CopperPlate, Item.ItemId.NeutronReflector, Item.ItemId.CopperPlate}
+        };
+        Items.Add(new Item(Item.ItemId.ThickenedNeutronReflector, new CraftRecipe(ThickenedNeutronReflectorRecipe, 1)));
+        //TeslaCoil
+        var TeslaCoilRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.Redstone, Item.ItemId.Redstone, Item.ItemId.Redstone},
+            {Item.ItemId.Redstone, Item.ItemId.MediumVoltageTransformer, Item.ItemId.Redstone},
+            {Item.ItemId.IronShell, Item.ItemId.WiringDiagram, Item.ItemId.IronShell}
+        };
+        Items.Add(new Item(Item.ItemId.TeslaCoil, new CraftRecipe(TeslaCoilRecipe, 1)));
+        //EngineBooster
+        var EngineBoosterRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.GlowstoneDust, Item.ItemId.Composite, Item.ItemId.GlowstoneDust},
+            {Item.ItemId.AdvancedWiringDiagram, Item.ItemId.Accelerator, Item.ItemId.AdvancedWiringDiagram},
+            {Item.ItemId.Composite, Item.ItemId.WiringDiagram, Item.ItemId.Composite}
+        };
+        Items.Add(new Item(Item.ItemId.EngineBooster, new CraftRecipe(EngineBoosterRecipe, 1)));
+        //Superconductor
+        var SuperconductorRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.SuperConductorInsulation, Item.ItemId.SuperConductorInsulation, Item.ItemId.SuperConductorInsulation},
+            {Item.ItemId.FiberglassWire, Item.ItemId.GoldIngot, Item.ItemId.FiberglassWire},
+            {Item.ItemId.SuperConductorInsulation, Item.ItemId.SuperConductorInsulation, Item.ItemId.SuperConductorInsulation}
+        };
+        Items.Add(new Item(Item.ItemId.Superconductor, new CraftRecipe(SuperconductorRecipe, 1)));
+        //GravityEngine
+        var GravityEngineRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.TeslaCoil, Item.ItemId.Superconductor, Item.ItemId.TeslaCoil},
+            {Item.ItemId.CoolingCore, Item.ItemId.HighVoltageTransformer, Item.ItemId.CoolingCore},
+            {Item.ItemId.TeslaCoil, Item.ItemId.Superconductor, Item.ItemId.TeslaCoil}
+        };
+        Items.Add(new Item(Item.ItemId.GravityEngine, new CraftRecipe(GravityEngineRecipe, 1)));
 
 
 

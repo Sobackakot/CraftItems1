@@ -168,6 +168,7 @@ public class ItemsSprite : MonoBehaviour
     public Sprite CoolingRodSprite;
     public Sprite CoolingRodsSprite;
     public Sprite DoubleCoolingRodsSprite;
+    public Sprite AcceleratorSprite;
     public Sprite ElectricLampSprite;
     public Sprite ElectricMotorSprite;
     public Sprite EnergyCrystalSprite;

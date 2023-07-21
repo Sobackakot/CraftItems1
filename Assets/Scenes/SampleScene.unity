@@ -15355,12 +15355,12 @@ MonoBehaviour:
   AdvancedBatterySprite: {fileID: 21300000, guid: 141165984a077a246b23616b4daf0dd4, type: 3}
   AdvancedWiringDiagramSprite: {fileID: 21300000, guid: cd784955eb0d700469882d9592fd9bf4, type: 3}
   AzuretronCrystalSprite: {fileID: 21300000, guid: f057dd48a2787f440916a46abd9c9ace, type: 3}
-  BatterySprite: {fileID: 21300000, guid: daba2449fd15d0a4fb3b663ccfebe80c, type: 3}
   CoilSprite: {fileID: 21300000, guid: 225cc45e2e54a1748985663bcca2e288, type: 3}
   CoolingCoreSprite: {fileID: 21300000, guid: 548d8b143df3a1f44bc93917ba6b9511, type: 3}
   CoolingRodSprite: {fileID: 21300000, guid: bb0c09c4d61096a4dbce8095ea3795b1, type: 3}
   CoolingRodsSprite: {fileID: 21300000, guid: 1bc85ba5d609f0c498bbee927d01fde1, type: 3}
   DoubleCoolingRodsSprite: {fileID: 21300000, guid: 8626013f8cb5b9c42923cec13e0e2657, type: 3}
+  AcceleratorSprite: {fileID: 21300000, guid: b8cbe0d3929aaf342b5ea933cae0e611, type: 3}
   ElectricLampSprite: {fileID: 21300000, guid: 78b12a7292019714e9f7324d314df091, type: 3}
   ElectricMotorSprite: {fileID: 21300000, guid: 56415ae8a682bdd43b35049c8fa594d6, type: 3}
   EnergyCrystalSprite: {fileID: 21300000, guid: c2d4d5866feb97f479003a532e045bfa, type: 3}
