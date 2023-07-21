@@ -1,5 +1,4 @@
-using System.Numerics;
-using System.Security.Cryptography;
+ 
 using UnityEngine; 
 
 public class Item 
@@ -160,7 +159,7 @@ public class Item
         AdvancedBattery = 140,
         AdvancedWiringDiagram = 141,
         AzuretronCrystal = 142,
-        Battery = 143,
+        CarbonFiberPlastic  = 143,
         Coil = 144,
         CoolingCore = 145,
         CoolingRod = 146,
@@ -236,8 +235,7 @@ public class Item
         HardenedIronBar =216,
         SilverOre =217,
         GlowstoneDust = 218,
-        LapisLazuli = 219,
-        CarbonFiberPlastic = 220
+        LapisLazuli = 219, 
     }
     public string GetNameItemId()
     {     
@@ -384,8 +382,7 @@ public class Item
             case ItemId.CopperWire: return "Copper Wire";
             case ItemId.AdvancedBattery: return "Advanced Battery";
             case ItemId.AdvancedWiringDiagram: return "Advanced Wiring Diagram";
-            case ItemId.AzuretronCrystal: return "Azuretron Crystal";
-            case ItemId.Battery: return "Battery";
+            case ItemId.AzuretronCrystal: return "Azuretron Crystal"; 
             case ItemId.Coil: return "Coil";
             case ItemId.CoolingCore: return "Cooling Core";
             case ItemId.CoolingRod: return "Cooling Rod";
@@ -614,8 +611,7 @@ public class Item
             case ItemId.CopperWire: return ItemsSprite.Instance.CopperWireSprite;
             case ItemId.AdvancedBattery: return ItemsSprite.Instance.AdvancedBatterySprite;
             case ItemId.AdvancedWiringDiagram: return ItemsSprite.Instance.AdvancedWiringDiagramSprite;
-            case ItemId.AzuretronCrystal: return ItemsSprite.Instance.AzuretronCrystalSprite;
-            case ItemId.Battery: return ItemsSprite.Instance.BatterySprite;
+            case ItemId.AzuretronCrystal: return ItemsSprite.Instance.AzuretronCrystalSprite; 
             case ItemId.Coil: return ItemsSprite.Instance.CoilSprite;
             case ItemId.CoolingCore: return ItemsSprite.Instance.CoolingCoreSprite;
             case ItemId.CoolingRod: return ItemsSprite.Instance.CoolingRodSprite;

@@ -1,6 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+
+using System.Collections.Generic; 
 using UnityEngine; 
 
 public class ItemsManager : MonoBehaviour
@@ -494,6 +493,142 @@ public class ItemsManager : MonoBehaviour
             {Item.ItemId.BronzeShell, Item.ItemId.LeadDust, Item.ItemId.BronzeShell}
         };
         Items.Add(new Item(Item.ItemId.AdvancedBattery, new CraftRecipe(AdvancedBatteryRecipe, 1)));
+        //NotChargedBattery
+        var NotChargedBatteryRecipe = new Item.ItemId[,]
+        {
+             {Item.ItemId.None, Item.ItemId.TinWireIsolated, Item.ItemId.None},
+            {Item.ItemId.TinShell, Item.ItemId.Redstone, Item.ItemId.TinShell},
+            {Item.ItemId.TinShell, Item.ItemId.Redstone, Item.ItemId.TinShell}
+        };
+        Items.Add(new Item(Item.ItemId.NotChargedBattery, new CraftRecipe(NotChargedBatteryRecipe, 1)));
+        //Coil
+        var CoilRecipe = new Item.ItemId[,]
+        {
+             {Item.ItemId.CopperWire, Item.ItemId.CopperWire, Item.ItemId.CopperWire},
+            {Item.ItemId.CopperWire, Item.ItemId.IronIngot, Item.ItemId.CopperWire},
+            {Item.ItemId.CopperWire, Item.ItemId.CopperWire, Item.ItemId.CopperWire}
+        };
+        Items.Add(new Item(Item.ItemId.Coil, new CraftRecipe(CoilRecipe, 1)));
+        //ElectricLamp
+        var ElectricLampRecipe = new Item.ItemId[,]
+        {
+             {Item.ItemId.IronShell, Item.ItemId.CopperWireIsolated, Item.ItemId.IronShell},
+            {Item.ItemId.Glass, Item.ItemId.TinWire, Item.ItemId.Glass},
+            {Item.ItemId.Glass, Item.ItemId.Glass, Item.ItemId.Glass}
+        };
+        Items.Add(new Item(Item.ItemId.ElectricLamp, new CraftRecipe(ElectricLampRecipe, 1)));
+        //EnergyCrystal
+        var EnergyCrystalRecipe = new Item.ItemId[,]
+        {
+             {Item.ItemId.EnergyDust, Item.ItemId.EnergyDust, Item.ItemId.EnergyDust},
+            {Item.ItemId.EnergyDust, Item.ItemId.EnergyDust, Item.ItemId.EnergyDust},
+            {Item.ItemId.EnergyDust, Item.ItemId.EnergyDust, Item.ItemId.EnergyDust}
+        };
+        Items.Add(new Item(Item.ItemId.EnergyCrystal, new CraftRecipe(EnergyCrystalRecipe, 1)));
+        //FortifiedStone
+        var FortifiedStoneRecipe = new Item.ItemId[,]
+        {
+             {Item.ItemId.SmoothStone, Item.ItemId.SmoothStone, Item.ItemId.SmoothStone},
+            {Item.ItemId.SmoothStone, Item.ItemId.Composite, Item.ItemId.SmoothStone},
+            {Item.ItemId.SmoothStone, Item.ItemId.SmoothStone, Item.ItemId.SmoothStone}
+        };
+        Items.Add(new Item(Item.ItemId.FortifiedStone, new CraftRecipe(FortifiedStoneRecipe, 1)));
+        //Heat-IntensiveReactorPlate
+        var HeatIntensiveReactorPlateRecipe = new Item.ItemId[,]
+        {
+             {Item.ItemId.CopperPlate, Item.ItemId.CopperPlate, Item.ItemId.CopperPlate},
+            {Item.ItemId.CopperPlate, Item.ItemId.Composite, Item.ItemId.CopperPlate},
+            {Item.ItemId.CopperPlate, Item.ItemId.CopperPlate, Item.ItemId.CopperPlate}
+        };
+        Items.Add(new Item(Item.ItemId.HeatIntensiveReactorPlate, new CraftRecipe(HeatIntensiveReactorPlateRecipe, 1)));
+        //NeutronReflector
+        var NeutronReflectorRecipe = new Item.ItemId[,]
+        {
+             {Item.ItemId.TinDust, Item.ItemId.CoalDust, Item.ItemId.TinDust},
+            {Item.ItemId.CoalDust, Item.ItemId.CopperPlate, Item.ItemId.CoalDust},
+            {Item.ItemId.TinDust, Item.ItemId.CoalDust, Item.ItemId.TinDust}
+        };
+        Items.Add(new Item(Item.ItemId.NeutronReflector, new CraftRecipe(NeutronReflectorRecipe, 1)));
+        //RefrigerantCapsule
+        var RefrigerantCapsuleRecipe = new Item.ItemId[,]
+        {
+             {Item.ItemId.None, Item.ItemId.TinPlate, Item.ItemId.None},
+            {Item.ItemId.TinPlate, Item.ItemId.LapisLazuliDust, Item.ItemId.TinPlate},
+            {Item.ItemId.None, Item.ItemId.TinPlate, Item.ItemId.None}
+        };
+        Items.Add(new Item(Item.ItemId.RefrigerantCapsule, new CraftRecipe(RefrigerantCapsuleRecipe, 1)));
+        //ReinforcedGlass
+        var ReinforcedGlassRecipe = new Item.ItemId[,]
+        {
+             {Item.ItemId.Glass, Item.ItemId.Composite, Item.ItemId.Glass},
+            {Item.ItemId.Glass, Item.ItemId.Glass, Item.ItemId.Glass},
+            {Item.ItemId.Glass, Item.ItemId.Composite, Item.ItemId.Glass}
+        };
+        Items.Add(new Item(Item.ItemId.ReinforcedGlass, new CraftRecipe(ReinforcedGlassRecipe, 1)));
+        //SuperConductorInsulation
+        var SuperConductorInsulationRecipe = new Item.ItemId[,]
+        {
+             {Item.ItemId.Composite, Item.ItemId.ReinforcedIridiumPlate, Item.ItemId.Composite},
+            {Item.ItemId.CarbonFiberPlastic, Item.ItemId.CarbonFiberPlastic, Item.ItemId.CarbonFiberPlastic},
+            {Item.ItemId.Composite, Item.ItemId.ReinforcedIridiumPlate, Item.ItemId.Composite}
+        };
+        Items.Add(new Item(Item.ItemId.SuperConductorInsulation, new CraftRecipe(SuperConductorInsulationRecipe, 1)));
+        //UnfiredMemoryCrystal
+        var UnfiredMemoryCrystalRecipe = new Item.ItemId[,]
+        {
+             {Item.ItemId.Silica, Item.ItemId.ObsidianDust, Item.ItemId.Silica},
+            {Item.ItemId.ObsidianDust, Item.ItemId.Silica, Item.ItemId.ObsidianDust},
+            {Item.ItemId.Silica, Item.ItemId.ObsidianDust, Item.ItemId.Silica}
+        };
+        Items.Add(new Item(Item.ItemId.UnfiredMemoryCrystal, new CraftRecipe(UnfiredMemoryCrystalRecipe, 1)));
+        //MemoryCrystal
+        var MemoryCrystalRecipe = new Item.ItemId[,]
+        { 
+            {Item.ItemId.UnfiredMemoryCrystal}
+        };
+        Items.Add(new Item(Item.ItemId.MemoryCrystal, new CraftRecipe(MemoryCrystalRecipe, 1)));
+        //UniversalLiquidCapsule
+        var UniversalLiquidCapsuleRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.None, Item.ItemId.TinShell, Item.ItemId.None},
+            {Item.ItemId.TinShell, Item.ItemId.GlassPanel, Item.ItemId.TinShell},
+            {Item.ItemId.None, Item.ItemId.TinShell, Item.ItemId.None}
+        };
+        Items.Add(new Item(Item.ItemId.UniversalLiquidCapsule, new CraftRecipe(UniversalLiquidCapsuleRecipe, 1)));
+        //WiringDiagram
+        var WiringDiagramRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.CopperWireIsolated, Item.ItemId.CopperWireIsolated, Item.ItemId.CopperWireIsolated},
+            {Item.ItemId.Redstone, Item.ItemId.IronPlate, Item.ItemId.Redstone},
+            {Item.ItemId.CopperWireIsolated, Item.ItemId.CopperWireIsolated, Item.ItemId.CopperWireIsolated}
+        };
+        Items.Add(new Item(Item.ItemId.WiringDiagram, new CraftRecipe(WiringDiagramRecipe, 1)));
+        //AdvancedWiringDiagram
+        var AdvancedWiringDiagramRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.Redstone, Item.ItemId.GlowstoneDust, Item.ItemId.Redstone},
+            {Item.ItemId.LapisLazuli, Item.ItemId.WiringDiagram, Item.ItemId.LapisLazuli},
+            {Item.ItemId.Redstone, Item.ItemId.GlowstoneDust, Item.ItemId.Redstone}
+        };
+        Items.Add(new Item(Item.ItemId.AdvancedWiringDiagram, new CraftRecipe(AdvancedWiringDiagramRecipe, 1)));
+        //AzuretronCrystal
+        var AzuretronCrystalRecipe = new Item.ItemId[,]
+        {
+            {Item.ItemId.Redstone, Item.ItemId.GlowstoneDust, Item.ItemId.Redstone},
+            {Item.ItemId.LapisLazuli, Item.ItemId.WiringDiagram, Item.ItemId.LapisLazuli},
+            {Item.ItemId.Redstone, Item.ItemId.GlowstoneDust, Item.ItemId.Redstone}
+        };
+        Items.Add(new Item(Item.ItemId.AzuretronCrystal, new CraftRecipe(AzuretronCrystalRecipe, 1)));
+
+
+
+
+
+
+
+
+
+
 
 
 

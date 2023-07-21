@@ -1,7 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+ 
 using UnityEngine;
 
 public class ItemsSprite : MonoBehaviour
@@ -166,7 +163,6 @@ public class ItemsSprite : MonoBehaviour
     public Sprite AdvancedBatterySprite;
     public Sprite AdvancedWiringDiagramSprite;
     public Sprite AzuretronCrystalSprite;
-    public Sprite BatterySprite;
     public Sprite CoilSprite;
     public Sprite CoolingCoreSprite;
     public Sprite CoolingRodSprite;
