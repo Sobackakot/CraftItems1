@@ -771,7 +771,6 @@ public class ItemsManager : MonoBehaviour
         //Half Block 24
         var HalfBlockRecipe = new Item.ItemId[,]
         {
-
             {Item.ItemId.Boards, Item.ItemId.Boards, Item.ItemId.Boards }
         };
         Items.Add(new Item(Item.ItemId.HalfBlock, new CraftRecipe(HalfBlockRecipe, 6)));
