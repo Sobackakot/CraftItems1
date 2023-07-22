@@ -1,4 +1,4 @@
-using System;
+
 using System.Collections;
 using System.Linq;
 using UnityEngine; 
@@ -23,7 +23,7 @@ public class CraftController : MonoBehaviour
     private int HorizontalIsNull { get; set; }
     private int VerticalIsNull { get; set; }
 
-    public bool HasResultItem => craftResultSlot.ItemInSlot != null;
+    public bool HasResultItem => craftResultSlot.ItemInSlot != null; 
 
     private string[] resourcesItemName1 = new string[17] //List of SECONDARY CRAFTS
     {
@@ -36,7 +36,30 @@ public class CraftController : MonoBehaviour
         "Gold Ore","Gold Ingot","Redstone Ore","Redstone","Iron Ingot","Flint","Feather","String","Trip Wire Source","Torch","Iron Nugget",
         "Iron Block", "Half Block","Pressure Plate","Glass","Redstone Torch","Compass","Wooden Chest", "TNT", "Stove","Hopper", "Trolley","Bow","Piston"
     };
-
+    private string[] resourcesItemName3 = new string[219]
+    {
+        "Wood Block", "Boards","Stick","Coal Ore","Coal","Diamond Ore","Diamond",
+        "Gold Ore","Gold Ingot","Redstone Ore","Redstone","Iron Ingot","Flint","Feather","String","Trip Wire Source","Torch","Iron Nugget",
+        "Iron Block", "Half Block","Pressure Plate","Glass","Redstone Torch","Compass","Wooden Chest", "TNT", "Stove","Hopper", "Trolley","Bow","Piston",
+        "Arrow", "Boards", "Bow", "Bronze Ingot", "Bronze Plate", "Bronze Shell", "Carbon Fiber", "Carbon Fiber Fabric", "Carbon Fiber Plastic", "Cauldron", 
+        "Clay Block", "Clay Dust", "Coal", "Coal Dust", "Coal Ore", "Coil", "Composite", "Composite Ingot", "Comparator", "Compass", "Cooling Core", "Cooling Rod",
+        "Cooling Rods", "Copper Ingot", "Copper Ore", "Copper Plate", "Copper Shell", "Copper Wire", "Copper Wire Isolated", "Crossbow", "Daylight Sensor", "Diamond", 
+        "Diamond Axe", "Diamond Boots", "Diamond Chestplate", "Diamond Helmet", "Diamond Hoe", "Diamond Leggings", "Diamond Ore", "Diamond Pickaxe", "Diamond Shovel", 
+        "Diamond Sword", "DiamondDust", "Distributor", "Double Cooling Rods", "Double Insulated Gold Wire", "Ejector", "Electric Furnace", "Electric Jetpack", "Electric Lamp", 
+        "Electric Motor", "Elevator", "EnderPearl", "Engine Booster", "Energy Crystal", "Energy Dust", "Energy Pack", "Energy Storage", "Faucet", "Feather", "Fiberglass Wire", 
+        "Fishing Rod", "Flint", "Flint and Steel", "Fortified Stone", "Frequency Binder", "Generator", "Glass", "Glass Panel", "Glowing Stone", "Glowstone Dust", "Gold Ingot", 
+        "Gold Plate", "Golden Shell", "Golden Wire Isolated", "Gravity Engine", "Gunpowder", "Hammer", "Hardened Iron Bar", "Hardened Iron Plate", "Heat Exchanger", "Heat Sink", 
+        "High Voltage Double Insulated Wire", "High Voltage Transformer", "High Voltage Wire", "High Voltage Wire Insulated", "Hopper", "Impr-oved Heat Dissipation", "Improved Heat Exchanger", 
+        "Improved Lappack", "Improved Machine Body", "Iridium", "Iron Bars", "Iron Block", "Iron Bucket", "Iron Furnace", "Iron Ingot", "Iron Ore", "Iron Plate", "Iron Shell", "Iron Turning Mold", 
+        "Lantern", "Lapis Lazuli", "Lapis Lazuli Dust", "Lapis Lazuli Ore", "Latex", "Lead Ingot", "Lead Ore", "Lead Plate", "Lead Sheath", "LeadDust", "Machine", "Main Machine Body", "Melting Furnace", 
+        "Memory Crystal", "Medium Voltage Transformer", "Mining Laser", "Multifunctional Energy Saver", "Neutron Reflector", "Night-Vision Device", "Not Charged Battery", "Observer", "Obsidian", "Obsidian Dust", 
+        "Piston", "Press-ure Plate", "Quantum Vest", "Rail", "Rail Detector Powered", "Rail Golden Powered", "Recovery Compass", "Refrigerant Capsule", "Reinforced Glass", "Reinforced Iridium Plate", 
+        "Reinforced Machine Body", "Reinforced Reactor Plate", "Reinforced Stone", "ReinforcedStone", "Rubber", "Sand", "Shears", "Shield", "Silica", "Silver Dust", "Silver Ingot", "Silver Ore", "Silicon", 
+        "Silicon Boule", "Silicon Dioxide", "Silicon Ingot", "Slime Ball", "Smokehouse", "Smooth Stone", "Sticky Piston", "Stick", "Stove", "Super Conductor Insulation", "Superconductor", "Sulfur Dust", 
+        "Super Conductor", "Teleport", "Tesla Coil", "Thick Copper Plate", "Thick Gold Plate", "Thick Lead Plate", "Thickened Neutron Reflector", "Tin Dust", "Tin Ingot", "Tin Ore", "Tin Plate", "Tin Shell", 
+        "Tin Wire", "Tin Wire Isolated", "TNT", "Trolley", "Trolley Chest", "Trolley Hopper", "Trolley Stove", "Trolley TNT", "Trip Wire Source", "Ultimate Lappack", "Unfired Memory Crystal", 
+        "Universal Liquid Capsule", "Wiring Diagram", "Wood Block", "Wooden Chest", "Workbench","Nanofiber Vest"
+    };
     public void Awake()
     {
         m_AudioSource = GetComponent<AudioSource>(); 
@@ -189,9 +212,8 @@ public class CraftController : MonoBehaviour
     //It also plays the craft slot audio and starts the particle system.
     private void SetSecondaryItemInResultSlot(ItemInSlot NewItemcInResultSlot) //SetNewItemInResultSlot  
     {
-        bool condition = ShowChallenge.InstanceChallenge.Index < 21; 
-        string [] selectedArray = condition ? resourcesItemName1 : resourcesItemName2; 
-
+        bool condition = ShowChallenge.InstanceChallenge.Index < 40;
+        string [] selectedArray = condition ? resourcesItemName1 : (condition ? resourcesItemName2 : resourcesItemName3); 
         for (int i = 0; i < selectedArray.Length; i++)
         {
             string nameItem = selectedArray[i];
