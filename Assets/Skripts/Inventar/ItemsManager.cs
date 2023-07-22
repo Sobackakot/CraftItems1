@@ -1,11 +1,5 @@
 
 using System.Collections.Generic;
-using System.Drawing;
-using System.Numerics;
-using System.Reflection;
-using Unity.VisualScripting;
-using UnityEditor;
-using UnityEditor.SceneManagement;
 using UnityEngine; 
 
 public class ItemsManager : MonoBehaviour
