@@ -201,7 +201,7 @@ public class Item
         NuclearBomb = 182,
         IronFurnace = 183,
         Generator = 184,
-        ElectricOven = 185,
+        ElectricFurnace = 185,
         EnergyStorage = 186,
         MediumVoltageTransformer = 187,
         HighVoltageTransformer = 188,
@@ -416,38 +416,18 @@ public class Item
             case ItemId.MiningLaser: return "Mining Laser";
             case ItemId.IronFurnace: return "Iron Furnace";
             case ItemId.Generator: return "Generator";
-            case ItemId.ElectricOven: return "Electric Oven";
+            case ItemId.ElectricFurnace: return "Electric Furnace";
             case ItemId.EnergyStorage: return "Energy Storage";
             case ItemId.MediumVoltageTransformer: return "Medium Voltage Transformer";
             case ItemId.HighVoltageTransformer: return "High Voltage Transformer";
             case ItemId.MultifunctionalEnergySaver: return "Multifunctional Energy Saver";
-            case ItemId.Teleport: return "Teleport";
-            case ItemId.SolarBattery: return "Solar Battery";
-            case ItemId.Crusher: return "Crusher";
-            case ItemId.Compressor: return "Compressor";
-            case ItemId.Extractor: return "Extractor"; 
-            case ItemId.InductionOven: return "Induction Oven";
-            case ItemId.GeothermalGenerator: return "Geothermal Generator";
-            case ItemId.NuclearReactor: return "Nuclear Reactor";
-            case ItemId.NuclearBomb: return "Nuclear Bomb";
-            case ItemId.MultiFunctionalStorageUnit: return "Multi-Functional Storage Unit";
-            case ItemId.ExtraHighVoltageTransformer: return "Extra High Voltage Transformer";
-            case ItemId.MatterProducer: return "Matter Producer";
-            case ItemId.Replicator: return "Replicator";
-            case ItemId.Scanner: return "Scanner";
-            case ItemId.TemplateGuardian: return "TemplateGuardian";
+            case ItemId.Teleport: return "Teleport"; 
+            case ItemId.NightVisionDevice: return "Night-Vision Device";
             case ItemId.EnergyPack: return "Energy Pack";
             case ItemId.ElectricJetpack: return "Electric Jetpack";
             case ItemId.ImprovedLappack: return "Improved Lappack";
             case ItemId.UltimateLappack: return "Ultimate Lappack";
-            case ItemId.NightVisionDevice: return "Night-Vision Device";
-            case ItemId.NanoHelmet: return "Nano Helmet";
-            case ItemId.NanofiberVest: return "Nanofiber Vest";
-            case ItemId.NanoLeggings: return "Nano Leggings";
-            case ItemId.NanoBoots: return "Nano Boots";
-            case ItemId.ImprovedElectricJetpack: return "Improved Electric Jetpack";
             case ItemId.QuantumVest: return "Quantum Vest";
-            case ItemId.GraviChestPlate: return "Gravi Chest Plate";
             case ItemId.GlowingStone: return "Glowing Stone";
             case ItemId.LapisLazuliOre: return "Lapis Lazuli Ore";
             case ItemId.TeslaCoil: return "Tesla Coil";
@@ -460,6 +440,31 @@ public class Item
             case ItemId.LapisLazuli: return "Lapis Lazuli";
             case ItemId.CarbonFiberPlastic: return "Carbon Fiber Plastic";
             case ItemId.Accelerator: return "Accelerator";
+
+
+
+
+
+            case ItemId.SolarBattery: return "Solar Battery";
+            case ItemId.Crusher: return "Crusher";
+            case ItemId.Compressor: return "Compressor";
+            case ItemId.Extractor: return "Extractor";
+            case ItemId.InductionOven: return "Induction Oven";
+            case ItemId.GeothermalGenerator: return "Geothermal Generator";
+            case ItemId.NuclearReactor: return "Nuclear Reactor";
+            case ItemId.NuclearBomb: return "Nuclear Bomb";
+            case ItemId.MultiFunctionalStorageUnit: return "Multi-Functional Storage Unit";
+            case ItemId.ExtraHighVoltageTransformer: return "Extra High Voltage Transformer";
+            case ItemId.MatterProducer: return "Matter Producer";
+            case ItemId.Replicator: return "Replicator";
+            case ItemId.Scanner: return "Scanner";
+            case ItemId.TemplateGuardian: return "TemplateGuardian";
+            case ItemId.NanoHelmet: return "Nano Helmet";
+            case ItemId.NanofiberVest: return "Nanofiber Vest";
+            case ItemId.NanoLeggings: return "Nano Leggings";
+            case ItemId.NanoBoots: return "Nano Boots";
+            case ItemId.ImprovedElectricJetpack: return "Improved Electric Jetpack";
+            case ItemId.GraviChestPlate: return "Gravi Chest Plate";
             default:
                 return "Unknown Item";  
         }
@@ -646,7 +651,7 @@ public class Item
             case ItemId.MiningLaser: return ItemsSprite.Instance.MiningLaserSprite;
             case ItemId.IronFurnace: return ItemsSprite.Instance.IronFurnaceSprite;
             case ItemId.Generator: return ItemsSprite.Instance.GeneratorSprite;
-            case ItemId.ElectricOven: return ItemsSprite.Instance.ElectricOvenSprite;
+            case ItemId.ElectricFurnace: return ItemsSprite.Instance.ElectricFurnaceSprite;
             case ItemId.EnergyStorage: return ItemsSprite.Instance.EnergyStorageSprite;
             case ItemId.MediumVoltageTransformer: return ItemsSprite.Instance.MediumVoltageTransformerSprite;
             case ItemId.HighVoltageTransformer: return ItemsSprite.Instance.HighVoltageTransformerSprite;

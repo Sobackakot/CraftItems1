@@ -84,11 +84,7 @@ public class ItemsSprite : MonoBehaviour
     public Sprite ComparatorSprite;
     public Sprite RailSprite;
     public Sprite RailGoldenPoweredSprite;
-    public Sprite RailDetectorPoweredSprite;
-    
-
-
-
+    public Sprite RailDetectorPoweredSprite; 
     public Sprite CopperIngotSprite;
     public Sprite TinIngotSprite;
     public Sprite SulfurDustSprite;
@@ -198,7 +194,7 @@ public class ItemsSprite : MonoBehaviour
     public Sprite MiningLaserSprite;
     public Sprite IronFurnaceSprite; 
     public Sprite GeneratorSprite;
-    public Sprite ElectricOvenSprite;
+    public Sprite ElectricFurnaceSprite; 
     public Sprite EnergyStorageSprite;
     public Sprite MediumVoltageTransformerSprite;
     public Sprite HighVoltageTransformerSprite;

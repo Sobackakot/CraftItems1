@@ -5,7 +5,7 @@ public class InventoryUpdater : MonoBehaviour
     [SerializeField] private MaterialSlot[] _slot; 
     [SerializeField] private InventoryController _inventory;
 
-    private int _index = 0;
+    private int _index = 40; // test
 
     private void Start()
     {

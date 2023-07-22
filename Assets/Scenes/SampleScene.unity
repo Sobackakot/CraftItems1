@@ -12098,7 +12098,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3609577720407849064, guid: 779f18ecc22685f44ad9fd29e114ac36, type: 3}
       propertyPath: _slot.Array.data[40]._item.Array.size
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3609577720407849064, guid: 779f18ecc22685f44ad9fd29e114ac36, type: 3}
       propertyPath: _slot.Array.data[41]._item.Array.size
@@ -12619,6 +12619,14 @@ PrefabInstance:
     - target: {fileID: 3609577720407849064, guid: 779f18ecc22685f44ad9fd29e114ac36, type: 3}
       propertyPath: _slot.Array.data[40]._item.Array.data[7]
       value: 85
+      objectReference: {fileID: 0}
+    - target: {fileID: 3609577720407849064, guid: 779f18ecc22685f44ad9fd29e114ac36, type: 3}
+      propertyPath: _slot.Array.data[40]._item.Array.data[8]
+      value: 97
+      objectReference: {fileID: 0}
+    - target: {fileID: 3609577720407849064, guid: 779f18ecc22685f44ad9fd29e114ac36, type: 3}
+      propertyPath: _slot.Array.data[40]._item.Array.data[9]
+      value: 98
       objectReference: {fileID: 0}
     - target: {fileID: 3609577720407849064, guid: 779f18ecc22685f44ad9fd29e114ac36, type: 3}
       propertyPath: _slot.Array.data[41]._item.Array.data[0]
@@ -15390,7 +15398,7 @@ MonoBehaviour:
   MiningLaserSprite: {fileID: 21300000, guid: fe55753c20c69bd478277f230a79b1d4, type: 3}
   IronFurnaceSprite: {fileID: 21300000, guid: 7a32178893d05694ba117f432aacaafe, type: 3}
   GeneratorSprite: {fileID: 21300000, guid: 37a5867f5e18d5e40bb799cf72238472, type: 3}
-  ElectricOvenSprite: {fileID: 21300000, guid: 4446572bf4d4f48439c55f758e6308fa, type: 3}
+  ElectricFurnaceSprite: {fileID: 21300000, guid: 4446572bf4d4f48439c55f758e6308fa, type: 3}
   EnergyStorageSprite: {fileID: 21300000, guid: 37e6f51b8bd8aa14fa756ed6049d81ac, type: 3}
   MediumVoltageTransformerSprite: {fileID: 21300000, guid: 0c993965d444b4c4f8a54e0e272c76e5, type: 3}
   HighVoltageTransformerSprite: {fileID: 21300000, guid: f3d9b8c18a33e4140829ceb13bcef3da, type: 3}
@@ -19511,6 +19519,7 @@ MonoBehaviour:
   particlRezultSlot: {fileID: 1765918579}
   nameItemSpriteChallenge: 
   isNextImageChallenge: 0
+  Index: 40
 --- !u!114 &1965410047 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1154780881009830307, guid: 0cd652d51adcb0344bc5e6af85e36b3f, type: 3}

@@ -4,7 +4,7 @@ using UnityEngine;
 public class StarSlot 
 {
     [SerializeField] private string _name;
-    [SerializeField] private int _level = 10;
+    [SerializeField] private int _level = 20;
     [SerializeField] private Sprite _prefab;
 
     public int Level => _level;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LevelProgress : MonoBehaviour
 {
-    [SerializeField] private int _levelSize = 10;
+    [SerializeField] private int _levelSize = 20;
     [Header("Refarence")]
     [SerializeField] private StarSlot[] _slots;
     [SerializeField] private Transform _holder;
@@ -14,7 +14,7 @@ public class LevelProgress : MonoBehaviour
     [SerializeField] private UnityEvent _onUpdateLvl;
 
     private int _level = 1;
-    private int _countCraft = 0;
+    private int _countCraft = 40; //test
     private Star[] _stars;
 
     private void OnValidate()
