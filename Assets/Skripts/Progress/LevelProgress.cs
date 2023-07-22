@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine.Events;
 using UnityEngine;
 
@@ -17,11 +16,12 @@ public class LevelProgress : MonoBehaviour
     private int _countCraft = 40; //test
     private Star[] _stars;
 
+    public int LevelSize => _levelSize;
+
     private void OnValidate()
     {
         _levelSize = _levelSize > 1 ? _levelSize : 1;
     }
-
 
     private void Awake()
     {
@@ -42,6 +42,32 @@ public class LevelProgress : MonoBehaviour
         _result.OnCraft += UpdateProgress;
     }
 
+    //countCraft
+
+    public string Save()
+    {
+        var progress = new ProgressData();
+        progress.Level = _level;
+        progress.CountCraft = _countCraft;
+        progress.Stars = new int[_levelSize];
+        for (int i = 0; i < _levelSize; i++)
+        {
+            progress.Stars[i] = _stars[i].Level;
+        }
+        return JsonUtility.ToJson(progress);
+    }
+
+    public void Load(ProgressData progress)
+    {
+        _level = progress.Level;
+        _countCraft = progress.CountCraft;
+        for (int i = 0; i < progress.Stars.Length; i++)
+        {
+            if(progress.Stars[i] != 0)
+                AddStar(_stars[i], progress.Stars[i]);
+        }
+    }
+
     public void UpdateProgress()
     {
         if (_countCraft >= _levelSize)
@@ -50,26 +76,25 @@ public class LevelProgress : MonoBehaviour
             _countCraft = 0;
             _onUpdateLvl.Invoke();
         }
-        AddStar(_stars[_countCraft]);
+        AddStar(_stars[_countCraft], _level);
         _countCraft++;
         _invetory.UpdateItem();
     }
 
-    private void AddStar(Star star)
+    private void AddStar(Star star, int level)
     {
-        star.SetStar(GetStar());
+        star.SetStar(level, GetStar(level));
         if (!star.gameObject.activeSelf)
         {
             star.gameObject.SetActive(true);
         }
     }
 
-
-    private Sprite GetStar()
+    private Sprite GetStar(int level)
     {
         foreach (var star in _slots)
         {
-            if (star.Level == _level)
+            if (star.Level == level)
             {
                 return star.Icon;
             }

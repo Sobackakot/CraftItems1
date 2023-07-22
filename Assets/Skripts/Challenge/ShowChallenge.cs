@@ -16,7 +16,9 @@ public class ShowChallenge : MonoBehaviour
     [HideInInspector] public string nameItemSpriteChallenge;
     [HideInInspector] public bool isNextImageChallenge = false;
     private int countClickBackImageChallenge = 0;
-    [HideInInspector] public int Index = 40; // test
+    [HideInInspector] public int Index { get; set; }
+
+    private int _level;
     
     public void Awake()
     {
@@ -25,11 +27,18 @@ public class ShowChallenge : MonoBehaviour
     }
     public void Start()
     {
+        Load(Index);
+    }
+
+    public void Load(int chalange)
+    {
+        Index = chalange;
         currentImageChallenge.sprite = spriteChallenge[Index];
         qurrentText.text = spriteChallenge[Index].name;
-        nameItemSpriteChallenge = spriteChallenge[Index].name; 
+        nameItemSpriteChallenge = spriteChallenge[Index].name;
         StartCoroutine(CoroutineDisableParticle());
     }
+
     //This method shows the next challenge image. It checks if there are any clicks
     //on the back button (countClickBackImageChallenge) and decreases the count if it's not zero.
     //It sets the isNextImageChallenge flag to true. If the flag is true, it deactivates the current challenge object,
