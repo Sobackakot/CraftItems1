@@ -12,6 +12,12 @@ public class InventoryUpdater : MonoBehaviour
         UpdateInvetory(_index);
     }
 
+    public void Load(int index)
+    {
+        _index = index;
+        UpdateInvetory(_index);
+    }
+
     public void UpdateItem()
     {
         _index++;

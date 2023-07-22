@@ -1,4 +1,3 @@
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections;
 using System.Linq;
@@ -24,7 +23,7 @@ public class CraftController : MonoBehaviour
     private int HorizontalIsNull { get; set; }
     private int VerticalIsNull { get; set; }
 
-    public bool HasResultItem => craftResultSlot.ItemInSlot != null; 
+    public bool HasResultItem => craftResultSlot.ItemInSlot != null;
 
     private string[] resourcesItemName1 = new string[17] //List of SECONDARY CRAFTS
     {
@@ -37,6 +36,7 @@ public class CraftController : MonoBehaviour
         "Gold Ore","Gold Ingot","Redstone Ore","Redstone","Iron Ingot","Flint","Feather","String","Trip Wire Source","Torch","Iron Nugget",
         "Iron Block", "Half Block","Pressure Plate","Glass","Redstone Torch","Compass","Wooden Chest", "TNT", "Stove","Hopper", "Trolley","Bow","Piston"
     };
+
     public void Awake()
     {
         m_AudioSource = GetComponent<AudioSource>(); 
