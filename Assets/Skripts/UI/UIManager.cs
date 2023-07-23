@@ -7,6 +7,8 @@ public class UIManager : MonoBehaviour
 { 
     private AudioSource m_AudioSource;
     public AudioClip clickButton;
+    public DataSaver m_DataSaver;
+    public InventoryUpdater inventoryUpdater;
     public void Awake()
     {
         m_AudioSource = GetComponent<AudioSource>();
@@ -16,9 +18,14 @@ public class UIManager : MonoBehaviour
     {
         m_AudioSource.PlayOneShot(clickButton, 1f);
     }
+    public void RestartChallengeButton()
+    {
+        inventoryUpdater.ResetInvetory();
+    }
     public void RestartGameButton()
     {
         m_AudioSource.PlayOneShot(clickButton, 1f);
+        m_DataSaver.RemoveSave();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
     }
     public void ExitGameButton()

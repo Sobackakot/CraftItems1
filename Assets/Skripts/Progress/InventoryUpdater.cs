@@ -27,4 +27,8 @@ public class InventoryUpdater : MonoBehaviour
             _inventory.AddItem(item);
         }
     }
+    public void ResetInvetory()
+    {
+        UpdateInvetory(_index);
+    }
 }

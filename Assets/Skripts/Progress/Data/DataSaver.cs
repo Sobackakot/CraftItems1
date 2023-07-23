@@ -16,7 +16,10 @@ public class DataSaver : MonoBehaviour
     {
         Save();
     }
-
+    public void RemoveSave()
+    {
+        PlayerPrefs.DeleteKey(_key);
+    }
     public void Save()
     {
         var data = new PlayerData();
