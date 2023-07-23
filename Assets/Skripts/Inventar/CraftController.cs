@@ -145,8 +145,6 @@ public class CraftController : MonoBehaviour
             {
                 if (craftSlot[i, j].ItemInSlot != null)
                 {
-                    if (craftSlot[i, j].ItemInSlot.Item.itemId == Item.ItemId.Hammer || craftSlot[i, j].ItemInSlot.Item.itemId == Item.ItemId.WireCutters)
-                        return;
                     craftSlot[i, j].DecreaseItemAmount(1);
                 }
             }
