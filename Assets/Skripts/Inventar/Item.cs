@@ -440,11 +440,6 @@ public class Item
             case ItemId.LapisLazuli: return "Lapis Lazuli";
             case ItemId.CarbonFiberPlastic: return "Carbon Fiber Plastic";
             case ItemId.Accelerator: return "Accelerator";
-
-
-
-
-
             case ItemId.SolarBattery: return "Solar Battery";
             case ItemId.Crusher: return "Crusher";
             case ItemId.Compressor: return "Compressor";
