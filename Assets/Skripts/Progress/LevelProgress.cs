@@ -39,10 +39,8 @@ public class LevelProgress : MonoBehaviour
 
     private void OnDisable()
     {
-        _result.OnCraft += UpdateProgress;
+        _result.OnCraft -= UpdateProgress;
     }
-
-    //countCraft
 
     public string Save()
     {
