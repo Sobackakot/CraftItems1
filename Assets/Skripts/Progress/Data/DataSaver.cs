@@ -38,7 +38,7 @@ public class DataSaver : MonoBehaviour
         }
         else
         {
-            _invetoryUpdate.Load(40);
+            _invetoryUpdate.Load(0);
         }
     }
 

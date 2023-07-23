@@ -6883,7 +6883,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &769893712
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16181,7 +16181,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1524521500
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19157,9 +19157,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spritesRecipe:
   - {fileID: 21300000, guid: 60cd8ae32489a764da6dd377ce7e1a4c, type: 3}
-  - {fileID: 21300000, guid: 2d7aa539c2a8a3544b0d7aa903b3e74d, type: 3}
+  - {fileID: 21300000, guid: e7688fa668da2c64484576f125de9f82, type: 3}
   - {fileID: 21300000, guid: cf3b49f9c77b8b6459c7ce04d8b8e52e, type: 3}
   - {fileID: 21300000, guid: 5c93f4f932fa14a4cbd200053a137f93, type: 3}
+  - {fileID: 21300000, guid: 9482e96eccc436e4982acb26c94ecfe5, type: 3}
   - {fileID: 21300000, guid: 5e51a4c4fc807b444af6d64a36c5abb9, type: 3}
   - {fileID: 21300000, guid: 852ac779a26133c4787418635e2f2c19, type: 3}
   - {fileID: 21300000, guid: 85a613bad72329242915667f1d757e54, type: 3}
