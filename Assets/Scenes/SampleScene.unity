@@ -16906,7 +16906,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db78bc712598c3845a19bcd2231c47ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _key: 2
+  _key: 8
+  _invetory: {fileID: 368364351}
   _progress: {fileID: 1570578028}
   _invetoryUpdate: {fileID: 1570578027}
 --- !u!1 &1604134431

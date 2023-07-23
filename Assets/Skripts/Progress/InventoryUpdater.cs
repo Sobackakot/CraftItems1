@@ -7,11 +7,6 @@ public class InventoryUpdater : MonoBehaviour
 
     private int _index = 0;
 
-    private void Start()
-    {
-        UpdateInvetory(_index);
-    }
-
     public void Load(int index)
     {
         _index = index;
