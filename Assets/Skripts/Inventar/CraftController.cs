@@ -252,6 +252,7 @@ public class CraftController : MonoBehaviour
         if (StartHorizontalIndex == -1)
             StartHorizontalIndex = i;
         EndHorizontalIdex++;
+        Debug.Log("End horizont index" + " " + EndHorizontalIdex);
         if (HorizontalIsNull < 3)
             HorizontalIsNull = 0; 
     }
@@ -262,6 +263,7 @@ public class CraftController : MonoBehaviour
         if (StartVerticalIndex == -1)
             StartVerticalIndex = i;
         EndVerticalIdex++;
+        Debug.Log("End vertical index" + " " + EndVerticalIdex);
         if (VerticalIsNull < 3)
             VerticalIsNull = 0; 
     }
@@ -272,6 +274,7 @@ public class CraftController : MonoBehaviour
         if (i == 1 && !craftSlot[i, j].HasItem && HorizontalIsNull != 3)
         {
             HorizontalIsNull++;
+            Debug.Log("Horizont-null" + " " + HorizontalIsNull);
             if (HorizontalIsNull == 3)
             {
                 EndHorizontalIdex++;
@@ -283,16 +286,25 @@ public class CraftController : MonoBehaviour
     //It is called when there are empty slots in the crafting grid and updates the HorizontalIsNull and EndHorizontalIdex accordingly.
     private void DecrementHorizontalNull(int i, int j) //CheckCraft -
     {
+        Debug.Log("DecrementHorizontalNull");
         if (i == 2 && !craftSlot[i, j].HasItem)
         {
+            Debug.Log("horiz Decrem true");
             if (HorizontalIsNull == 3)
+            {
                 HorizontalIsNull--;
+                Debug.Log("Horizont-null" + " " + HorizontalIsNull + " - - ");
+            } 
             else if (HorizontalIsNull == 2)
+            {
                 HorizontalIsNull--;
+                Debug.Log("Horizont-null" + " " + HorizontalIsNull + " - - ");
+            }
             else if (HorizontalIsNull == 1)
             {
                 HorizontalIsNull--;
                 EndHorizontalIdex--;
+                Debug.Log("Horizont-null" + " " + HorizontalIsNull + " - - ");
             }
             return;
         }
@@ -304,6 +316,7 @@ public class CraftController : MonoBehaviour
         if (i == 1 && !craftSlot[j, i].HasItem && VerticalIsNull != 3)
         {
             VerticalIsNull++;
+            Debug.Log("Vertical-null" + " " + VerticalIsNull);
             if (VerticalIsNull == 3)
             {
                 EndVerticalIdex++;
@@ -315,16 +328,26 @@ public class CraftController : MonoBehaviour
     //It is called when there are empty slots in the crafting grid and updates the VerticalIsNull and EndVerticalIdex accordingly.
     private void DecrementVerticalNull(int j, int i) //CheckCraft 
     {
+        Debug.Log("DecrementVerticalNull");
         if (i == 2 && !craftSlot[j, i].HasItem)
         {
+            Debug.Log("vertic Decrem true");
             if (VerticalIsNull == 3)
+            {
                 VerticalIsNull--;
+                Debug.Log("Vertical-null" + " " + VerticalIsNull + " - - ");
+            } 
             else if (VerticalIsNull == 2)
+            {
                 VerticalIsNull--;
+                Debug.Log("Vertical-null" + " " + VerticalIsNull + " - - ");
+            }
+                
             else if (VerticalIsNull == 1)
             {
                 VerticalIsNull--;
                 EndVerticalIdex--;
+                Debug.Log("Vertical-null" + " " + VerticalIsNull + " - - ");
             }
             return;
         }
