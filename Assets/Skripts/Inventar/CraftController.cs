@@ -145,6 +145,8 @@ public class CraftController : MonoBehaviour
             {
                 if (craftSlot[i, j].ItemInSlot != null)
                 {
+                    if (craftSlot[i, j].ItemInSlot.Item.itemId == Item.ItemId.Hammer || craftSlot[i, j].ItemInSlot.Item.itemId == Item.ItemId.WireCutters)
+                        return;
                     craftSlot[i, j].DecreaseItemAmount(1);
                 }
             }
@@ -212,8 +214,9 @@ public class CraftController : MonoBehaviour
     //It also plays the craft slot audio and starts the particle system.
     private void SetSecondaryItemInResultSlot(ItemInSlot NewItemcInResultSlot) //SetNewItemInResultSlot  
     {
-        bool condition = ShowChallenge.InstanceChallenge.Index < 40;
-        string [] selectedArray = condition ? resourcesItemName1 : (condition ? resourcesItemName2 : resourcesItemName3); 
+        bool condition1 = ShowChallenge.InstanceChallenge.Index < 20;
+        bool condition2 = ShowChallenge.InstanceChallenge.Index < 40;
+        string [] selectedArray = condition1 ? resourcesItemName1 : (condition2 ? resourcesItemName2 : resourcesItemName3); 
         for (int i = 0; i < selectedArray.Length; i++)
         {
             string nameItem = selectedArray[i];

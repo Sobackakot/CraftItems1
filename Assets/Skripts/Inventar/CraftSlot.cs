@@ -15,8 +15,8 @@ public class CraftSlot : Slot
         InventoryWindow.InstanceInventory.craftController.CheckCraft();  
     }
     public void DecreaseItemAmount(int amount)
-    {
-        ItemInSlot.Amount -= amount;
+    {   
+        ItemInSlot.Amount -= amount; 
         if(ItemInSlot.Amount < 1)
         ResetItem();
         RefreshUI();

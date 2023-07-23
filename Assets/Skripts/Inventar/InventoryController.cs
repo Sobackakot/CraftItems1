@@ -5,8 +5,7 @@ public class InventoryController : MonoBehaviour
 { 
     [SerializeField] private GameObject slotPrefab;
     [SerializeField] private Transform mainSlotGrid;
-    [SerializeField] private Transform additionalSlotGrid;
-
+    [SerializeField] private Transform additionalSlotGrid; 
     private ItemsManager itemsManager;
     private List<Slot> _slots = new List<Slot>();
     
@@ -72,9 +71,12 @@ public class InventoryController : MonoBehaviour
     }
 
     private void SetItem(Item.ItemId itemid, Slot slot, int count = 64)
-    {
+    {   
         var item = itemsManager.GetItem(itemid);
-        slot?.SetItem(new ItemInSlot(item, count));
+        if (Item.ItemId.Hammer == itemid || Item.ItemId.WireCutters == itemid)
+            slot?.SetItem(new ItemInSlot(item, 1));
+        else
+            slot?.SetItem(new ItemInSlot(item, count));
     }
 
     private Slot GetSlot()

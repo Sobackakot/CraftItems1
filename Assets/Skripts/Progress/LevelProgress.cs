@@ -13,7 +13,7 @@ public class LevelProgress : MonoBehaviour
     [SerializeField] private UnityEvent _onUpdateLvl;
 
     private int _level = 1;
-    private int _countCraft = 0; 
+    private int _countCraft = 40; 
     private Star[] _stars;
 
     public int LevelSize => _levelSize;

@@ -15,7 +15,7 @@ public class ShowChallenge : MonoBehaviour
     [SerializeField] private ParticleSystem particlRezultSlot;
     [HideInInspector] public string nameItemSpriteChallenge;
     [HideInInspector] public bool isNextImageChallenge = false;
-    private int countClickBackImageChallenge = 0;
+    private int countClickBackImageChallenge = 40;
     [HideInInspector] public int Index { get; set; }
     
     public void Awake()
