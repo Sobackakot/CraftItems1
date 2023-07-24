@@ -2,39 +2,41 @@ using UnityEngine;
 
 public class DataSaver : MonoBehaviour
 {
-    [SerializeField] private string _key;
+    [Header("Reference")]
     [SerializeField] private InventoryController _invetory;
     [SerializeField] private LevelProgress _progress;
     [SerializeField] private InventoryUpdater _invetoryUpdate;
 
+    private string _data = null;
+
+    public bool IsLoad { get; private set; } = false;
+
     private void Start()
     {
-        Load();
+        Load(_data);
     }
 
-    private void OnApplicationQuit()
+    public void SetData(string data)
     {
-        Save();
+        _data = data;
     }
-    public void RemoveSave()
-    {
-        PlayerPrefs.DeleteKey(_key);
-    }
-    public void Save()
+
+    public string Save()
     {
         var data = new PlayerData();
         data.Progress = _progress.Save();
         data.Invetory = _invetory.Save();
-        PlayerPrefs.SetString(_key, JsonUtility.ToJson(data));
+        return JsonUtility.ToJson(data);
     }
 
-    public void Load()
+    private void Load(string data)
     {
-        if (PlayerPrefs.HasKey(_key))
+        IsLoad = true;
+        if (data != null)
         {
-            var data = JsonUtility.FromJson<PlayerData>(PlayerPrefs.GetString(_key));
-            LoadProgress(data.Progress);
-            LoadInventory(data.Invetory);
+            var saveData = JsonUtility.FromJson<PlayerData>(data);
+            LoadProgress(saveData.Progress);
+            LoadInventory(saveData.Invetory);
         }
         else
         {
