@@ -227,5 +227,5 @@ public class ItemsSprite : MonoBehaviour
     public Sprite ImprovedElectricJetpackSprite;
     public Sprite QuantumVestSprite;
     public Sprite GraviChestPlateSprite;
-    
+
 }
