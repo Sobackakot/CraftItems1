@@ -39,7 +39,7 @@ public class CraftController : MonoBehaviour
         "Gold Ore","Gold Ingot","Redstone Ore","Redstone","Iron Ingot","Flint","Feather","String","Trip Wire Source","Torch","Iron Nugget",
         "Iron Block", "Half Block","Pressure Plate","Glass","Redstone Torch","Compass","Wooden Chest", "TNT", "Stove","Hopper", "Trolley","Bow","Piston"
     };
-    private string[] resourcesItemName3 = new string[225]
+    private string[] resourcesItemName3 = new string[227]
     {
         "Wood Block", "Boards","Stick","Coal Ore","Coal","Diamond Ore","Diamond",
         "Gold Ore","Gold Ingot","Redstone Ore","Redstone","Iron Ingot","Flint","Feather","String","Trip Wire Source","Torch","Iron Nugget",
@@ -62,7 +62,7 @@ public class CraftController : MonoBehaviour
         "Super Conductor", "Teleport", "Tesla Coil", "Thick Copper Plate", "Thick Gold Plate", "Thick Lead Plate", "Thickened Neutron Reflector", "Tin Dust", "Tin Ingot", "Tin Ore", "Tin Plate", "Tin Shell", 
         "Tin Wire", "Tin Wire Isolated", "TNT", "Trolley", "Trolley Chest", "Trolley Hopper", "Trolley Stove", "Trolley TNT", "Trip Wire Source", "Ultimate Lappack", "Unfired Memory Crystal",
         "Universal Liquid Capsule", "Wiring Diagram", "Wood Block", "Wooden Chest", "Workbench","Nanofiber Vest","Geothermal Generator","Reactor Shell","Reactor Chamber",
-        "Advanced Wiring Diagram","Azuretron Crystal","Advanced Battery","Golden Wire"
+        "Advanced Wiring Diagram","Azuretron Crystal","Advanced Battery","Golden Wire","Lapis Lazuli Plate","Heat-Intensive Reactor Plate"
     };
     public void Awake()
     {

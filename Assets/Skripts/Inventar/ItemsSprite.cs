@@ -1,4 +1,4 @@
- 
+
 using UnityEngine;
 
 public class ItemsSprite : MonoBehaviour
@@ -226,6 +226,5 @@ public class ItemsSprite : MonoBehaviour
     public Sprite NanoBootsSprite;
     public Sprite ImprovedElectricJetpackSprite;
     public Sprite QuantumVestSprite;
-    public Sprite GraviChestPlateSprite;
-
+    public Sprite GraviChestPlateSprite; 
 }

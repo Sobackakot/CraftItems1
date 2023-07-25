@@ -452,7 +452,7 @@ public class Item
             case ItemId.MatterProducer: return "Matter Producer";
             case ItemId.Replicator: return "Replicator";
             case ItemId.Scanner: return "Scanner";
-            case ItemId.TemplateGuardian: return "TemplateGuardian";
+            case ItemId.TemplateGuardian: return "Template Guardian";
             case ItemId.NanoHelmet: return "Nano Helmet";
             case ItemId.NanofiberVest: return "Nanofiber Vest";
             case ItemId.NanoLeggings: return "Nano Leggings";
@@ -461,7 +461,7 @@ public class Item
             case ItemId.GraviChestPlate: return "Gravi Chest Plate";
             case ItemId.GoldenWire: return "Golden Wire";
             default:
-                return "Unknown Item";  
+                return "Unknown Item"; 
         }
     }
     public Sprite GetSpriteItems() 
