@@ -35,5 +35,10 @@ public class YandexSdk : MonoBehaviour
     public void CompliteAds()
     {
         IsReady = true;
+        Time.timeScale = 1f;
+    }
+    public void Open()
+    {
+        Time.timeScale = 0f;
     }
 }

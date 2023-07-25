@@ -10404,6 +10404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e9a26cec9b5854429c7a01fa3475f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sdk: {fileID: 528257662}
   clickButton: {fileID: 8300000, guid: 789cc4345f6ea3d4096770b88cebb52d, type: 3}
   m_DataSaver: {fileID: 745545735}
   inventoryUpdater: {fileID: 1570578027}

@@ -22,7 +22,8 @@ mergeInto(LibraryManager.library,
 			callbacks: 
 			{
 				onOpen: () => {
-				  console.log('Video ad open.');
+				  myGame.SendMessage('YandexSdk', 'Open');
+
 				},
 				onRewarded: () => {
 				  myGame.SendMessage('YandexSdk', 'Reward');
