@@ -1,9 +1,7 @@
 
-using Palmmedia.ReportGenerator.Core;
+
 using System.Collections;
 using System.Linq;
-using System.Numerics;
-using UnityEditor;
 using UnityEngine; 
 
 public class CraftController : MonoBehaviour
