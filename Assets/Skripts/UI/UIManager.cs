@@ -7,7 +7,7 @@ public class UIManager : MonoBehaviour
 { 
     private AudioSource m_AudioSource;
     public AudioClip clickButton;
-    public DataSaver m_DataSaver;
+    public SaveController m_DataSaver;
     public InventoryUpdater inventoryUpdater;
     public void Awake()
     {
