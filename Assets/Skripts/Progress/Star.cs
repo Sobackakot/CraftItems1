@@ -17,3 +17,4 @@ public class Star : MonoBehaviour
         _partical.Play();
     }
 }
+

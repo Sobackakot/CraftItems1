@@ -1,6 +1,5 @@
- 
-using UnityEngine; 
 
+using UnityEngine;
 public class Item 
 { 
     public ItemId itemId { get; set; }  
@@ -236,12 +235,12 @@ public class Item
         SilverOre =217,
         GlowstoneDust = 218,
         LapisLazuli = 219,
-        Accelerator = 220
+        Accelerator = 220,
     }
     public string GetNameItemId()
     {     
         switch (itemId)
-        {
+        { 
             case ItemId.Torch: return "Torch";
             case ItemId.IronBucket: return "Iron Bucket";
             case ItemId.Arrow: return "Arrow";
@@ -436,15 +435,10 @@ public class Item
             case ItemId.ImprovedMachineBody: return "Improved Machine Body";
             case ItemId.HardenedIronBar: return "Hardened Iron Bar";
             case ItemId.SilverOre: return "Silver Ore";
-            case ItemId.GlowstoneDust: return " Glowstone Dust";
+            case ItemId.GlowstoneDust: return "Glowstone Dust";
             case ItemId.LapisLazuli: return "Lapis Lazuli";
             case ItemId.CarbonFiberPlastic: return "Carbon Fiber Plastic";
             case ItemId.Accelerator: return "Accelerator";
-
-
-
-
-
             case ItemId.SolarBattery: return "Solar Battery";
             case ItemId.Crusher: return "Crusher";
             case ItemId.Compressor: return "Compressor";
@@ -458,15 +452,16 @@ public class Item
             case ItemId.MatterProducer: return "Matter Producer";
             case ItemId.Replicator: return "Replicator";
             case ItemId.Scanner: return "Scanner";
-            case ItemId.TemplateGuardian: return "TemplateGuardian";
+            case ItemId.TemplateGuardian: return "Template Guardian";
             case ItemId.NanoHelmet: return "Nano Helmet";
             case ItemId.NanofiberVest: return "Nanofiber Vest";
             case ItemId.NanoLeggings: return "Nano Leggings";
             case ItemId.NanoBoots: return "Nano Boots";
             case ItemId.ImprovedElectricJetpack: return "Improved Electric Jetpack";
             case ItemId.GraviChestPlate: return "Gravi Chest Plate";
+            case ItemId.GoldenWire: return "Golden Wire";
             default:
-                return "Unknown Item";  
+                return "Unknown Item"; 
         }
     }
     public Sprite GetSpriteItems() 
@@ -695,6 +690,7 @@ public class Item
             case ItemId.LapisLazuli: return ItemsSprite.Instance.LapisLazuliSprite;
             case ItemId.CarbonFiberPlastic: return ItemsSprite.Instance.CarbonFiberPlasticSprite;
             case ItemId.Accelerator: return ItemsSprite.Instance.AcceleratorSprite;
+            case ItemId.GoldenWire: return ItemsSprite.Instance.GoldenWireSprite;
         }
     }
 }

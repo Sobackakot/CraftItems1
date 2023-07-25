@@ -15,6 +15,5 @@ public class ListObjectsImageRecipe : MonoBehaviour
     public void Start()
     {
         recipeGameObject.gameObject.SetActive(false);
-        objectsRecipe[0].gameObject.SetActive(true);
     } 
 }

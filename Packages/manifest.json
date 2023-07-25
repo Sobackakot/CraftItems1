@@ -1,6 +1,11 @@
 {
   "dependencies": {
+<<<<<<< HEAD
     "com.unity.collab-proxy": "2.0.3",
+=======
+    "com.unity.2d.psdimporter": "6.0.7",
+    "com.unity.collab-proxy": "1.15.18",
+>>>>>>> d71ce752c3aebc5fb3ddc6adf932ac115cf28c0b
     "com.unity.feature.development": "1.0.1",
     "com.unity.ide.rider": "3.0.18",
     "com.unity.ide.visualstudio": "2.0.17",

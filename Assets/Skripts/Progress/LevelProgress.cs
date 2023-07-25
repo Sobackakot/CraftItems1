@@ -39,7 +39,31 @@ public class LevelProgress : MonoBehaviour
 
     private void OnDisable()
     {
-        _result.OnCraft += UpdateProgress;
+        _result.OnCraft -= UpdateProgress;
+    }
+
+    public string Save()
+    {
+        var progress = new ProgressData();
+        progress.Level = _level;
+        progress.CountCraft = _countCraft;
+        progress.Stars = new int[_levelSize];
+        for (int i = 0; i < _levelSize; i++)
+        {
+            progress.Stars[i] = _stars[i].Level;
+        }
+        return JsonUtility.ToJson(progress);
+    }
+
+    public void Load(ProgressData progress)
+    {
+        _level = progress.Level;
+        _countCraft = progress.CountCraft;
+        for (int i = 0; i < progress.Stars.Length; i++)
+        {
+            if(progress.Stars[i] != 0)
+                AddStar(_stars[i], progress.Stars[i]);
+        }
     }
 
     //countCraft

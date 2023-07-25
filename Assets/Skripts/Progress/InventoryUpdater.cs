@@ -7,8 +7,9 @@ public class InventoryUpdater : MonoBehaviour
 
     private int _index = 0;
 
-    private void Start()
+    public void Load(int index)
     {
+        _index = index;
         UpdateInvetory(_index);
     }
 
@@ -31,5 +32,9 @@ public class InventoryUpdater : MonoBehaviour
         {
             _inventory.AddItem(item);
         }
+    }
+    public void ResetInvetory()
+    {
+        UpdateInvetory(_index);
     }
 }

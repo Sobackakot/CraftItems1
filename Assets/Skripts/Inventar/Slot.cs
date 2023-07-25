@@ -18,6 +18,7 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, I
     private ItemInSlot CurrentItem { get; set; }
     private int TotalAmountItemInSlot { get; set; }  
     public bool HasItem => ItemInSlot != null;
+
     public void Awake()
     {
         image = GetComponent<Image>();

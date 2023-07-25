@@ -8,7 +8,7 @@ public class ItemInSlot
     public int Amount { get; set; }
     public ItemInSlot(Item item, int amount)
     {
-        Item= item;
+        Item = item;
         Amount = amount;
     }
 }

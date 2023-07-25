@@ -1,11 +1,5 @@
 
 using System.Collections.Generic;
-using System.Drawing;
-using System.Numerics;
-using System.Reflection;
-using Unity.VisualScripting;
-using UnityEditor;
-using UnityEditor.SceneManagement;
 using UnityEngine; 
 
 public class ItemsManager : MonoBehaviour
@@ -30,7 +24,8 @@ public class ItemsManager : MonoBehaviour
     }
 
     private void RecipeItems()
-    {
+    {   //EngineBooster
+        //Diamond
         Items = new List<Item>(); 
         // wood 0
         Items.Add(new Item(Item.ItemId.WoodBlock));
@@ -43,9 +38,9 @@ public class ItemsManager : MonoBehaviour
         //Faucet
         var FaucetRecipe = new Item.ItemId[,]
         {
-            {Item.ItemId.None, Item.ItemId.IronIngot, Item.ItemId.None},
-            {Item.ItemId.IronIngot, Item.ItemId.IronIngot, Item.ItemId.IronIngot},
-            {Item.ItemId.IronIngot, Item.ItemId.None, Item.ItemId.None}
+            {Item.ItemId.None, Item.ItemId.Boards, Item.ItemId.None},
+            {Item.ItemId.Boards, Item.ItemId.Boards, Item.ItemId.Boards},
+            {Item.ItemId.Boards, Item.ItemId.None, Item.ItemId.None}
         };
         Items.Add(new Item(Item.ItemId.Faucet, new CraftRecipe(FaucetRecipe, 1)));
         //Wooden Stick 2
@@ -90,7 +85,7 @@ public class ItemsManager : MonoBehaviour
         {
             {Item.ItemId.GoldPlate,Item.ItemId.Hammer}
         };
-        Items.Add(new Item(Item.ItemId.GoldenShell, new CraftRecipe(GoldenShellRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.GoldenShell, new CraftRecipe(GoldenShellRecipe, 2)));
         //GoldenWire
         var GoldenWireRecipe = new Item.ItemId[,]
         {
@@ -130,7 +125,7 @@ public class ItemsManager : MonoBehaviour
         {
             {Item.ItemId.IronPlate,Item.ItemId.Hammer}
         };
-        Items.Add(new Item(Item.ItemId.IronShell, new CraftRecipe(IronShellRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.IronShell, new CraftRecipe(IronShellRecipe, 2)));
         //Iron Block 13
         var IronBlockRecipe = new Item.ItemId[,]
         {
@@ -158,6 +153,7 @@ public class ItemsManager : MonoBehaviour
             { Item.ItemId.IronIngot}
         };
         Items.Add(new Item(Item.ItemId.IronNugget, new CraftRecipe(IronNuggetRecipe, 9)));
+        //CoolingCore
         //flint 14
         Items.Add(new Item(Item.ItemId.Flint));
         //feather 15
@@ -183,6 +179,7 @@ public class ItemsManager : MonoBehaviour
         Items.Add(new Item(Item.ItemId.WireCutters));
         //Latex
         Items.Add(new Item(Item.ItemId.Latex));
+        //HeatIntensiveReactorPlate
         //Rubber
         var RubberRecipe = new Item.ItemId[,]
         {
@@ -223,9 +220,9 @@ public class ItemsManager : MonoBehaviour
         //HighVoltageWire
         var HighVoltageWireRecipe = new Item.ItemId[,]
         {
-            {Item.ItemId.HardenedIronPlate, Item.ItemId.WireCutters}
+            {Item.ItemId.HardenedIronBar, Item.ItemId.HardenedIronBar,Item.ItemId.HardenedIronBar}
         };
-        Items.Add(new Item(Item.ItemId.HighVoltageWire, new CraftRecipe(HighVoltageWireRecipe, 4)));
+        Items.Add(new Item(Item.ItemId.HighVoltageWire, new CraftRecipe(HighVoltageWireRecipe, 12)));
         //HighVoltageWireInsulated
         var HighVoltageWireInsulatedRecipe = new Item.ItemId[,]
         {
@@ -257,13 +254,13 @@ public class ItemsManager : MonoBehaviour
         {
             {Item.ItemId.CopperPlate,Item.ItemId.Hammer}
         };
-        Items.Add(new Item(Item.ItemId.CopperShell, new CraftRecipe(ÑopperShellRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.CopperShell, new CraftRecipe(ÑopperShellRecipe, 2)));
         //ÑopperWire
         var ÑopperWireRecipe = new Item.ItemId[,]
         {
             {Item.ItemId.CopperPlate,Item.ItemId.WireCutters}
         };
-        Items.Add(new Item(Item.ItemId.CopperWire, new CraftRecipe(ÑopperWireRecipe, 4)));
+        Items.Add(new Item(Item.ItemId.CopperWire, new CraftRecipe(ÑopperWireRecipe, 2)));
         //ÑopperWireIsolated
         var ÑopperWireIsolatedRecipe = new Item.ItemId[,]
         {
@@ -289,19 +286,19 @@ public class ItemsManager : MonoBehaviour
         {
             {Item.ItemId.TinPlate, Item.ItemId.Hammer}
         };
-        Items.Add(new Item(Item.ItemId.TinShell, new CraftRecipe(TinShellRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.TinShell, new CraftRecipe(TinShellRecipe, 2)));
         //TinDust
         var TinDustRecipe = new Item.ItemId[,]
         {
             {Item.ItemId.TinIngot}
         };
-        Items.Add(new Item(Item.ItemId.TinDust, new CraftRecipe(TinDustRecipe, 4)));
+        Items.Add(new Item(Item.ItemId.TinDust, new CraftRecipe(TinDustRecipe, 1)));
         //TinWire
         var TinWireRecipe = new Item.ItemId[,]
         {
             {Item.ItemId.TinPlate, Item.ItemId.WireCutters}
         };
-        Items.Add(new Item(Item.ItemId.TinWire, new CraftRecipe(TinWireRecipe, 4)));
+        Items.Add(new Item(Item.ItemId.TinWire, new CraftRecipe(TinWireRecipe, 3)));
         //TinWireIsolated
         var TinWireIsolatedRecipe = new Item.ItemId[,]
         {
@@ -321,7 +318,7 @@ public class ItemsManager : MonoBehaviour
         {
             {Item.ItemId.SilverIngot }
         };
-        Items.Add(new Item(Item.ItemId.SilverDust, new CraftRecipe(SilverDustRecipe, 4)));
+        Items.Add(new Item(Item.ItemId.SilverDust, new CraftRecipe(SilverDustRecipe, 1)));
         //BronzeIngot
         var BronzeIngotRecipe = new Item.ItemId[,]
         {
@@ -340,7 +337,7 @@ public class ItemsManager : MonoBehaviour
         {
             {Item.ItemId.BronzePlate,Item.ItemId.Hammer}
         };
-        Items.Add(new Item(Item.ItemId.BronzeShell, new CraftRecipe(BronzeShellRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.BronzeShell, new CraftRecipe(BronzeShellRecipe, 2)));
         //LeadOre
         Items.Add(new Item(Item.ItemId.LeadOre));
         //LeadIngot
@@ -374,7 +371,7 @@ public class ItemsManager : MonoBehaviour
         {
             {Item.ItemId.LeadIngot}
         };
-        Items.Add(new Item(Item.ItemId.LeadDust, new CraftRecipe(LeadDustRecipe, 4)));
+        Items.Add(new Item(Item.ItemId.LeadDust, new CraftRecipe(LeadDustRecipe, 1)));
         //ReactorShell
         var ReactorShellRecipe = new Item.ItemId[,]
         {
@@ -429,7 +426,7 @@ public class ItemsManager : MonoBehaviour
         {
             {Item.ItemId.Diamond}
         };
-        Items.Add(new Item(Item.ItemId.DiamondDust, new CraftRecipe(DiamondDustRecipe, 4)));
+        Items.Add(new Item(Item.ItemId.DiamondDust, new CraftRecipe(DiamondDustRecipe, 1)));
         //Iridium
         Items.Add(new Item(Item.ItemId.Iridium));
         //ReinforcedIridiumPlate
@@ -452,7 +449,7 @@ public class ItemsManager : MonoBehaviour
             {Item.ItemId.LapisLazuli}
         };
         
-        Items.Add(new Item(Item.ItemId.LapisLazuliDust, new CraftRecipe(LapisLazuliDustRecipe, 4)));
+        Items.Add(new Item(Item.ItemId.LapisLazuliDust, new CraftRecipe(LapisLazuliDustRecipe, 1)));
         //LapisLazuliPlate
         var LapisLazuliPlateRecipe = new Item.ItemId[,]
         {
@@ -467,15 +464,15 @@ public class ItemsManager : MonoBehaviour
             {Item.ItemId.DiamondDust, Item.ItemId.Redstone, Item.ItemId.DiamondDust},
             {Item.ItemId.Redstone, Item.ItemId.DiamondDust, Item.ItemId.Redstone}
         };
-        Items.Add(new Item(Item.ItemId.EnergyDust, new CraftRecipe(EnergyDustRecipe, 4)));
+        Items.Add(new Item(Item.ItemId.EnergyDust, new CraftRecipe(EnergyDustRecipe, 9)));
         //CompositeIngot
         var CompositeIngotRecipe = new Item.ItemId[,]
         {
-             {Item.ItemId.IronIngot, Item.ItemId.IronIngot, Item.ItemId.IronIngot},
-            {Item.ItemId.BronzeIngot, Item.ItemId.BronzeIngot, Item.ItemId.BronzeIngot},
-            {Item.ItemId.TinIngot, Item.ItemId.TinIngot, Item.ItemId.TinIngot}
+            {Item.ItemId.IronPlate, Item.ItemId.IronPlate, Item.ItemId.IronPlate},
+            {Item.ItemId.BronzePlate, Item.ItemId.BronzePlate, Item.ItemId.BronzePlate},
+            {Item.ItemId.TinPlate, Item.ItemId.TinPlate, Item.ItemId.TinPlate}
         };
-        Items.Add(new Item(Item.ItemId.CompositeIngot, new CraftRecipe(CompositeIngotRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.CompositeIngot, new CraftRecipe(CompositeIngotRecipe, 2)));
         //Composite
         var CompositeRecipe = new Item.ItemId[,]
         {
@@ -490,7 +487,7 @@ public class ItemsManager : MonoBehaviour
             {Item.ItemId.EnergyDust, Item.ItemId.SilverDust, Item.ItemId.EnergyDust},
             {Item.ItemId.Glass, Item.ItemId.Glass, Item.ItemId.Glass}
         };
-        Items.Add(new Item(Item.ItemId.FiberglassWire, new CraftRecipe(FiberglassWireRecipe, 4)));
+        Items.Add(new Item(Item.ItemId.FiberglassWire, new CraftRecipe(FiberglassWireRecipe, 6)));
         //AdvancedBattery
         var AdvancedBatteryRecipe = new Item.ItemId[,]
         {
@@ -522,7 +519,7 @@ public class ItemsManager : MonoBehaviour
             {Item.ItemId.Glass, Item.ItemId.TinWire, Item.ItemId.Glass},
             {Item.ItemId.Glass, Item.ItemId.Glass, Item.ItemId.Glass}
         };
-        Items.Add(new Item(Item.ItemId.ElectricLamp, new CraftRecipe(ElectricLampRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.ElectricLamp, new CraftRecipe(ElectricLampRecipe, 8)));
         //EnergyCrystal
         var EnergyCrystalRecipe = new Item.ItemId[,]
         {
@@ -543,7 +540,7 @@ public class ItemsManager : MonoBehaviour
         var HeatIntensiveReactorPlateRecipe = new Item.ItemId[,]
         {
              {Item.ItemId.CopperPlate, Item.ItemId.CopperPlate, Item.ItemId.CopperPlate},
-            {Item.ItemId.CopperPlate, Item.ItemId.Composite, Item.ItemId.CopperPlate},
+            {Item.ItemId.CopperPlate, Item.ItemId.ReactorShell, Item.ItemId.CopperPlate},
             {Item.ItemId.CopperPlate, Item.ItemId.CopperPlate, Item.ItemId.CopperPlate}
         };
         Items.Add(new Item(Item.ItemId.HeatIntensiveReactorPlate, new CraftRecipe(HeatIntensiveReactorPlateRecipe, 1)));
@@ -570,7 +567,7 @@ public class ItemsManager : MonoBehaviour
             {Item.ItemId.Glass, Item.ItemId.Glass, Item.ItemId.Glass},
             {Item.ItemId.Glass, Item.ItemId.Composite, Item.ItemId.Glass}
         };
-        Items.Add(new Item(Item.ItemId.ReinforcedGlass, new CraftRecipe(ReinforcedGlassRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.ReinforcedGlass, new CraftRecipe(ReinforcedGlassRecipe, 7)));
         //SuperConductorInsulation
         var SuperConductorInsulationRecipe = new Item.ItemId[,]
         {
@@ -578,7 +575,7 @@ public class ItemsManager : MonoBehaviour
             {Item.ItemId.CarbonFiberPlastic, Item.ItemId.CarbonFiberPlastic, Item.ItemId.CarbonFiberPlastic},
             {Item.ItemId.Composite, Item.ItemId.ReinforcedIridiumPlate, Item.ItemId.Composite}
         };
-        Items.Add(new Item(Item.ItemId.SuperConductorInsulation, new CraftRecipe(SuperConductorInsulationRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.SuperConductorInsulation, new CraftRecipe(SuperConductorInsulationRecipe, 3)));
         //UnfiredMemoryCrystal
         var UnfiredMemoryCrystalRecipe = new Item.ItemId[,]
         {
@@ -660,9 +657,9 @@ public class ItemsManager : MonoBehaviour
         //CoolingCore
         var CoolingCoreRecipe = new Item.ItemId[,]
         {
-            {Item.ItemId.CoolingRods, Item.ItemId.ImprovedHeatExchanger, Item.ItemId.CoolingRods},
+            {Item.ItemId.DoubleCoolingRods, Item.ItemId.ImprovedHeatExchanger, Item.ItemId.DoubleCoolingRods},
             {Item.ItemId.HeatIntensiveReactorPlate, Item.ItemId.ReinforcedIridiumPlate, Item.ItemId.HeatIntensiveReactorPlate},
-            {Item.ItemId.CoolingRods, Item.ItemId.ImprovedHeatExchanger, Item.ItemId.CoolingRods}
+            {Item.ItemId.DoubleCoolingRods, Item.ItemId.ImprovedHeatExchanger, Item.ItemId.DoubleCoolingRods}
         };
         Items.Add(new Item(Item.ItemId.CoolingCore, new CraftRecipe(CoolingCoreRecipe, 1)));
         //DoubleCoolingRods
@@ -740,7 +737,7 @@ public class ItemsManager : MonoBehaviour
         {
             {Item.ItemId.GlowstoneDust, Item.ItemId.Composite, Item.ItemId.GlowstoneDust},
             {Item.ItemId.AdvancedWiringDiagram, Item.ItemId.Accelerator, Item.ItemId.AdvancedWiringDiagram},
-            {Item.ItemId.Composite, Item.ItemId.WiringDiagram, Item.ItemId.Composite}
+            {Item.ItemId.Composite, Item.ItemId.ImprovedHeatDissipation, Item.ItemId.Composite}
         };
         Items.Add(new Item(Item.ItemId.EngineBooster, new CraftRecipe(EngineBoosterRecipe, 1)));
         //Superconductor
@@ -750,7 +747,7 @@ public class ItemsManager : MonoBehaviour
             {Item.ItemId.FiberglassWire, Item.ItemId.GoldIngot, Item.ItemId.FiberglassWire},
             {Item.ItemId.SuperConductorInsulation, Item.ItemId.SuperConductorInsulation, Item.ItemId.SuperConductorInsulation}
         };
-        Items.Add(new Item(Item.ItemId.Superconductor, new CraftRecipe(SuperconductorRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.Superconductor, new CraftRecipe(SuperconductorRecipe, 3)));
         //GravityEngine
         var GravityEngineRecipe = new Item.ItemId[,]
         {
@@ -886,9 +883,14 @@ public class ItemsManager : MonoBehaviour
             {Item.ItemId.ReinforcedIridiumPlate, Item.ItemId.ElectricJetpack, Item.ItemId.ReinforcedIridiumPlate}
         };
         Items.Add(new Item(Item.ItemId.QuantumVest, new CraftRecipe(QuantumVestRecipe, 1)));
-
-
-
+        // Accelerator
+        var AcceleratorRecipe = new Item.ItemId[,]
+        { 
+            {Item.ItemId.CoolingRod, Item.ItemId.CoolingRod, Item.ItemId.CoolingRod},
+            {Item.ItemId.CopperWireIsolated, Item.ItemId.WiringDiagram, Item.ItemId.CopperWireIsolated}
+        };
+        Items.Add(new Item(Item.ItemId.Accelerator, new CraftRecipe(AcceleratorRecipe, 2)));
+        //TinWires
 
 
 
@@ -931,7 +933,7 @@ public class ItemsManager : MonoBehaviour
         var ExtractorRecipe = new Item.ItemId[,]
         {
             {Item.ItemId.Faucet, Item.ItemId.MainMachineBody, Item.ItemId.Faucet},
-            {Item.ItemId.Faucet, Item.ItemId.AdvancedWiringDiagram, Item.ItemId.Faucet} 
+            {Item.ItemId.Faucet, Item.ItemId.WiringDiagram, Item.ItemId.Faucet} 
         };
         Items.Add(new Item(Item.ItemId.Extractor, new CraftRecipe(ExtractorRecipe, 1)));
         //GeothermalGenerator
@@ -971,7 +973,7 @@ public class ItemsManager : MonoBehaviour
         {
             {Item.ItemId.ThickenedNeutronReflector, Item.ItemId.AdvancedWiringDiagram, Item.ItemId.ThickenedNeutronReflector},
             {Item.ItemId.ThickenedNeutronReflector, Item.ItemId.ImprovedMachineBody, Item.ItemId.ThickenedNeutronReflector},
-            {Item.ItemId.ThickenedNeutronReflector, Item.ItemId.ImprovedMachineBody, Item.ItemId.ThickenedNeutronReflector}
+            {Item.ItemId.ThickenedNeutronReflector, Item.ItemId.AdvancedWiringDiagram, Item.ItemId.ThickenedNeutronReflector}
         };
         Items.Add(new Item(Item.ItemId.NuclearBomb, new CraftRecipe(NuclearBombRecipe, 1)));
         //NuclearReactor
@@ -1009,37 +1011,37 @@ public class ItemsManager : MonoBehaviour
         //NanofiberVest
         var NanofiberVestRecipe = new Item.ItemId[,]
         {
-            {Item.ItemId.CarbonFiber, Item.ItemId.None, Item.ItemId.CarbonFiber},
-            {Item.ItemId.CarbonFiber, Item.ItemId.EnergyCrystal, Item.ItemId.CarbonFiber},
-            {Item.ItemId.CarbonFiber, Item.ItemId.CarbonFiber, Item.ItemId.CarbonFiber}
+            {Item.ItemId.CarbonFiberPlastic, Item.ItemId.None, Item.ItemId.CarbonFiberPlastic},
+            {Item.ItemId.CarbonFiberPlastic, Item.ItemId.EnergyCrystal, Item.ItemId.CarbonFiberPlastic},
+            {Item.ItemId.CarbonFiberPlastic, Item.ItemId.CarbonFiberPlastic, Item.ItemId.CarbonFiberPlastic}
         };
         Items.Add(new Item(Item.ItemId.NanofiberVest, new CraftRecipe(NanofiberVestRecipe, 1)));
         //NanoLeggings
         var NanoLeggingsRecipe = new Item.ItemId[,]
         {
-            {Item.ItemId.CarbonFiber, Item.ItemId.EnergyCrystal, Item.ItemId.CarbonFiber},
-            {Item.ItemId.CarbonFiber, Item.ItemId.None, Item.ItemId.CarbonFiber},
-            {Item.ItemId.CarbonFiber, Item.ItemId.None, Item.ItemId.CarbonFiber}
+            {Item.ItemId.CarbonFiberPlastic, Item.ItemId.EnergyCrystal, Item.ItemId.CarbonFiberPlastic},
+            {Item.ItemId.CarbonFiberPlastic, Item.ItemId.None, Item.ItemId.CarbonFiberPlastic},
+            {Item.ItemId.CarbonFiberPlastic, Item.ItemId.None, Item.ItemId.CarbonFiberPlastic}
         };
         Items.Add(new Item(Item.ItemId.NanoLeggings, new CraftRecipe(NanoLeggingsRecipe, 1)));
         //NanoHelmet
         var NanoHelmetRecipe = new Item.ItemId[,]
         {
-            {Item.ItemId.CarbonFiber, Item.ItemId.EnergyCrystal, Item.ItemId.CarbonFiber},
-            {Item.ItemId.CarbonFiber, Item.ItemId.NightVisionDevice, Item.ItemId.CarbonFiber}
+            {Item.ItemId.CarbonFiberPlastic, Item.ItemId.EnergyCrystal, Item.ItemId.CarbonFiberPlastic},
+            {Item.ItemId.CarbonFiberPlastic, Item.ItemId.NightVisionDevice, Item.ItemId.CarbonFiberPlastic}
         };
         Items.Add(new Item(Item.ItemId.NanoHelmet, new CraftRecipe(NanoHelmetRecipe, 1)));
         //NanoBoots
         var NanoBootsRecipe = new Item.ItemId[,]
         {
-            {Item.ItemId.CarbonFiber, Item.ItemId.None, Item.ItemId.CarbonFiber},
-            {Item.ItemId.CarbonFiber, Item.ItemId.EnergyCrystal, Item.ItemId.CarbonFiber}
+            {Item.ItemId.CarbonFiberPlastic, Item.ItemId.None, Item.ItemId.CarbonFiberPlastic},
+            {Item.ItemId.CarbonFiberPlastic, Item.ItemId.EnergyCrystal, Item.ItemId.CarbonFiberPlastic}
         };
         Items.Add(new Item(Item.ItemId.NanoBoots, new CraftRecipe(NanoBootsRecipe, 1)));
         //ImprovedElectricJetpack
         var ImprovedElectricJetpackRecipe = new Item.ItemId[,]
         {
-            {Item.ItemId.CarbonFiber, Item.ItemId.ElectricJetpack, Item.ItemId.CarbonFiber},
+            {Item.ItemId.CarbonFiberPlastic, Item.ItemId.ElectricJetpack, Item.ItemId.CarbonFiberPlastic},
             {Item.ItemId.EngineBooster, Item.ItemId.ImprovedLappack, Item.ItemId.EngineBooster},
             {Item.ItemId.FiberglassWire, Item.ItemId.AdvancedWiringDiagram, Item.ItemId.FiberglassWire}
         };
@@ -1051,15 +1053,9 @@ public class ItemsManager : MonoBehaviour
             {Item.ItemId.GravityEngine, Item.ItemId.HighVoltageTransformer, Item.ItemId.GravityEngine},
             {Item.ItemId.Superconductor, Item.ItemId.UltimateLappack, Item.ItemId.Superconductor}
         };
-        Items.Add(new Item(Item.ItemId.GraviChestPlate, new CraftRecipe(GraviChestPlateRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.GraviChestPlate, new CraftRecipe(GraviChestPlateRecipe, 1))); 
 
-
-
-
-
-
-
-
+        //Reinfor
         //Half Block 24
         var HalfBlockRecipe = new Item.ItemId[,]
         {
@@ -1084,7 +1080,7 @@ public class ItemsManager : MonoBehaviour
             {Item.ItemId.Glass , Item.ItemId.Glass , Item.ItemId.Glass },
             {Item.ItemId.Glass, Item.ItemId.Glass , Item.ItemId.Glass }
         };
-        Items.Add(new Item(Item.ItemId.GlassPanel, new CraftRecipe(GlassPanelRecipe, 4)));
+        Items.Add(new Item(Item.ItemId.GlassPanel, new CraftRecipe(GlassPanelRecipe, 16)));
         //RedstoneTorch 27
         var RedstoneTorchRecipe = new Item.ItemId[,]
         {
@@ -1092,7 +1088,7 @@ public class ItemsManager : MonoBehaviour
             {Item.ItemId.Stick}
         };
         Items.Add(new Item(Item.ItemId.RedstoneTorch, new CraftRecipe(RedstoneTorchRecipe, 1)));
-
+        
 
         //Torch 28
         var torchRecipe = new Item.ItemId[,] 
