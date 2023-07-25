@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,9 +11,11 @@ public class ShowChallenge : MonoBehaviour
     public static ShowChallenge InstanceChallenge { get; private set; }
     [SerializeField] private Sprite[] spriteChallenge; 
     [SerializeField] private Image currentImageChallenge;
-    [SerializeField] private TextMeshProUGUI qurrentText;
+    [SerializeField] private TextMeshProUGUI currentTextChallenge;
+    [SerializeField] private GameObject buttonsRecipe;
     [SerializeField] private ParticleSystem particlChallenge;
     [SerializeField] private ParticleSystem particlRezultSlot;
+
     [HideInInspector] public string nameItemSpriteChallenge;
     [HideInInspector] public bool isNextImageChallenge = false;
     private int countClickBackImageChallenge = 0;
@@ -32,7 +35,7 @@ public class ShowChallenge : MonoBehaviour
     {
         Index = index;
         currentImageChallenge.sprite = spriteChallenge[Index];
-        qurrentText.text = spriteChallenge[Index].name;
+        currentTextChallenge.text = spriteChallenge[Index].name;
         nameItemSpriteChallenge = spriteChallenge[Index].name;
         StartCoroutine(CoroutineDisableParticle());
     }
@@ -49,13 +52,14 @@ public class ShowChallenge : MonoBehaviour
             isNextImageChallenge = true;
         }
         if (isNextImageChallenge)
-        { 
-            listObjectImajeRecipe.objectsRecipe[Index]?.gameObject.SetActive(false);
-            GetNextIndexChallenge();
+        {
+            listObjectImajeRecipe.objectsRecipe[Index].gameObject.SetActive(false);
+            buttonsRecipe.gameObject.SetActive(false);
+            GetNextIndexChallenge(); 
             currentImageChallenge.sprite = spriteChallenge[Index];
-            qurrentText.text = spriteChallenge[Index].name;
+            currentTextChallenge.text = spriteChallenge[Index].name;
             nameItemSpriteChallenge = spriteChallenge[Index].name;
-            StartCoroutine(CoroutineDisableParticle());
+            StartCoroutine(CoroutineDisableParticle()); 
         }
         isNextImageChallenge = false;
     }
@@ -64,18 +68,21 @@ public class ShowChallenge : MonoBehaviour
     //updates the current image challenge, text, and the name of the sprite challenge.
     //It starts the coroutine to disable the particle system.
     public void ShowBackChalleng()
-    {   
+    {
         listObjectImajeRecipe.objectsRecipe[Index]?.gameObject.SetActive(false);
-        GetBackIndexChallenge();
+        buttonsRecipe.gameObject.SetActive(false);
+        GetBackIndexChallenge(); 
         currentImageChallenge.sprite = spriteChallenge[Index];
-        qurrentText.text = spriteChallenge[Index].name;
+        currentTextChallenge.text = spriteChallenge[Index].name;
         nameItemSpriteChallenge = spriteChallenge[Index].name;
         StartCoroutine(CoroutineDisableParticle());
+        
     }
     //This method shows the current recipe image. It activates the current challenge object.
     public void ShowCurrentRecipiImage()
     {
          listObjectImajeRecipe.objectsRecipe[Index]?.gameObject.SetActive(true);
+        buttonsRecipe.gameObject.SetActive(true);
     }
     //This method retrieves the next index for the challenge.
     //If the current index is less than the total number of sprite challenges minus one,
