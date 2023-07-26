@@ -32,7 +32,7 @@ public class DataSaver : MonoBehaviour
     private void Load(string data)
     {
         IsLoad = true;
-        if (data != null)
+        if (data != null && data != "")
         {
             var saveData = JsonUtility.FromJson<PlayerData>(data);
             LoadProgress(saveData.Progress);

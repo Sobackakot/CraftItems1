@@ -1,6 +1,6 @@
 [System.Serializable]
 public class PlayerData 
 {
-    public string Progress;
-    public string Invetory;
+    public string Progress = null;
+    public string Invetory = null;
 }
