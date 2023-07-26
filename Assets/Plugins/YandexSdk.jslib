@@ -1,12 +1,12 @@
 mergeInto(LibraryManager.library, 
 { 
-	SaveExten: function (data) 
+	SaveExtern: function (data) 
 	{
 		var save = JSON.parse(UTF8ToString(data));
 		player.setData(save);
 	},
 	
-	LoadExten: function () 
+	LoadExtern: function () 
 	{
 		player.getData().then(_date =>
 		{
@@ -38,4 +38,4 @@ mergeInto(LibraryManager.library,
 		})
 	},
 
-}
+});
