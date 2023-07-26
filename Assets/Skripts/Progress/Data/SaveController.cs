@@ -1,5 +1,7 @@
+using System.Collections;
 using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SaveController : MonoBehaviour
 {
@@ -14,6 +16,10 @@ public class SaveController : MonoBehaviour
     public void Awake()
     {
         Load();
+    }
+    public void Start()
+    {
+        StartCoroutine(SaveGames());
     }
 
     public void OnApplicationQuit()
@@ -50,10 +56,26 @@ public class SaveController : MonoBehaviour
         LoadExtern();
 #endif
     }
-
+     
     public void Load(string data)
     {
         _dataSaver.SetData(data);
+    }
+    public  IEnumerator SaveGames()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(2f);
+            Save();
+        }
+    }
+    public void Restart()
+    {
+#if !UNITY_WEBGL || UNITY_EDITOR
+        PlayerPrefs.SetString(_key, JsonUtility.ToJson(new PlayerData()));
+#else
+        SaveExtern(JsonUtility.ToJson(new PlayerData()));
+#endif
     }
 
 }
