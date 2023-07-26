@@ -75,7 +75,8 @@ public class SaveController : MonoBehaviour
         PlayerPrefs.SetString(_key, JsonUtility.ToJson(new PlayerData()));
 #else
         SaveExtern(JsonUtility.ToJson(new PlayerData()));
-#endif
+#endif 
+
     }
 
 }
