@@ -26,41 +26,60 @@ public class CraftController : MonoBehaviour
 
     public bool HasResultItem => craftResultSlot.ItemInSlot != null; 
 
-    private string[] resourcesItemName1 = new string[17] //List of SECONDARY CRAFTS
+    private string[] resourcesItemName1 = new string[11] //List of SECONDARY CRAFTS
     {
-        "Wood Block", "Boards","Stick","Coal Ore","Coal","Diamond Ore","Diamond",
-        "Gold Ore","Gold Ingot","Redstone Ore","Redstone","Iron Ingot","Flint","Feather","String","Torch","Iron Nugget"
+        "Доски", "Палка", "Уголь", 
+        "Алмаз", "Золотой слиток", "Красная пыль" ,
+        "Железный слиток","Кремень","Нить","Факел","Железный самородок"
+    }; 
+    private string[] resourcesItemName2 = new string[24] //List of SECONDARY CRAFTS
+    {
+       "Доски", "Палка", "Уголь",
+        "Алмаз", "Золотой слиток", "Красная пыль" ,
+        "Железный слиток","Нить","Факел","Железный самородок","Железный блок",
+        "Полублок","Нажимная плита","Стекло","Красный факел","Компас","Деревянный сундук","ТНТ","Печка","Петля","Вагонетка","Лук","Поршень", "Воронка"
     };
-    private string[] resourcesItemName2 = new string[31] //List of SECONDARY CRAFTS
-    {
-        "Wood Block", "Boards","Stick","Coal Ore","Coal","Diamond Ore","Diamond",
-        "Gold Ore","Gold Ingot","Redstone Ore","Redstone","Iron Ingot","Flint","Feather","String","Trip Wire Source","Torch","Iron Nugget",
-        "Iron Block", "Half Block","Pressure Plate","Glass","Redstone Torch","Compass","Wooden Chest", "TNT", "Stove","Hopper", "Trolley","Bow","Piston"
-    };
-    private string[] resourcesItemName3 = new string[227]
-    {
-        "Wood Block", "Boards","Stick","Coal Ore","Coal","Diamond Ore","Diamond",
-        "Gold Ore","Gold Ingot","Redstone Ore","Redstone","Iron Ingot","Flint","Feather","String","Trip Wire Source","Torch","Iron Nugget",
-        "Iron Block", "Half Block","Pressure Plate","Glass","Redstone Torch","Compass","Wooden Chest", "TNT", "Stove","Hopper", "Trolley","Bow","Piston",
-        "Arrow", "Boards", "Bow", "Bronze Ingot", "Bronze Plate", "Bronze Shell", "Carbon Fiber", "Carbon Fiber Fabric", "Carbon Fiber Plastic", "Cauldron", 
-        "Clay Block", "Clay Dust", "Coal", "Coal Dust", "Coal Ore", "Coil", "Composite", "Composite Ingot", "Comparator", "Compass", "Cooling Core", "Cooling Rod",
-        "Cooling Rods", "Copper Ingot", "Copper Ore", "Copper Plate", "Copper Shell", "Copper Wire", "Copper Wire Isolated", "Crossbow", "Daylight Sensor", "Diamond", 
-        "Diamond Axe", "Diamond Boots", "Diamond Chestplate", "Diamond Helmet", "Diamond Hoe", "Diamond Leggings", "Diamond Ore", "Diamond Pickaxe", "Diamond Shovel", 
-        "Diamond Sword", "Diamond Dust", "Distributor", "Double Cooling Rods", "Double Insulated Gold Wire", "Ejector", "Electric Furnace", "Electric Jetpack", "Electric Lamp", 
-        "Electric Motor", "Elevator", "Ender Pearl", "Engine Booster", "Energy Crystal", "Energy Dust", "Energy Pack", "Energy Storage", "Faucet", "Feather", "Fiberglass Wire", 
-        "Fishing Rod", "Flint", "Flint and Steel", "Fortified Stone", "Frequency Binder", "Generator", "Glass", "Glass Panel", "Glowing Stone", "Glowstone Dust", "Gold Ingot", 
-        "Gold Plate", "Golden Shell", "Golden Wire Isolated", "Gravity Engine", "Gunpowder", "Hammer", "Hardened Iron Bar", "Hardened Iron Plate", "Heat Exchanger", "Heat Sink", 
-        "High Voltage Double Insulated Wire", "High Voltage Transformer", "High Voltage Wire", "High Voltage Wire Insulated", "Hopper", "Improved Heat Dissipation", "Improved Heat Exchanger", 
-        "Improved Lappack", "Improved Machine Body", "Iridium", "Iron Bars", "Iron Block", "Iron Bucket", "Iron Furnace", "Iron Ingot", "Iron Ore", "Iron Plate", "Iron Shell", "Iron Turning Mold", 
-        "Lantern", "Lapis Lazuli", "Lapis Lazuli Dust", "Lapis Lazuli Ore", "Latex", "Lead Ingot", "Lead Ore", "Lead Plate", "Lead Sheath", "Lead Dust", "Machine", "Main Machine Body", "Melting Furnace", 
-        "Memory Crystal", "Medium Voltage Transformer", "Mining Laser", "Multifunctional Energy Saver", "Neutron Reflector", "Night-Vision Device", "Not Charged Battery", "Observer", "Obsidian", "Obsidian Dust", 
-        "Piston", "Press-ure Plate", "Quantum Vest", "Rail", "Rail Detector Powered", "Rail Golden Powered", "Recovery Compass", "Refrigerant Capsule", "Reinforced Glass", "Reinforced Iridium Plate", 
-        "Reinforced Machine Body", "Reinforced Reactor Plate", "Reinforced Stone", "Rubber", "Sand", "Shears", "Shield", "Silica", "Silver Dust", "Silver Ingot", "Silver Ore", "Silicon", 
-        "Silicon Boule", "Silicon Dioxide", "Silicon Ingot", "Slime Ball", "Smokehouse", "Smooth Stone", "Sticky Piston", "Stick", "Stove", "Super Conductor Insulation", "Superconductor", "Sulfur Dust", 
-        "Super Conductor", "Teleport", "Tesla Coil", "Thick Copper Plate", "Thick Gold Plate", "Thick Lead Plate", "Thickened Neutron Reflector", "Tin Dust", "Tin Ingot", "Tin Ore", "Tin Plate", "Tin Shell", 
-        "Tin Wire", "Tin Wire Isolated", "TNT", "Trolley", "Trolley Chest", "Trolley Hopper", "Trolley Stove", "Trolley TNT", "Trip Wire Source", "Ultimate Lappack", "Unfired Memory Crystal",
-        "Universal Liquid Capsule", "Wiring Diagram", "Wood Block", "Wooden Chest", "Workbench","Nanofiber Vest","Geothermal Generator","Reactor Shell","Reactor Chamber",
-        "Advanced Wiring Diagram","Azuretron Crystal","Advanced Battery","Golden Wire","Lapis Lazuli Plate","Heat-Intensive Reactor Plate"
+    private string[] resourcesItemName3 = new string[128]
+    { 
+        "Доски","Уголь",
+        "Алмаз", "Золотой слиток", "Красная пыль",
+        "Железный слиток","Стекло","Красный факел","ТНТ","Печка", 
+        "Доски", "Бронзовый слиток", "Бронзовая пластина", "Бронзовая оболочка",
+        "Углеродное волокно", "Ткань из углеродного волокна", "Пластик из углеродного волокна",
+        "Глиняная пыль", "Уголь", "Угольная пыль", "Катушка", "Композит",
+        "Композитный слиток",  "Охлаждающее ядро", "Охлаждающий стержень",
+        "Охлаждающие стержни", "Слиток меди", "Медная пластина", "Медная оболочка",
+        "Медный провод", "Изолированный медный провод", "Алмаз", 
+        "Алмазная пыль", "Раздатчик", "Двойные охлаждающие стержни",
+        "Золотой провод с двойной изоляцией", "Выбрасыватель", "Электрическая печь", "Электрический реактивный ранец",
+        "Электрическая лампа", "Электродвигатель", "Усилитель двигателя",
+        "Кристалл энергии", "Энергетическая пыль", "Энергопак","Хранилище энергии", 
+        "Кран" , "Стекловолоконная проволока", 
+        "Радиомаяк", "Генератор", "Стекло", "Стеклянная панель",
+        "Светящийся камень", "Светящаяся пыль", "Золотой слиток", "Золотая пластина", "Золотая оболочка",  
+        "Золотой провод изолирован", "Гравитационный двигатель",
+        "Закаленая сталь", "Стальная пластина", "Теплообменник", "Радиатор",
+        "Высоковольтный провод с двойной изоляцией", "Высоковольтный трансформатор",
+        "Высоковольтный провод", "Высоковольтный провод с изоляцией", "Улучшенный теплоотвод",
+        "Улучшенный теплообменник", "Улучшенный корпус механизма",  "Железная печь",
+        "Железная пластина", "Железная оболочка", "Железная токарная форма", "Лазурит", "Лазуритовая пыль",  
+         "Слиток свинца", "Свинцовая пластина", "Свинцовая оболочка",
+        "Свинцовая пыль", "Основной корпус механизма" ,
+        "Кристалл памяти","Шаблон кристалла памяти" , "Трансформатор среднего напряжения", "Шахтерский лазер",
+        "Многофункциональное энергосбережение", "Нейтронный отражатель",
+        "Прибор ночного видения", "Батарея незаряженая" , "Обсидиановая пыль", "Квантовый жилет", 
+        "Капсула хладагента", "Армированное стекло", "Усиленная иридиевая пластина" ,
+        "Толстая свинцовая пластина", "Укрепленный камень", "Резина",  "Диоксид кремния",
+        "Серебряная пыль", "Серебряный слиток", 
+        "Изоляция сверхпроводника", "Сверхпроводник", "Серная пыль", "Телепорт", "Катушка Тесла",
+        "Утолщенный отражатель нейтронов", "Оловянная пыль", "Оловянный слиток",
+        "Оловяная проволока", "Оловянная проволока изолирована",
+        "Улучшенный лаппак", "Железная решетка",
+        "Универсальная жидкая капсула", "Электросхема",
+         "Нановолоконный жилет","Ускоритель", "Ултимейт лаппак",
+        "Геотермальный генератор", "Оболочка реактора", "Реакторная камера",
+        "Улучшенная электросхема", "Кристалл азуретрона", "Улучшенный аккумулятор",
+        "Золотой провод", "Лазуритовая пластина", "Теплоемкая реакторная плита", "Оловяная пластина","Оловяная оболочка"
     };
     public void Awake()
     {

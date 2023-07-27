@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections.Generic;
 using UnityEngine; 
 
@@ -11,8 +12,7 @@ public class ItemsManager : MonoBehaviour
     {
         InstanceItemManager = this;
         RecipeItems();
-    }
-
+    } 
     public Item GetItem(Item.ItemId type)
     {
         foreach (var item in Items)

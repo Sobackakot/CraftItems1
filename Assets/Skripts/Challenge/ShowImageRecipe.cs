@@ -25,21 +25,19 @@ public class ShowImageRecipe : MonoBehaviour
         if (IndexSprite >= spritesRecipe.Length - 1)
             return;
         else
-        {
-            Debug.Log(IndexSprite + "  next");
+        { 
             IndexSprite++;
         }
             
         qurrentSpriteRecipe.sprite = spritesRecipe[IndexSprite];
-        textNameRecipe.text = spritesRecipe[IndexSprite].name;
+        textNameRecipe.text = spritesRecipe[IndexSprite].name; 
     }
     public void ShowBackRecipeImage()
     {
         if (IndexSprite <= 0)
             return;
         else
-        {
-            Debug.Log(IndexSprite + "  back");
+        { 
             IndexSprite--;
         }
            
