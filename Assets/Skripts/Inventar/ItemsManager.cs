@@ -1091,12 +1091,12 @@ public class ItemsManager : MonoBehaviour
         
 
         //Torch 28
-        var torchRecipe = new Item.ItemId[,] 
+        var TorchRecipe = new Item.ItemId[,] 
         {
             {Item.ItemId.Coal},
             {Item.ItemId.Stick}, 
         };
-        Items.Add(new Item(Item.ItemId.Torch, new CraftRecipe(torchRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.Torch, new CraftRecipe(TorchRecipe, 1)));
         //Diamond Axe 29
         var diamondAxeRecipe = new Item.ItemId[,]
         {
@@ -1187,14 +1187,14 @@ public class ItemsManager : MonoBehaviour
         };
         Items.Add(new Item(Item.ItemId.Arrow, new CraftRecipe(arrowRecipe, 4)));
         
-        //bow 40
-        var bowRecipe = new Item.ItemId[,]
+        //Bow 40
+        var BowRecipe = new Item.ItemId[,]
         {
             { Item.ItemId.None,Item.ItemId.Stick,Item.ItemId.Strings},
             {Item.ItemId.Stick,Item.ItemId.None,Item.ItemId.Strings},
             {Item.ItemId.None,Item.ItemId.Stick,Item.ItemId.Strings}
         };
-        Items.Add(new Item(Item.ItemId.Bow, new CraftRecipe(bowRecipe, 1)));
+        Items.Add(new Item(Item.ItemId.Bow, new CraftRecipe(BowRecipe, 1)));
         //fishing_rod 41
         var fishing_rodRecipe = new Item.ItemId[,] 
         {
@@ -1255,19 +1255,19 @@ public class ItemsManager : MonoBehaviour
         {
             {Item.ItemId.IronIngot, Item.ItemId.None, Item.ItemId.IronIngot },
              {Item.ItemId.IronIngot, Item.ItemId.None, Item.ItemId.IronIngot},
-              {Item.ItemId.IronIngot,Item.ItemId.IronIngot, Item.ItemId.IronIngot }
-
+              {Item.ItemId.IronIngot,Item.ItemId.IronIngot, Item.ItemId.IronIngot } 
         };
         Items.Add(new Item(Item.ItemId.Cauldron, new CraftRecipe(CauldronRecipe,1)));
        
-        //Lantern 49
+        //Lantern
         var LanternRecipe = new Item.ItemId[,]
         {
             {Item.ItemId.IronNugget, Item.ItemId.IronNugget, Item.ItemId.IronNugget },
             {Item.ItemId.IronNugget, Item.ItemId.Torch, Item.ItemId.IronNugget },
             {Item.ItemId.IronNugget, Item.ItemId.IronNugget, Item.ItemId.IronNugget }
         };
-        Items.Add(new Item(Item.ItemId.Lantern, new CraftRecipe(LanternRecipe, 1))); 
+        Items.Add(new Item(Item.ItemId.Lantern, new CraftRecipe(LanternRecipe, 1)));
+        
         //Compass 50
         var CompassRecipe = new Item.ItemId[,]
         {

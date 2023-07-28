@@ -240,7 +240,7 @@ public class Item
     public string GetNameItemId()
     {     
         switch (itemId)
-        {
+        { 
             case ItemId.Torch: return "Факел";
             case ItemId.IronBucket: return "Железное ведро";
             case ItemId.Arrow: return "Стрела";
@@ -459,7 +459,7 @@ public class Item
             case ItemId.NanoBoots: return "Наноботинки";
             case ItemId.ImprovedElectricJetpack: return "Улучшенный электрический реактивный ранец";
             case ItemId.GraviChestPlate: return "Грави нагрудник";
-            case ItemId.GoldenWire: return "Золотой провод";
+            case ItemId.GoldenWire: return "Золотой провод"; 
             default:
                 return "Unknown Item"; 
         }
@@ -690,7 +690,7 @@ public class Item
             case ItemId.LapisLazuli: return ItemsSprite.Instance.LapisLazuliSprite;
             case ItemId.CarbonFiberPlastic: return ItemsSprite.Instance.CarbonFiberPlasticSprite;
             case ItemId.Accelerator: return ItemsSprite.Instance.AcceleratorSprite;
-            case ItemId.GoldenWire: return ItemsSprite.Instance.GoldenWireSprite;
+            case ItemId.GoldenWire: return ItemsSprite.Instance.GoldenWireSprite; 
         }
     }
 }

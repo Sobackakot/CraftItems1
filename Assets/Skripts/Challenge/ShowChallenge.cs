@@ -17,7 +17,7 @@ public class ShowChallenge : MonoBehaviour
     [HideInInspector] public string nameItemSpriteChallenge;
     [HideInInspector] public bool isNextImageChallenge = false;
     private int countClickBackImageChallenge = 0;
-    [HideInInspector] public int Index = 0;
+    [HideInInspector] public int Index { get; set; } 
     
     public void Awake()
     {
