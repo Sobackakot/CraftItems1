@@ -20,10 +20,7 @@ public class InventoryWindow : MonoBehaviour
         inventoryController.Init();
         craftController.Init(); 
     }
-    public void OpenInventoryCraftUI()
-    {
-        gameObject.SetActive(true); 
-    }
+    
     public void SetCurrentItem(ItemInSlot itemInSlot)
     {   
         CurrentItemInSlot = itemInSlot;

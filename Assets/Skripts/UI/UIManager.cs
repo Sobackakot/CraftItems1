@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private YandexSdk _sdk;
+     
 
     private AudioSource m_AudioSource;
     public AudioClip clickButton;
@@ -60,9 +60,8 @@ public class UIManager : MonoBehaviour
 
     public void ShowRecipeCurrentImageButton()
     {
-        m_AudioSource.PlayOneShot(clickButton, 1f);
-        _sdk.ShowRewardAds(() =>
-            ShowChallenge.InstanceChallenge.ShowCurrentRecipiImage());
+        m_AudioSource.PlayOneShot(clickButton, 1f); 
+        ShowChallenge.InstanceChallenge.ShowCurrentRecipiImage();
     }
     public void NextImageButtonChallenge()
     {
