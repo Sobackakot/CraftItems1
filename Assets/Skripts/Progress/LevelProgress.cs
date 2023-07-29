@@ -1,7 +1,6 @@
 using UnityEngine.Events;
-using UnityEngine;
-using Unity.VisualScripting;
-using System.Collections;
+using UnityEngine; 
+using System.Runtime.InteropServices;
 
 public class LevelProgress : MonoBehaviour
 {
@@ -21,6 +20,9 @@ public class LevelProgress : MonoBehaviour
     private Star[] _stars;
 
     public int LevelSize => _levelSize;
+
+    [DllImport("__Internal")]
+    private static extern void MyLiderBoards(int value);
 
     private void OnValidate()
     {
@@ -86,6 +88,7 @@ public class LevelProgress : MonoBehaviour
             questsItemsS.gameObject.SetActive(false);
             rateGame.gameObject.SetActive(true); 
         }
+        MyLiderBoards(_countCraft);
     }
 
     private void AddStar(Star star, int level)
