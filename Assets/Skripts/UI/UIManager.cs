@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-     
-
     private AudioSource m_AudioSource;
     public AudioClip clickButton;
     public SaveController m_DataSaver;

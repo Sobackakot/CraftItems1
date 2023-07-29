@@ -15,7 +15,14 @@ public class Yandex : MonoBehaviour
     private static extern void GetPlayerData();
     [DllImport("__Internal")]
     private static extern void RateGame();
-
+    [DllImport("__Internal")]
+    private static extern void ShowReclama(); 
+    public void ShowReclamaInUnity()
+    {
+        Time.timeScale = 0f;
+        StartCoroutine(ReclamaCoroutine());
+        ShowReclama();
+    }
     public void RateGameButton()
     { 
         RateGame(); 
@@ -39,6 +46,11 @@ public class Yandex : MonoBehaviour
         if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
             Debug.Log(request.error);
         else playerImage.texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
+    }
+    private IEnumerator ReclamaCoroutine()
+    {
+        yield return new WaitForSeconds(20);
+        Time.timeScale = 1f;
     }
 
 }
