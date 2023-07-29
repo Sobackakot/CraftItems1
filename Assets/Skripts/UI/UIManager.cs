@@ -53,6 +53,10 @@ public class UIManager : MonoBehaviour
         ShowImage.Instance.ShowNextImage();
     }
     //UI Main
+    public void RateGameCloseButton()
+    {
+        m_AudioSource.PlayOneShot(clickButton, 1f);
+    }
     public void PouseButton()
     {
         m_AudioSource.PlayOneShot(clickButton, 1f);

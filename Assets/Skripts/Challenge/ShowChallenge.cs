@@ -12,7 +12,7 @@ public class ShowChallenge : MonoBehaviour
     [SerializeField] private TextMeshProUGUI currentTextChallenge;
     [SerializeField] private GameObject buttonsRecipe;
     [SerializeField] private ParticleSystem particlChallenge;
-    [SerializeField] private ParticleSystem particlRezultSlot;
+    [SerializeField] private ParticleSystem particlRezultSlot; 
 
     [HideInInspector] public string nameItemSpriteChallenge;
     [HideInInspector] public bool isNextImageChallenge = false;

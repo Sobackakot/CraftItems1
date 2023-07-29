@@ -10,7 +10,7 @@ public class CraftController : MonoBehaviour
     [SerializeField] private AudioClip craftSlotAoudio;
     [SerializeField] private GameObject slotPrefab;
     [SerializeField] private Transform craftGrid;
-    [SerializeField] private ParticleSystem particlCraftSlot; 
+    [SerializeField] private ParticleSystem particlCraftSlot;
     [HideInInspector] public bool IsQuestCraft;
     public CraftSlot[,] craftSlot { get; private set; }
     public CraftResultSlot craftResultSlot;
@@ -347,7 +347,7 @@ public class CraftController : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         particlCraftSlot.Stop();
-    }
+    } 
     //This coroutine method manages the crafting progress.
     //It sets the isCraftingInProgress flag to true and waits for a specified duration before setting it back to false.
     //It is used to prevent repeated crafting actions during the crafting progress.

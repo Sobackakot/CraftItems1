@@ -9,11 +9,17 @@ using UnityEngine.UI;
 public class Yandex : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI playerName;
-    [SerializeField] private RawImage playerImage;
+    [SerializeField] private RawImage playerImage; 
 
     [DllImport("__Internal")]
     private static extern void GetPlayerData();
+    [DllImport("__Internal")]
+    private static extern void RateGame();
 
+    public void RateGameButton()
+    { 
+        RateGame(); 
+    }
     public void ShowPlayerDataButton()
     {
         GetPlayerData();

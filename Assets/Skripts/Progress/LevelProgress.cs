@@ -1,5 +1,7 @@
 using UnityEngine.Events;
 using UnityEngine;
+using Unity.VisualScripting;
+using System.Collections;
 
 public class LevelProgress : MonoBehaviour
 {
@@ -10,7 +12,9 @@ public class LevelProgress : MonoBehaviour
     [SerializeField] private CraftResultSlot _result;
     [SerializeField] private InventoryUpdater _invetory;
     [Header("Event")]
-    [SerializeField] private UnityEvent _onUpdateLvl;
+    [SerializeField] private UnityEvent _onUpdateLvl;  
+    [SerializeField] private GameObject rateGame;
+    [SerializeField] private GameObject questsItemsS;
 
     private int _level = 1;
     private int _countCraft = 0; 
@@ -29,7 +33,7 @@ public class LevelProgress : MonoBehaviour
         foreach (var star in _stars)
         {
             star.gameObject.SetActive(false);
-        }
+        } 
     }
 
     private void OnEnable()
@@ -49,7 +53,7 @@ public class LevelProgress : MonoBehaviour
         progress.CountCraft = _countCraft;
         progress.Stars = new int[_levelSize];
         for (int i = 0; i < _levelSize; i++)
-        {
+        { 
             progress.Stars[i] = _stars[i].Level;
         }
         return JsonUtility.ToJson(progress);
@@ -77,6 +81,11 @@ public class LevelProgress : MonoBehaviour
         AddStar(_stars[_countCraft], _level);
         _countCraft++;
         _invetory.UpdateItem();
+        if(_countCraft == 20)
+        {
+            questsItemsS.gameObject.SetActive(false);
+            rateGame.gameObject.SetActive(true); 
+        }
     }
 
     private void AddStar(Star star, int level)
@@ -98,6 +107,6 @@ public class LevelProgress : MonoBehaviour
             }
         }
         return _slots[_slots.Length-1].Icon;
-    }
+    } 
 
 }
