@@ -17,20 +17,44 @@ public class Yandex : MonoBehaviour
     private static extern void RateGame();
     [DllImport("__Internal")]
     private static extern void ShowReclama(); 
+
     public void ShowReclamaInUnity()
     {
         Time.timeScale = 0f;
         StartCoroutine(ReclamaCoroutine());
+#if UNITY_EDITOR
+        Debug.Log("unity");
+#else
+#if UNITY_WEBGL
+        Debug.Log("webgl");
         ShowReclama();
+#endif
+#endif
     }
     public void RateGameButton()
-    { 
-        RateGame(); 
+    {
+#if UNITY_EDITOR
+        Debug.Log("unity");
+#else
+#if UNITY_WEBGL
+        Debug.Log("webgl");
+        RateGame();
+#endif
+#endif
     }
+
     public void ShowPlayerDataButton()
     {
+#if UNITY_EDITOR
+        Debug.Log("unity");
+#else
+#if UNITY_WEBGL
+        Debug.Log("webgl");
         GetPlayerData();
+#endif
+#endif
     }
+
     public void SetNamePlayer(string namePlayer)
     {
         playerName.text = namePlayer;

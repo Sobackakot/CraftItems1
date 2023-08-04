@@ -88,7 +88,14 @@ public class LevelProgress : MonoBehaviour
             questsItemsS.gameObject.SetActive(false);
             rateGame.gameObject.SetActive(true); 
         }
+#if UNITY_EDITOR
+        Debug.Log("unity");
+#else
+#if UNITY_WEBGL
+        Debug.Log("webgl");
         MyLiderBoards(_countCraft);
+#endif
+#endif 
     }
 
     private void AddStar(Star star, int level)

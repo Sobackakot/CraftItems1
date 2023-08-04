@@ -61,8 +61,11 @@ public class CraftController : MonoBehaviour
     };
     public void Awake()
     {
-        m_AudioSource = GetComponent<AudioSource>(); 
-        particlCraftSlot.Stop();
+        m_AudioSource = GetComponent<AudioSource>();  
+    }
+    public void Start()
+    {
+        StartCoroutine(CoroutineDisableParticle());
     }
     //This method initializes the craftSlot array and creates the crafting grid.
     //It instantiates slot prefabs and assigns them to the craftSlot array.
@@ -203,7 +206,7 @@ public class CraftController : MonoBehaviour
         {
             craftResultSlot.ResetItem();
             m_AudioSource.Stop();
-            particlCraftSlot.Stop();
+            StartCoroutine(CoroutineDisableParticle());
         }
     }
     //This method sets the resulting item in the craft result slot if it's a secondary resource item.
