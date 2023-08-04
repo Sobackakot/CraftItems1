@@ -23,6 +23,7 @@ public class ShowChallenge : MonoBehaviour
     {
         InstanceChallenge = this;
         listObjectImajeRecipe = ListObjectsImageRecipe.InstanceListObjects;
+        StartCoroutine(CoroutineDisableParticle());
     }
     public void Start()
     {

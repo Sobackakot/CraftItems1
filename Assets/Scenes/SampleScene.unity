@@ -3033,7 +3033,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 683811031}
   m_HandleRect: {fileID: 683811030}
   m_Direction: 2
-  m_Value: 0.00000014430263
+  m_Value: 0.00000014430266
   m_Size: 0.5563291
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -3535,7 +3535,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotPrefab: {fileID: 6617857056426915824, guid: 0cd652d51adcb0344bc5e6af85e36b3f, type: 3}
-  mainSlotGrid: {fileID: 0}
   additionalSlotGrid: {fileID: 1427143450}
 --- !u!114 &368364352
 MonoBehaviour:
@@ -5858,8 +5857,8 @@ RectTransform:
   m_Father: {fileID: 1783283705}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.000000064022885}
-  m_AnchorMax: {x: 1, y: 0.5563291}
+  m_AnchorMin: {x: 0, y: 0.00000006402289}
+  m_AnchorMax: {x: 1, y: 0.55632913}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8254,6 +8253,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1943221058}
+        m_TargetAssemblyTypeName: ShowChallenge, Assembly-CSharp
+        m_MethodName: Start
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1569969602}
+        m_TargetAssemblyTypeName: CraftController, Assembly-CSharp
+        m_MethodName: Start
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &922462005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9138,18 +9161,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BackGroundImage, Assembly-CSharp
-        m_MethodName: ShouNextImage
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -20962,6 +20973,14 @@ PrefabInstance:
     - target: {fileID: 8734250881527921988, guid: 5eeb1f04a0fb9984da7199b023095ff8, type: 3}
       propertyPath: m_Name
       value: Funnel with Stars
+      objectReference: {fileID: 0}
+    - target: {fileID: 8930719333557595020, guid: 5eeb1f04a0fb9984da7199b023095ff8, type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8931013427367717070, guid: 5eeb1f04a0fb9984da7199b023095ff8, type: 3}
+      propertyPath: looping
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8931407040288120126, guid: 5eeb1f04a0fb9984da7199b023095ff8, type: 3}
       propertyPath: looping
