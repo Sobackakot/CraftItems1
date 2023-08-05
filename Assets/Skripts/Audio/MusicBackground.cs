@@ -18,7 +18,8 @@ public class MusicBackground : MonoBehaviour
 
     private IEnumerator Start()
     {
-        PlayNextMusic();
+        if (!isPlaying)
+            PlayNextMusic();
         yield return null;
     }
 
@@ -57,4 +58,5 @@ public class MusicBackground : MonoBehaviour
         StopAllCoroutines();
         isPlaying = false;
     }
-}
+}  
+
