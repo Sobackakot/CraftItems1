@@ -16,9 +16,7 @@ public class Yandex : MonoBehaviour
     [DllImport("__Internal")]
     private static extern void RateGame();
     [DllImport("__Internal")]
-    private static extern void ShowReclama();
-    [DllImport("__Internal")]
-    private static extern void RequestAuthorization();
+    private static extern void ShowReclama(); 
 
     public void ShowReclamaInUnity()
     {
@@ -52,7 +50,6 @@ public class Yandex : MonoBehaviour
 #else
 #if UNITY_WEBGL
         Debug.Log("webgl"); 
-        RequestAuthorization();
         GetPlayerData();
 #endif
 #endif  

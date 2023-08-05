@@ -13,7 +13,7 @@ mergeInto(LibraryManager.library, {
           console.log(feedbackSent);
         })
       } else {
-        console.log(reason)
+        console.log(reason);
       }
     }) 
   }, 
@@ -43,8 +43,5 @@ mergeInto(LibraryManager.library, {
     }
   })
  }, 
- RequestAuthorization: function () {
-    auto();
-  }, 
 
 });
