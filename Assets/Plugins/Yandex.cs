@@ -17,11 +17,8 @@ public class Yandex : MonoBehaviour
     private static extern void RateGame();
     [DllImport("__Internal")]
     private static extern void ShowReclama(); 
-
     public void ShowReclamaInUnity()
     {
-        Time.timeScale = 0f;
-        StartCoroutine(ReclamaCoroutine());
 #if UNITY_EDITOR
         Debug.Log("unity");
 #else
@@ -72,9 +69,4 @@ public class Yandex : MonoBehaviour
             Debug.Log(request.error);
         else playerImage.texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
     }
-    private IEnumerator ReclamaCoroutine()
-    {
-        yield return new WaitForSeconds(20);
-        Time.timeScale = 1f;
-    }   
 }

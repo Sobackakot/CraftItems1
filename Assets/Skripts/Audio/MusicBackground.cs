@@ -9,13 +9,30 @@ public class MusicBackground : MonoBehaviour
     [SerializeField] private AudioClip[] audioArray;
     private int index = 0;
     private bool isPlaying = false;
+    private bool isMusicPlaying = true;
 
+    
     private void Awake()
     {
         InstanceMusick = this;
         m_AudioSource = GetComponent<AudioSource>();
     }
-
+    public void PauseMusic()
+    {
+        if (isMusicPlaying)
+        {
+            m_AudioSource.Stop();
+            isMusicPlaying = false;
+        }
+    }
+    public void PlayingMusic()
+    {
+        if (!isMusicPlaying)
+        {
+            m_AudioSource.Play();
+            isMusicPlaying = true;
+        }
+    }
     private IEnumerator Start()
     {
         if (!isPlaying)
