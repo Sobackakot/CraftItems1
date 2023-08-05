@@ -43,5 +43,8 @@ mergeInto(LibraryManager.library, {
     }
   })
  }, 
+ RequestAuthorization: function () {
+    auto();
+  }, 
 
 });
