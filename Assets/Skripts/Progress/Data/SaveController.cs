@@ -11,7 +11,7 @@ public class SaveController : MonoBehaviour
         Load();
     }
 
-    public void Start()
+    public void StartMetod()
     {
         StartCoroutine(SaveGames());
     }
@@ -46,7 +46,6 @@ public class SaveController : MonoBehaviour
     }
     public IEnumerator SaveGames()
     {
-        yield return new WaitWhile(() => _dataSaver.gameObject.activeSelf);
         while (true)
         {
             yield return new WaitForSeconds(2f);

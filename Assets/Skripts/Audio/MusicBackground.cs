@@ -8,8 +8,7 @@ public class MusicBackground : MonoBehaviour
     private AudioSource m_AudioSource;
     [SerializeField] private AudioClip[] audioArray;
     private int index = 0;
-    private bool isPlaying = false;
-    private bool isMusicPlaying = true;
+    private bool isPlaying = false; 
 
     
     private void Awake()
@@ -17,22 +16,7 @@ public class MusicBackground : MonoBehaviour
         InstanceMusick = this;
         m_AudioSource = GetComponent<AudioSource>();
     }
-    public void PauseMusic()
-    {
-        if (isMusicPlaying)
-        {
-            m_AudioSource.Stop();
-            isMusicPlaying = false;
-        }
-    }
-    public void PlayingMusic()
-    {
-        if (!isMusicPlaying)
-        {
-            m_AudioSource.Play();
-            isMusicPlaying = true;
-        }
-    }
+     
     private IEnumerator Start()
     {
         if (!isPlaying)

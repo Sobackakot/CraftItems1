@@ -4,7 +4,6 @@ using UnityEngine;
 public class InventoryController : MonoBehaviour
 { 
     [SerializeField] private GameObject slotPrefab;
-    [SerializeField] private Transform mainSlotGrid;
     [SerializeField] private Transform additionalSlotGrid; 
     private ItemsManager itemsManager;
     private List<Slot> _slots = new List<Slot>();

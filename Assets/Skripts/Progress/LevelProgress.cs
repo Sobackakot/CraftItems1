@@ -1,6 +1,5 @@
 using UnityEngine.Events;
-using UnityEngine; 
-using System.Runtime.InteropServices;
+using UnityEngine;  
 
 public class LevelProgress : MonoBehaviour
 {
@@ -11,18 +10,13 @@ public class LevelProgress : MonoBehaviour
     [SerializeField] private CraftResultSlot _result;
     [SerializeField] private InventoryUpdater _invetory;
     [Header("Event")]
-    [SerializeField] private UnityEvent _onUpdateLvl;  
-    [SerializeField] private GameObject rateGame;
-    [SerializeField] private GameObject questsItemsS;
+    [SerializeField] private UnityEvent _onUpdateLvl;   
 
     private int _level = 1;
     private int _countCraft = 0; 
     private Star[] _stars;
 
-    public int LevelSize => _levelSize;
-
-    [DllImport("__Internal")]
-    private static extern void MyLiderBoards(int value);
+    public int LevelSize => _levelSize; 
 
     private void OnValidate()
     {
@@ -82,20 +76,7 @@ public class LevelProgress : MonoBehaviour
         }
         AddStar(_stars[_countCraft], _level);
         _countCraft++;
-        _invetory.UpdateItem();
-        if(_countCraft == 20)
-        {
-            questsItemsS.gameObject.SetActive(false);
-            rateGame.gameObject.SetActive(true); 
-        }
-#if UNITY_EDITOR
-        Debug.Log("unity");
-#else
-#if UNITY_WEBGL
-        Debug.Log("webgl");
-        MyLiderBoards(_countCraft);
-#endif
-#endif 
+        _invetory.UpdateItem(); 
     }
 
     private void AddStar(Star star, int level)
