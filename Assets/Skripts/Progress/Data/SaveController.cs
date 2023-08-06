@@ -6,11 +6,11 @@ public class SaveController : MonoBehaviour
     [SerializeField] private string _key;
     [SerializeField] private DataSaver _dataSaver;
 
-    
-    public void Awake()
+    private void Awake()
     {
         Load();
     }
+
     public void Start()
     {
         StartCoroutine(SaveGames());
@@ -46,6 +46,7 @@ public class SaveController : MonoBehaviour
     }
     public IEnumerator SaveGames()
     {
+        yield return new WaitWhile(() => _dataSaver.gameObject.activeSelf);
         while (true)
         {
             yield return new WaitForSeconds(2f);
