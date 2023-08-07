@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public class FocusSoundController : MonoBehaviour
 {
+    private bool IsPlayingReclam = true;
     private void OnApplicationFocus(bool hasFocus)
     {
         Silence(!hasFocus);
@@ -19,23 +20,26 @@ public class FocusSoundController : MonoBehaviour
     }
     private IEnumerator PouseMusicCoroutine()
     {
-        while (true)
+        while (IsPlayingReclam)
         {
             PouseMusic();
             yield return null;
         }
+        PlayingMusic();
     }
     public void SwitchMusicButton()
     {
-        StartCoroutine(PouseMusicCoroutine());
+        IsPlayingReclam = true;
+        StartCoroutine(PouseMusicCoroutine()); 
     }
     public void PouseMusic()
     {
         Silence(true);
+        IsPlayingReclam = true;
     }
     public void PlayingMusic()
-    {
-        StopCoroutine(PouseMusicCoroutine());
-        Silence(false); 
+    { 
+        Silence(false);
+        IsPlayingReclam = false;
     }
 }

@@ -4,7 +4,7 @@ mergeInto(LibraryManager.library, {
    ysdk.adv.showRewardedVideo({
     callbacks: {
       onOpen: () => {
-        console.log('Video ad open.');
+        console.log('Video ad open. ---- PouseMusic');
         MyGameInstance.SendMessage('MainCamera', 'PouseMusic'); 
       },
       onRewarded: () => { 
@@ -12,7 +12,7 @@ mergeInto(LibraryManager.library, {
         
       },
       onClose: () => {
-        console.log('Video ad closed.');
+        console.log('Video ad closed. ---- PlayingMusic');
         MyGameInstance.SendMessage('MainCamera', 'PlayingMusic');
       }, 
       onError: (e) => {
