@@ -4,11 +4,11 @@ using UnityEngine;
 public class FocusSoundController : MonoBehaviour
 {
     private bool IsPlayingReclam = true;
-    private void OnApplicationFocus(bool hasFocus)
+    private void OnApplicationFocus(bool hasFocus) //metod unity
     {
         Silence(!hasFocus);
     }
-    private void OnApplicationPause(bool isPaused)
+    private void OnApplicationPause(bool isPaused) //metod unity
     {
         Silence(isPaused);
     }
@@ -18,7 +18,7 @@ public class FocusSoundController : MonoBehaviour
         // Or / And
         AudioListener.volume = silence ? 0 : 1;
     }
-    private IEnumerator PouseMusicCoroutine()
+    private IEnumerator PouseMusicCoroutine() // coroutine
     {
         while (IsPlayingReclam)
         {

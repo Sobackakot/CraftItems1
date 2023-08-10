@@ -2909,8 +2909,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 683811031}
   m_HandleRect: {fileID: 683811030}
   m_Direction: 2
-  m_Value: 0.00000009620175
-  m_Size: 0.5563291
+  m_Value: 0.00000009620179
+  m_Size: 0.55632913
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6592,6 +6592,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _key: 8
   _dataSaver: {fileID: 1570578029}
+  isStartGame: 1
 --- !u!4 &745545736
 Transform:
   m_ObjectHideFlags: 0

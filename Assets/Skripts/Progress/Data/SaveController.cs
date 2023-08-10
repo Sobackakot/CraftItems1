@@ -5,12 +5,19 @@ public class SaveController : MonoBehaviour
 {
     [SerializeField] private string _key;
     [SerializeField] private DataSaver _dataSaver;
+    [SerializeField] private bool isStartGame = false;
 
     private void Awake()
     {
         Load();
     }
-
+    private void Start()
+    {
+        if (isStartGame)
+        {
+            StartMetod();
+        }
+    }
     public void StartMetod()
     {
         StartCoroutine(SaveGames());
