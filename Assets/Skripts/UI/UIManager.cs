@@ -22,13 +22,14 @@ public class UIManager : MonoBehaviour
     }
     public void RestartChallengeButton()
     {
+        m_AudioSource.PlayOneShot(clickButton, 1f);
         inventoryUpdater.ResetInvetory();
     }
     public void RestartGameButton()
     {
         m_AudioSource.PlayOneShot(clickButton, 1f);
         m_DataSaver.RemoveSave();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(1);
     }
     public void ExitGameButton()
     {
