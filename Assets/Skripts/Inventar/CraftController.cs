@@ -74,6 +74,14 @@ public class CraftController : MonoBehaviour
         craftSlot = new CraftSlot[3,3];
         CreateSlotsPrefabs();
     }
+    public void Clear()
+    {
+        foreach (var item in craftSlot)
+        {   
+            if(item.HasItem)
+            item.ResetItem();
+        }
+    }
     // This method creates the crafting grid by instantiating slot prefabs and placing them in the craft grid.
     // It iterates over the craftSlot array and assigns each slot with the CraftSlot component.
     private void CreateSlotsPrefabs() // Init  

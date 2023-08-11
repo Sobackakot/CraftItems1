@@ -3,9 +3,15 @@ using UnityEngine;
 public class InventoryUpdater : MonoBehaviour
 {
     [SerializeField] private MaterialSlot[] _slot; 
-    [SerializeField] private InventoryController _inventory;
+    [SerializeField] private InventoryController _inventory; 
+    private CraftResultSlot _craftResultSlot;
 
     private int _index = 0;
+
+    public void Start()
+    {
+        _craftResultSlot = FindObjectOfType<CraftResultSlot>();
+    }
 
     public void Load(int index)
     {
@@ -20,12 +26,14 @@ public class InventoryUpdater : MonoBehaviour
     }
 
     private void UpdateInvetory(int index)
-    {
-        _inventory.Clear();
+    { 
+        _inventory.Clear(); 
+        InventoryWindow.InstanceInventory.craftController.Clear();
+        _craftResultSlot?.Clear();
         foreach (var item in _slot[index].Items)
         {
             _inventory.AddItem(item);
-        }
+        } 
     }
     public void ResetInvetory()
     {

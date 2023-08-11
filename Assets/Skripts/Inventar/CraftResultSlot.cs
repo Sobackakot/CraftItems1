@@ -1,4 +1,4 @@
-using UnityEngine;
+using UnityEngine; 
 
 public class CraftResultSlot : Slot
 {   
@@ -15,6 +15,11 @@ public class CraftResultSlot : Slot
     {
         inventoryWindow = InventoryWindow.InstanceInventory;
         challenge = ShowChallenge.InstanceChallenge;
+    }
+    public void Clear()
+    {
+        if (HasItem)
+            ResetItem();
     }
     public override void LeftMouseClick() //Takes items from the result slot completely at a time
     {

@@ -2909,8 +2909,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 683811031}
   m_HandleRect: {fileID: 683811030}
   m_Direction: 2
-  m_Value: 0.00000009620175
-  m_Size: 0.5563291
+  m_Value: 0.00000009620179
+  m_Size: 0.55632913
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5878,8 +5878,8 @@ RectTransform:
   m_Father: {fileID: 1783283705}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.000000042681922}
-  m_AnchorMax: {x: 1, y: 0.55632913}
+  m_AnchorMin: {x: 0, y: 0.00000004268193}
+  m_AnchorMax: {x: 1, y: 0.5563292}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6592,6 +6592,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _key: 8
   _dataSaver: {fileID: 1570578029}
+  isStartGame: 0
 --- !u!4 &745545736
 Transform:
   m_ObjectHideFlags: 0
@@ -12235,9 +12236,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: d6ce26705f9ee84448090408cef388f1, type: 3}
     - target: {fileID: 3609577720407849064, guid: 779f18ecc22685f44ad9fd29e114ac36, type: 3}
+      propertyPath: craftSlot
+      value: 
+      objectReference: {fileID: 1569969602}
+    - target: {fileID: 3609577720407849064, guid: 779f18ecc22685f44ad9fd29e114ac36, type: 3}
       propertyPath: _inventory
       value: 
       objectReference: {fileID: 368364351}
+    - target: {fileID: 3609577720407849064, guid: 779f18ecc22685f44ad9fd29e114ac36, type: 3}
+      propertyPath: inventorySlot
+      value: 
+      objectReference: {fileID: 368364351}
+    - target: {fileID: 3609577720407849064, guid: 779f18ecc22685f44ad9fd29e114ac36, type: 3}
+      propertyPath: _inventoryCraft
+      value: 
+      objectReference: {fileID: 1569969602}
+    - target: {fileID: 3609577720407849064, guid: 779f18ecc22685f44ad9fd29e114ac36, type: 3}
+      propertyPath: _craftResultSlot
+      value: 
+      objectReference: {fileID: 1758985895}
     - target: {fileID: 3609577720407849064, guid: 779f18ecc22685f44ad9fd29e114ac36, type: 3}
       propertyPath: _slot.Array.size
       value: 60
