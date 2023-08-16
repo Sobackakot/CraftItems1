@@ -104,7 +104,7 @@ NavMeshSettings:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_BuildSettings:
-    serializedVersion: 2
+    serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
@@ -117,7 +117,7 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    buildHeightMesh: 0
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
@@ -3264,7 +3264,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 928066554}
     m_Modifications:
     - target: {fileID: 100000, guid: 3d4907e6bd39f474b8fd8220920e65c4, type: 3}
@@ -3356,7 +3356,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 3d4907e6bd39f474b8fd8220920e65c4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1765918580}
   m_SourcePrefab: {fileID: 100100000, guid: 3d4907e6bd39f474b8fd8220920e65c4, type: 3}
 --- !u!1 &368364349
 GameObject:
@@ -4735,6 +4740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -6920,7 +6926,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 724322444}
     m_Modifications:
     - target: {fileID: 100006, guid: 60bc526f4be1e044ab9e46340b82ffb3, type: 3}
@@ -6992,7 +6998,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100006, guid: 60bc526f4be1e044ab9e46340b82ffb3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1910470792}
   m_SourcePrefab: {fileID: 100100000, guid: 60bc526f4be1e044ab9e46340b82ffb3, type: 3}
 --- !u!1 &768559203
 GameObject:
@@ -8920,9 +8931,17 @@ Camera:
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -11640,7 +11659,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 185447897}
     m_Modifications:
     - target: {fileID: 1046858756152697791, guid: 779f18ecc22685f44ad9fd29e114ac36, type: 3}
@@ -14744,7 +14763,15 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8749901916475960502, guid: 779f18ecc22685f44ad9fd29e114ac36, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1570578031}
+    - targetCorrespondingSourceObject: {fileID: 8749901916475960502, guid: 779f18ecc22685f44ad9fd29e114ac36, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1570578029}
   m_SourcePrefab: {fileID: 100100000, guid: 779f18ecc22685f44ad9fd29e114ac36, type: 3}
 --- !u!1 &1242395539
 GameObject:
@@ -18989,7 +19016,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1569969601}
     m_Modifications:
     - target: {fileID: 1154780881009830307, guid: 0cd652d51adcb0344bc5e6af85e36b3f, type: 3}
@@ -19101,10 +19128,15 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3757958876083121013, guid: 0cd652d51adcb0344bc5e6af85e36b3f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 928066554}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6617857056426915824, guid: 0cd652d51adcb0344bc5e6af85e36b3f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1758985895}
   m_SourcePrefab: {fileID: 100100000, guid: 0cd652d51adcb0344bc5e6af85e36b3f, type: 3}
 --- !u!224 &1758985893 stripped
 RectTransform:
@@ -21166,7 +21198,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 185447897}
     m_Modifications:
     - target: {fileID: 4360442051171365587, guid: c8fbcccb63145524a918a95ef3a87a26, type: 3}
@@ -21258,7 +21290,9 @@ PrefabInstance:
       value: Noob
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8fbcccb63145524a918a95ef3a87a26, type: 3}
 --- !u!224 &7777835550648522486 stripped
 RectTransform:
@@ -21270,7 +21304,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 928066554}
     m_Modifications:
     - target: {fileID: 1351268555596620495, guid: 5eeb1f04a0fb9984da7199b023095ff8, type: 3}
@@ -21383,7 +21417,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8734250881527921988, guid: 5eeb1f04a0fb9984da7199b023095ff8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9186711838562940965}
   m_SourcePrefab: {fileID: 100100000, guid: 5eeb1f04a0fb9984da7199b023095ff8, type: 3}
 --- !u!223 &9186711838562940965
 Canvas:
