@@ -8,8 +8,8 @@ public class MusicBackground : MonoBehaviour
     [HideInInspector]public AudioSource m_AudioSource;
     [SerializeField] private AudioClip[] audioArray;
     private int index = 0;
-    private bool isPlaying = false; 
-
+    private bool isPlaying = false;
+    private Coroutine _corotine;
     
     private void Awake()
     { 
@@ -37,7 +37,7 @@ public class MusicBackground : MonoBehaviour
     { 
         m_AudioSource.clip = audioArray[index];
         m_AudioSource.Play();
-        StartCoroutine(WaitForMusicToFinish());
+        _corotine = StartCoroutine(WaitForMusicToFinish());
     }
 
     private IEnumerator WaitForMusicToFinish()
@@ -59,12 +59,17 @@ public class MusicBackground : MonoBehaviour
     public void TurnOnMusic()
     {
         if (!isPlaying)
-            PlayNextMusic();
+            m_AudioSource.Play();
     }
 
     public void TurnOffMusic()
     {
         m_AudioSource.Stop();
+        if (_corotine != null)
+        {
+            StopCoroutine(_corotine);
+            _corotine = null;
+        }
         StopAllCoroutines();
         isPlaying = false;
     }

@@ -6736,7 +6736,19 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 963194231}
         m_TargetAssemblyTypeName: FocusSoundController, Assembly-CSharp
-        m_MethodName: SwitchMusicButton
+        m_MethodName: PouseMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 963194230}
+        m_TargetAssemblyTypeName: MusicBackground, Assembly-CSharp
+        m_MethodName: TurnOffMusic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

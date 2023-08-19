@@ -6,8 +6,7 @@ public class FocusSoundController : MonoBehaviour
     private MusicBackground musick;
     private void Start()
     {
-        musick = MusicBackground.InstanceMusick;
-        enabled = false;
+        musick = MusicBackground.InstanceMusick; 
     }
     private void OnApplicationFocus(bool hasFocus) //metod unity
     {
@@ -25,13 +24,13 @@ public class FocusSoundController : MonoBehaviour
     }
     
     public void PouseMusic()
-    {
-        musick.m_AudioSource.Stop();
-        enabled = true; 
+    { 
+        enabled = false;
+        musick.TurnOffMusic();
     }
     public void PlayingMusic()
     {    
-        enabled = false;
-        musick.m_AudioSource.Play();
+        enabled = true;
+        musick.TurnOnMusic();
     }
 }
