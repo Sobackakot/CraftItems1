@@ -2,8 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 public class FocusSoundController : MonoBehaviour
-{
-    private bool IsPlayingReclam = true;
+{ 
+    private MusicBackground musick;
+    private void Start()
+    {
+        musick = MusicBackground.InstanceMusick;
+        enabled = false;
+    }
     private void OnApplicationFocus(bool hasFocus) //metod unity
     {
         Silence(!hasFocus);
@@ -18,28 +23,15 @@ public class FocusSoundController : MonoBehaviour
         // Or / And
         AudioListener.volume = silence ? 0 : 1;
     }
-    private IEnumerator PouseMusicCoroutine() // coroutine
-    {
-        while (IsPlayingReclam)
-        {
-            PouseMusic();
-            yield return null;
-        }
-        PlayingMusic();
-    }
-    public void SwitchMusicButton()
-    {
-        IsPlayingReclam = true;
-        StartCoroutine(PouseMusicCoroutine()); 
-    }
+    
     public void PouseMusic()
     {
-        Silence(true);
-        IsPlayingReclam = true;
+        musick.m_AudioSource.Stop();
+        enabled = true; 
     }
     public void PlayingMusic()
-    { 
-        Silence(false);
-        IsPlayingReclam = false;
+    {    
+        enabled = false;
+        musick.m_AudioSource.Play();
     }
 }
